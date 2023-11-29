@@ -2,9 +2,9 @@
 # AUTO-GENERATED FILE, DO NOT MODIFY!
 #
 
-name: 'pieces_sdk_'
+name: 'pieces_sdk_dart'
 version: '0.0.1'
-description: 'OpenAPI API client'
+description: 'Dart SDK for communicating and interacting with the Pieces OS endpoints.'
 homepage: 'https://pieces.app'
 repository: 'https://github.com/pieces-app/sdk-dart'
 issue_tracker: 'https://github.com/pieces-app/sdk-dart/issues'
