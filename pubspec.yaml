@@ -11,7 +11,7 @@ issue_tracker: 'https://github.com/pieces-app/sdk-dart/issues'
 environment:
   sdk: '>=3.0.0 <3.3.0'
 dependencies:
-  http: '>=0.13.0'
+  http: '>=0.13.0 <1.1.1'
   intl: '^0.17.0'
   meta: '^1.1.8'
 #  runtime_common_library:
