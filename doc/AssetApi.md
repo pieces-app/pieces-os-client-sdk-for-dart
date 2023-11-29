@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -32,7 +32,7 @@ This will associate a tag with a asset. This will do the same thing as the tag e
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
@@ -76,7 +76,7 @@ This will enable us to dissassociate a tag from a asset. This will do the same t
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final tag = tag_example; // String | tag id
@@ -120,7 +120,7 @@ Get the formats for a given asset.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
@@ -165,7 +165,7 @@ This will update the classification of this asset to the proper classification.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -210,7 +210,7 @@ This will take in a SeededScoreIncrement and will increment the material relativ
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
@@ -254,7 +254,7 @@ Get the snapshot of a specific asset.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
@@ -299,7 +299,7 @@ Get the snapshot of a specific asset. by passing over as well the user who is ge
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
@@ -346,7 +346,7 @@ This will get a specific asset's conversations
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
@@ -391,7 +391,7 @@ This will return a export version of your asset.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
@@ -436,7 +436,7 @@ This endpoint will accept an Asset that the user wants to update, and will retur
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -481,7 +481,7 @@ This will associate a website with a asset. This will do the same thing as the w
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
@@ -525,7 +525,7 @@ This will enable us to dissassociate a website from a asset. This will do the sa
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AssetApi();
 final website = website_example; // String | website id

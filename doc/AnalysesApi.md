@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -21,7 +21,7 @@ This will get a snapshot of all of your analyses, that are all attached to forma
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = AnalysesApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)

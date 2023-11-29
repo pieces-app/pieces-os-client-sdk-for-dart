@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -21,7 +21,7 @@ This is an endpoint for updating an application.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = ApplicationApi();
 final application = Application(); // Application | 

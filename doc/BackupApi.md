@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = BackupApi();
 final assets = Assets(); // Assets | 
@@ -62,7 +62,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = BackupApi();
 final asset = Asset(); // Asset | 

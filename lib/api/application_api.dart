@@ -13,13 +13,13 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
-import 'package:runtime_common_library/api_helper.dart' show decodeBodyBytes, QueryParam, getQueryParams, parameterToString;
+import '/api_helper.dart' show decodeBodyBytes, QueryParam, getQueryParams, parameterToString;
 
-import 'package:core_openapi/api_helper.dart';
-export 'package:core_openapi/api_helper.dart';
+import '/api_helper.dart';
+export '/api_helper.dart';
 
-import 'package:core_openapi/api_client.dart' show ApiClient;
-import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
+import '/api_client.dart' show ApiClient;
+import '/api.dart' show defaultApiClient, ApiException;
 
 
     class ApplicationApi {

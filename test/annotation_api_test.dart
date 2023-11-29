@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 import 'package:test/test.dart';
 
 /// tests for AnnotationApi

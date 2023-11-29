@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -27,7 +27,7 @@ This will download a specific model onto your local machine.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = ModelApi();
 final model = model_example; // String | model id
@@ -70,7 +70,7 @@ This will cancel a specific model download in progress.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = ModelApi();
 final model = model_example; // String | model id
@@ -113,7 +113,7 @@ This is a Websocket Connection, to get the progress of the downloading of a spec
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = ModelApi();
 final model = model_example; // String | model id
@@ -156,7 +156,7 @@ This will load an already downloaded model into memory. This is different that d
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = ModelApi();
 final model = model_example; // String | model id
@@ -199,7 +199,7 @@ This will unload an already loaded model from memory. This will free up the ram 
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = ModelApi();
 final model = model_example; // String | model id
@@ -240,7 +240,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = ModelApi();
 final model = Model(); // Model | 
@@ -283,7 +283,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import '../lib/api.dart';
 
 final api_instance = ModelApi();
 final model = model_example; // String | model id
