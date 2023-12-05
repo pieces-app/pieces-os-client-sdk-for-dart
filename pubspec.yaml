@@ -2,7 +2,7 @@
 # AUTO-GENERATED FILE, DO NOT MODIFY!
 #
 
-name: 'pieces_sdk_dart'
+name: 'pieces_os_client'
 version: '0.0.1'
 description: 'Dart SDK for communicating and interacting with the Pieces OS endpoints.'
 homepage: 'https://pieces.app'
