@@ -11,9 +11,9 @@
 
 import 'dart:convert';
 
-import 'package:runtime_common_library/api_helper.dart';
+import '/api_helper.dart';
 // import 'package:core_openapi/api_helper.dart';
-import 'package:core_openapi/auth/authentication.dart';
+import '/auth/authentication.dart';
 
 class HttpBasicAuth implements Authentication {
   HttpBasicAuth({this.username = '', this.password = ''});

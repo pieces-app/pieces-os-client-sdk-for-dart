@@ -9,9 +9,9 @@
 // ignore_for_file: lines_longer_than_80_chars
 
 
-import 'package:runtime_common_library/api_helper.dart';
+import '/api_helper.dart';
 // import 'package:core_openapi/api_helper.dart';
-import 'package:core_openapi/auth/authentication.dart';
+import '/auth/authentication.dart';
 
 
 class OAuth implements Authentication {
