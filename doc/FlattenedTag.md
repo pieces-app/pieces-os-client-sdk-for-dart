@@ -1,8 +1,8 @@
-# core_openapi.model.FlattenedTag
+# pieces-os-client.model.FlattenedTag
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

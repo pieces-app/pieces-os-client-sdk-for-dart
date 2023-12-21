@@ -1,8 +1,8 @@
-# core_openapi.api.ApplicationApi
+# pieces-os-client.api.ApplicationApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -21,7 +21,7 @@ This is an endpoint for updating an application.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ApplicationApi();
 final application = Application(); // Application | 

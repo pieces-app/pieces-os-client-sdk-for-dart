@@ -1,8 +1,8 @@
-# core_openapi.model.Accessor
+# pieces-os-client.model.Accessor
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

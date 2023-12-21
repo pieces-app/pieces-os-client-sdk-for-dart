@@ -1,8 +1,8 @@
-# core_openapi.api.WellKnownApi
+# pieces-os-client.api.WellKnownApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -22,7 +22,7 @@ This will get the health of the server.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = WellKnownApi();
 
@@ -61,7 +61,7 @@ This will get the version of the server. This will return a string of current ve
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = WellKnownApi();
 

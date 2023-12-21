@@ -1,8 +1,8 @@
-# core_openapi.model.ExistentMetadata
+# pieces-os-client.model.ExistentMetadata
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

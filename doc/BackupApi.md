@@ -1,8 +1,8 @@
-# core_openapi.api.BackupApi
+# pieces-os-client.api.BackupApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = BackupApi();
 final assets = Assets(); // Assets | 
@@ -62,7 +62,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = BackupApi();
 final asset = Asset(); // Asset | 

@@ -1,8 +1,8 @@
-# core_openapi.model.QGPTQuestionOutput
+# pieces-os-client.model.QGPTQuestionOutput
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

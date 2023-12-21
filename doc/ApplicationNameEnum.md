@@ -1,8 +1,8 @@
-# core_openapi.model.ApplicationNameEnum
+# pieces-os-client.model.ApplicationNameEnum
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

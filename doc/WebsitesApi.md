@@ -1,8 +1,8 @@
-# core_openapi.api.WebsitesApi
+# pieces-os-client.api.WebsitesApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -24,7 +24,7 @@ This will create a website and attach it to a specific asset.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = WebsitesApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -69,7 +69,7 @@ This will delete a specific website!
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = WebsitesApi();
 final website = website_example; // String | website id
@@ -111,7 +111,7 @@ This will check all of the websites in our database to see if this specific prov
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = WebsitesApi();
 final existentMetadata = ExistentMetadata(); // ExistentMetadata | 
@@ -154,7 +154,7 @@ This will get a snapshot of all your websites.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = WebsitesApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)

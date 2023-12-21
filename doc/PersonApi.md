@@ -1,8 +1,8 @@
-# core_openapi.api.PersonApi
+# pieces-os-client.api.PersonApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -23,7 +23,7 @@ This will take in a SeededScoreIncrement and will increment the material relativ
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = PersonApi();
 final person = person_example; // String | This is a uuid that represents a person.
@@ -67,7 +67,7 @@ This will get a snapshot of a specific person
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = PersonApi();
 final person = person_example; // String | This is a uuid that represents a person.
@@ -112,7 +112,7 @@ This will update a specific person
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = PersonApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)

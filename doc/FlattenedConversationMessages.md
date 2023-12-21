@@ -1,8 +1,8 @@
-# core_openapi.model.FlattenedConversationMessages
+# pieces-os-client.model.FlattenedConversationMessages
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

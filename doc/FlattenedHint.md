@@ -1,8 +1,8 @@
-# core_openapi.model.FlattenedHint
+# pieces-os-client.model.FlattenedHint
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

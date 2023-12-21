@@ -1,8 +1,8 @@
-# core_openapi.model.TransferableString
+# pieces-os-client.model.TransferableString
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

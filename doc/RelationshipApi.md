@@ -1,8 +1,8 @@
-# core_openapi.api.RelationshipApi
+# pieces-os-client.api.RelationshipApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -21,7 +21,7 @@ This will return a single relationship object.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = RelationshipApi();
 final relationship = relationship_example; // String | this is a specific relationship uuid.

@@ -1,8 +1,8 @@
-# core_openapi.model.Sensitive
+# pieces-os-client.model.Sensitive
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

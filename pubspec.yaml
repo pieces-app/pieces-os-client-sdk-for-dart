@@ -2,10 +2,10 @@
 # AUTO-GENERATED FILE, DO NOT MODIFY!
 #
 
-name: 'core_openapi'
+name: 'pieces-os-client'
 version: '0.0.1'
-description: 'OpenAPI API client'
-homepage: 'homepage'
+description: 'Pieces OS client SDK for dart.'
+homepage: 'https://github.com/pieces-app/pieces-os-client-sdk-for-dart'
 environment:
   sdk: '>=3.0.0 <3.3.0'
 dependencies:

@@ -1,8 +1,8 @@
-# core_openapi.api.DefaultApi
+# pieces-os-client.api.DefaultApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -21,7 +21,7 @@ This will unload all of the ml models.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = DefaultApi();
 

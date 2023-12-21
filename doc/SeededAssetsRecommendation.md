@@ -1,8 +1,8 @@
-# core_openapi.model.SeededAssetsRecommendation
+# pieces-os-client.model.SeededAssetsRecommendation
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

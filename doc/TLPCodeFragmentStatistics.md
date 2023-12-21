@@ -1,8 +1,8 @@
-# core_openapi.model.TLPCodeFragmentStatistics
+# pieces-os-client.model.TLPCodeFragmentStatistics
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties
