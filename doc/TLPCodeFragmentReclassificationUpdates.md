@@ -1,8 +1,8 @@
-# core_openapi.model.TLPCodeFragmentReclassificationUpdates
+# pieces-os-client.model.TLPCodeFragmentReclassificationUpdates
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

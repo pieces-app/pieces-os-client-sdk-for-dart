@@ -1,8 +1,8 @@
-# core_openapi.model.TLPDirectedDiscoveryFilters
+# pieces-os-client.model.TLPDirectedDiscoveryFilters
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

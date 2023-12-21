@@ -1,8 +1,8 @@
-# core_openapi.api.AnnotationApi
+# pieces-os-client.api.AnnotationApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -23,7 +23,7 @@ This will take in a SeededScoreIncrement and will increment the material relativ
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = AnnotationApi();
 final annotation = annotation_example; // String | This is a specific annotation uuid.
@@ -67,7 +67,7 @@ This will get a snapshot of a specific annotation.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = AnnotationApi();
 final annotation = annotation_example; // String | This is a specific annotation uuid.
@@ -110,7 +110,7 @@ This will update a specific annotation.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = AnnotationApi();
 final annotation = Annotation(); // Annotation | 

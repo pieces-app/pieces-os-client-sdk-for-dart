@@ -1,8 +1,8 @@
-# core_openapi.api.SensitiveApi
+# pieces-os-client.api.SensitiveApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -23,7 +23,7 @@ This will take in a SeededScoreIncrement and will increment the material relativ
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = SensitiveApi();
 final sensitive = sensitive_example; // String | This is a uuid that represents a sensitive.
@@ -67,7 +67,7 @@ This will get a specific sensitive via the sensitive uuid.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = SensitiveApi();
 final sensitive = sensitive_example; // String | 
@@ -110,7 +110,7 @@ This will update a specific sensitive
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = SensitiveApi();
 final sensitive = Sensitive(); // Sensitive | 

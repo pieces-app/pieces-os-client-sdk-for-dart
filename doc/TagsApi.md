@@ -1,8 +1,8 @@
-# core_openapi.api.TagsApi
+# pieces-os-client.api.TagsApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -24,7 +24,7 @@ This will create a new tag.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = TagsApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -69,7 +69,7 @@ This will delete a specific tag.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = TagsApi();
 final tag = tag_example; // String | tag id
@@ -111,7 +111,7 @@ This will check all of the tags in our database to see if this specific provided
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = TagsApi();
 final existentMetadata = ExistentMetadata(); // ExistentMetadata | 
@@ -154,7 +154,7 @@ This will get a snapshot of all of your tags.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = TagsApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)

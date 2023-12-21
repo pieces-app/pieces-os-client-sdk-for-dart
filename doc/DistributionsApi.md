@@ -1,8 +1,8 @@
-# core_openapi.api.DistributionsApi
+# pieces-os-client.api.DistributionsApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -23,7 +23,7 @@ This will create a new distribution.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = DistributionsApi();
 final seededDistribution = SeededDistribution(); // SeededDistribution | 
@@ -66,7 +66,7 @@ This will delete a specific distribution.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = DistributionsApi();
 final distribution = distribution_example; // String | This is the uuid of a specific distribution.
@@ -108,7 +108,7 @@ This will get a specific snapshot of all our distributions.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = DistributionsApi();
 

@@ -1,8 +1,8 @@
-# core_openapi.api.AnchorsApi
+# pieces-os-client.api.AnchorsApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -24,7 +24,7 @@ This will create a anchor and attach it to a specific asset(s) This will also en
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = AnchorsApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -69,7 +69,7 @@ This will delete a specific anchor!
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = AnchorsApi();
 final anchor = anchor_example; // String | This is the specific uuid of an anchor.
@@ -111,7 +111,7 @@ This will get a snapshot of all your anchors.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = AnchorsApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -154,7 +154,7 @@ This will update both the asset and the anchor reference, that will remove a anc
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = AnchorsApi();
 final anchor = anchor_example; // String | This is the specific uuid of an anchor.

@@ -1,8 +1,8 @@
-# core_openapi.model.SeededFragment
+# pieces-os-client.model.SeededFragment
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

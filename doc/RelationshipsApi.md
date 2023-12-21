@@ -1,8 +1,8 @@
-# core_openapi.api.RelationshipsApi
+# pieces-os-client.api.RelationshipsApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -21,7 +21,7 @@ This will reurn all of the relationships that exists within your pieces db.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = RelationshipsApi();
 

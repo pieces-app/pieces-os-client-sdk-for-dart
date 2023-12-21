@@ -1,8 +1,8 @@
-# core_openapi.model.ReferencedTag
+# pieces-os-client.model.ReferencedTag
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

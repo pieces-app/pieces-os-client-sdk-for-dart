@@ -1,8 +1,8 @@
-# core_openapi.model.GraphicalImageDescriptiveStatistics
+# pieces-os-client.model.GraphicalImageDescriptiveStatistics
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

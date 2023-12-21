@@ -1,8 +1,8 @@
-# core_openapi.model.SeededDistribution
+# pieces-os-client.model.SeededDistribution
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

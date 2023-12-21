@@ -1,8 +1,8 @@
-# core_openapi.api.CodeAnalysesApi
+# pieces-os-client.api.CodeAnalysesApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -21,7 +21,7 @@ This will get a snapshot of all of your code analyses, a code analysis is attach
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = CodeAnalysesApi();
 

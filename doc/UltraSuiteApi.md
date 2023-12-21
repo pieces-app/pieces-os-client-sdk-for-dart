@@ -1,8 +1,8 @@
-# core_openapi.api.UltraSuiteApi
+# pieces-os-client.api.UltraSuiteApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -21,7 +21,7 @@ This Endpoint will create an Asset that is sent from UltraSuite.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = UltraSuiteApi();
 final seededUltraSuiteAsset = SeededUltraSuiteAsset(); // SeededUltraSuiteAsset | 

@@ -1,8 +1,8 @@
-# core_openapi.api.ConversationApi
+# pieces-os-client.api.ConversationApi
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -32,7 +32,7 @@ This will update both the anchor and the conversation.  and associate the 2 toge
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -76,7 +76,7 @@ This will update both the asset and the conversation.  and associate the 2 toget
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -120,7 +120,7 @@ This will update both the anchor and the conversation.  and delete(disacioate) t
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -164,7 +164,7 @@ This will update both the asset and the conversation.  and delete(disacioate) th
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -208,7 +208,7 @@ This will get a specific conversation.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -253,7 +253,7 @@ This will save the grounding context for a conversation. This will enable us to 
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -297,7 +297,7 @@ This will remove specific grounding context for a conversation. This will enable
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -341,7 +341,7 @@ This will take in a SeededScoreIncrement and will increment the material relativ
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -385,7 +385,7 @@ This will get a specific conversations messages
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -430,7 +430,7 @@ This will take a specific converssation and it will rename using ML.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -475,7 +475,7 @@ This will take a current conversation and create a summary of the conversation a
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -520,7 +520,7 @@ This will update a specific conversation.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 
 final api_instance = ConversationApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)

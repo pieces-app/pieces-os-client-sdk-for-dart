@@ -1,8 +1,8 @@
-# core_openapi.model.Annotations
+# pieces-os-client.model.Annotations
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties

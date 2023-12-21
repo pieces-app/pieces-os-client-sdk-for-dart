@@ -1,8 +1,8 @@
-# core_openapi.model.OCRAnalysis
+# pieces-os-client.model.OCRAnalysis
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces-os-client/api.dart';
 ```
 
 ## Properties
