@@ -40,7 +40,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 ///
             /// * [String] website (required):
                 ///   website id
-        Future<Response> associateAssetWithHttpInfo(String asset, String website,) async {
+        Future<Response> websiteAssociateAssetWithHttpInfo(String asset, String website,) async {
             // ignore: prefer_const_declarations
             final path = r'/website/{website}/assets/associate/{asset}'
                 .replaceAll('{asset}', asset)
@@ -86,8 +86,74 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     ///
                 /// * [String] website (required):
                     ///   website id
-            Future<void> associateAsset(String asset, String website,) async {
-            final response = await associateAssetWithHttpInfo(asset, website,);
+            Future<void> websiteAssociateAsset(String asset, String website,) async {
+            final response = await websiteAssociateAssetWithHttpInfo(asset, website,);
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+            }
+
+            /// /website/{website}/conversations/associate/{conversation} [POST]
+                ///
+            /// This will associate a website with a conversation.
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] website (required):
+                ///   website id
+                ///
+            /// * [String] conversation (required):
+                ///   This is the uuid of a conversation.
+        Future<Response> websiteAssociateConversationWithHttpInfo(String website, String conversation,) async {
+            // ignore: prefer_const_declarations
+            final path = r'/website/{website}/conversations/associate/{conversation}'
+                .replaceAll('{website}', website)
+                .replaceAll('{conversation}', conversation);
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /website/{website}/conversations/associate/{conversation} [POST]
+                    ///
+                /// This will associate a website with a conversation.
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] website (required):
+                    ///   website id
+                    ///
+                /// * [String] conversation (required):
+                    ///   This is the uuid of a conversation.
+            Future<void> websiteAssociateConversation(String website, String conversation,) async {
+            final response = await websiteAssociateConversationWithHttpInfo(website, conversation,);
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }
@@ -106,7 +172,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 ///
             /// * [String] person (required):
                 ///   This is a uuid that represents a person.
-        Future<Response> associatePersonWithHttpInfo(String website, String person,) async {
+        Future<Response> websiteAssociatePersonWithHttpInfo(String website, String person,) async {
             // ignore: prefer_const_declarations
             final path = r'/website/{website}/persons/associate/{person}'
                 .replaceAll('{website}', website)
@@ -152,8 +218,8 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     ///
                 /// * [String] person (required):
                     ///   This is a uuid that represents a person.
-            Future<void> associatePerson(String website, String person,) async {
-            final response = await associatePersonWithHttpInfo(website, person,);
+            Future<void> websiteAssociatePerson(String website, String person,) async {
+            final response = await websiteAssociatePersonWithHttpInfo(website, person,);
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }
@@ -172,7 +238,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 ///
             /// * [String] asset (required):
                 ///   The id (uuid) of the asset that you are trying to access.
-        Future<Response> disassociateAssetWithHttpInfo(String website, String asset,) async {
+        Future<Response> websiteDisassociateAssetWithHttpInfo(String website, String asset,) async {
             // ignore: prefer_const_declarations
             final path = r'/website/{website}/assets/disassociate/{asset}'
                 .replaceAll('{website}', website)
@@ -218,8 +284,74 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     ///
                 /// * [String] asset (required):
                     ///   The id (uuid) of the asset that you are trying to access.
-            Future<void> disassociateAsset(String website, String asset,) async {
-            final response = await disassociateAssetWithHttpInfo(website, asset,);
+            Future<void> websiteDisassociateAsset(String website, String asset,) async {
+            final response = await websiteDisassociateAssetWithHttpInfo(website, asset,);
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+            }
+
+            /// /website/{website}/conversations/disassociate/{conversation} [POST]
+                ///
+            /// This will enable us to dissassociate a website from a conversation.
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] website (required):
+                ///   website id
+                ///
+            /// * [String] conversation (required):
+                ///   This is the uuid of a conversation.
+        Future<Response> websiteDisassociateConversationWithHttpInfo(String website, String conversation,) async {
+            // ignore: prefer_const_declarations
+            final path = r'/website/{website}/conversations/disassociate/{conversation}'
+                .replaceAll('{website}', website)
+                .replaceAll('{conversation}', conversation);
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /website/{website}/conversations/disassociate/{conversation} [POST]
+                    ///
+                /// This will enable us to dissassociate a website from a conversation.
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] website (required):
+                    ///   website id
+                    ///
+                /// * [String] conversation (required):
+                    ///   This is the uuid of a conversation.
+            Future<void> websiteDisassociateConversation(String website, String conversation,) async {
+            final response = await websiteDisassociateConversationWithHttpInfo(website, conversation,);
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }
@@ -238,7 +370,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 ///
             /// * [String] person (required):
                 ///   This is a uuid that represents a person.
-        Future<Response> disassociatePersonWithHttpInfo(String website, String person,) async {
+        Future<Response> websiteDisassociatePersonWithHttpInfo(String website, String person,) async {
             // ignore: prefer_const_declarations
             final path = r'/website/{website}/persons/disassociate/{person}'
                 .replaceAll('{website}', website)
@@ -284,8 +416,8 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     ///
                 /// * [String] person (required):
                     ///   This is a uuid that represents a person.
-            Future<void> disassociatePerson(String website, String person,) async {
-            final response = await disassociatePersonWithHttpInfo(website, person,);
+            Future<void> websiteDisassociatePerson(String website, String person,) async {
+            final response = await websiteDisassociatePersonWithHttpInfo(website, person,);
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }

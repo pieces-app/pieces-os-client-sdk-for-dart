@@ -364,7 +364,9 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
             /// /model/update [POST]
                 ///
-                /// Note: This method returns the HTTP [Response].
+            /// This will update Machinelearning Model, this is only available for \"custom:true\" models.
+            ///
+            /// Note: This method returns the HTTP [Response].
                 ///
             /// Parameters:
             ///
@@ -404,6 +406,8 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
             }
 
                 /// /model/update [POST]
+                    ///
+                /// This will update Machinelearning Model, this is only available for \"custom:true\" models.
                     ///
                 /// Parameters:
                 ///

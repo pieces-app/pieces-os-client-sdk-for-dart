@@ -2,7 +2,7 @@
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 ```
 
 ## Properties
@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
 **asset** | **String** | This is the specific asset that this website is going to get attached to!! | [optional] 
+**conversation** | **String** | This is the specific conversation that this website is going to get attached to!! | [optional] 
 **url** | **String** | this is the url of the website. | 
 **name** | **String** | name of the website.(customizable and updateable as well.) | 
 **mechanism** | [**MechanismEnum**](MechanismEnum.md) |  | [optional] 

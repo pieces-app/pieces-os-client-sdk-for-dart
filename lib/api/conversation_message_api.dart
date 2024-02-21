@@ -40,7 +40,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 ///
             /// * [String] message (required):
                 ///   This is the uuid of a message.
-        Future<Response> associateAnnotationWithHttpInfo(String annotation, String message,) async {
+        Future<Response> messageAssociateAnnotationWithHttpInfo(String annotation, String message,) async {
             // ignore: prefer_const_declarations
             final path = r'/message/{message}/annotations/associate/{annotation}'
                 .replaceAll('{annotation}', annotation)
@@ -86,8 +86,8 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     ///
                 /// * [String] message (required):
                     ///   This is the uuid of a message.
-            Future<void> associateAnnotation(String annotation, String message,) async {
-            final response = await associateAnnotationWithHttpInfo(annotation, message,);
+            Future<void> messageAssociateAnnotation(String annotation, String message,) async {
+            final response = await messageAssociateAnnotationWithHttpInfo(annotation, message,);
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }
@@ -106,7 +106,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 ///
             /// * [String] message (required):
                 ///   This is the uuid of a message.
-        Future<Response> disassociateAnnotationWithHttpInfo(String annotation, String message,) async {
+        Future<Response> messageDisassociateAnnotationWithHttpInfo(String annotation, String message,) async {
             // ignore: prefer_const_declarations
             final path = r'/message/{message}/annotations/disassociate/{annotation}'
                 .replaceAll('{annotation}', annotation)
@@ -152,8 +152,8 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     ///
                 /// * [String] message (required):
                     ///   This is the uuid of a message.
-            Future<void> disassociateAnnotation(String annotation, String message,) async {
-            final response = await disassociateAnnotationWithHttpInfo(annotation, message,);
+            Future<void> messageDisassociateAnnotation(String annotation, String message,) async {
+            final response = await messageDisassociateAnnotationWithHttpInfo(annotation, message,);
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }

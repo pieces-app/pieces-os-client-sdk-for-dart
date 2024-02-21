@@ -27,6 +27,72 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
     final ApiClient apiClient;
 
+            /// /anchors/{anchor}/assets/delete/{asset} [POST]
+                ///
+            /// This will update both the asset and the anchor reference, that will remove a anchor from an asset(only the references).  This will NOT remove the anchor. This will NOT remove the asset. This will only update the references so that they are disconnected from one another.
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] anchor (required):
+                ///   This is the specific uuid of an anchor.
+                ///
+            /// * [String] asset (required):
+                ///   The id (uuid) of the asset that you are trying to access.
+        Future<Response> anchorDisassociateAssetWithHttpInfo(String anchor, String asset,) async {
+            // ignore: prefer_const_declarations
+            final path = r'/anchors/{anchor}/assets/delete/{asset}'
+                .replaceAll('{anchor}', anchor)
+                .replaceAll('{asset}', asset);
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /anchors/{anchor}/assets/delete/{asset} [POST]
+                    ///
+                /// This will update both the asset and the anchor reference, that will remove a anchor from an asset(only the references).  This will NOT remove the anchor. This will NOT remove the asset. This will only update the references so that they are disconnected from one another.
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] anchor (required):
+                    ///   This is the specific uuid of an anchor.
+                    ///
+                /// * [String] asset (required):
+                    ///   The id (uuid) of the asset that you are trying to access.
+            Future<void> anchorDisassociateAsset(String anchor, String asset,) async {
+            final response = await anchorDisassociateAssetWithHttpInfo(anchor, asset,);
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+            }
+
             /// /anchors/create [POST]
                 ///
             /// This will create a anchor and attach it to a specific asset(s) This will also ensure the anchor is normalized.
@@ -229,71 +295,5 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     
                 }
                 throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
-            }
-
-            /// /anchors/{anchor}/assets/delete/{asset} [POST]
-                ///
-            /// This will update both the asset and the anchor reference, that will remove a anchor from an asset(only the references).  This will NOT remove the anchor. This will NOT remove the asset. This will only update the references so that they are disconnected from one another.
-            ///
-            /// Note: This method returns the HTTP [Response].
-                ///
-            /// Parameters:
-            ///
-            /// * [String] anchor (required):
-                ///   This is the specific uuid of an anchor.
-                ///
-            /// * [String] asset (required):
-                ///   The id (uuid) of the asset that you are trying to access.
-        Future<Response> removeAnchorReferenceFromAssetWithHttpInfo(String anchor, String asset,) async {
-            // ignore: prefer_const_declarations
-            final path = r'/anchors/{anchor}/assets/delete/{asset}'
-                .replaceAll('{anchor}', anchor)
-                .replaceAll('{asset}', asset);
-
-
-
-
-            // ignore: prefer_final_locals
-            Object? postBody;
-
-
-
-
-            final queryParams = <QueryParam>[];
-            final headerParams = <String, String>{};
-            final formParams = <String, String>{};
-
-            const authNames = <String>[];
-            const contentTypes = <String>[];
-
-
-            return apiClient.invokeAPI(
-            path,
-            'POST',
-            queryParams,
-            postBody,
-            headerParams,
-            formParams,
-            contentTypes.isEmpty ? null : contentTypes.first,
-            authNames,
-            );
-            }
-
-                /// /anchors/{anchor}/assets/delete/{asset} [POST]
-                    ///
-                /// This will update both the asset and the anchor reference, that will remove a anchor from an asset(only the references).  This will NOT remove the anchor. This will NOT remove the asset. This will only update the references so that they are disconnected from one another.
-                    ///
-                /// Parameters:
-                ///
-                /// * [String] anchor (required):
-                    ///   This is the specific uuid of an anchor.
-                    ///
-                /// * [String] asset (required):
-                    ///   The id (uuid) of the asset that you are trying to access.
-            Future<void> removeAnchorReferenceFromAsset(String anchor, String asset,) async {
-            final response = await removeAnchorReferenceFromAssetWithHttpInfo(anchor, asset,);
-            if (response.statusCode >= HttpStatus.badRequest) {
-            throw ApiException(response.statusCode, await decodeBodyBytes(response));
-            }
             }
         }

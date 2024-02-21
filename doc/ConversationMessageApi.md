@@ -2,22 +2,22 @@
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**associateAnnotation**](ConversationMessageApi.md#associateannotation) | **POST** /message/{message}/annotations/associate/{annotation} | /message/{message}/annotations/associate/{annotation} [POST]
-[**disassociateAnnotation**](ConversationMessageApi.md#disassociateannotation) | **POST** /message/{message}/annotations/disassociate/{annotation} | /message/{message}/annotations/disassociate/{annotation} [POST]
+[**messageAssociateAnnotation**](ConversationMessageApi.md#messageassociateannotation) | **POST** /message/{message}/annotations/associate/{annotation} | /message/{message}/annotations/associate/{annotation} [POST]
+[**messageDisassociateAnnotation**](ConversationMessageApi.md#messagedisassociateannotation) | **POST** /message/{message}/annotations/disassociate/{annotation} | /message/{message}/annotations/disassociate/{annotation} [POST]
 [**messageScoresIncrement**](ConversationMessageApi.md#messagescoresincrement) | **POST** /message/{message}/scores/increment | '/message/{message}/scores/increment' [POST]
 [**messageSpecificMessageSnapshot**](ConversationMessageApi.md#messagespecificmessagesnapshot) | **GET** /message/{message} | /message/{message} [GET]
 [**messageSpecificMessageUpdate**](ConversationMessageApi.md#messagespecificmessageupdate) | **POST** /message/update | /message/update [GET]
 
 
-# **associateAnnotation**
-> associateAnnotation(annotation, message)
+# **messageAssociateAnnotation**
+> messageAssociateAnnotation(annotation, message)
 
 /message/{message}/annotations/associate/{annotation} [POST]
 
@@ -25,16 +25,16 @@ This will associate a message with an annotation.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ConversationMessageApi();
 final annotation = annotation_example; // String | This is a specific annotation uuid.
 final message = message_example; // String | This is the uuid of a message.
 
 try {
-    api_instance.associateAnnotation(annotation, message);
+    api_instance.messageAssociateAnnotation(annotation, message);
 } catch (e) {
-    print('Exception when calling ConversationMessageApi->associateAnnotation: $e\n');
+    print('Exception when calling ConversationMessageApi->messageAssociateAnnotation: $e\n');
 }
 ```
 
@@ -60,8 +60,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **disassociateAnnotation**
-> disassociateAnnotation(annotation, message)
+# **messageDisassociateAnnotation**
+> messageDisassociateAnnotation(annotation, message)
 
 /message/{message}/annotations/disassociate/{annotation} [POST]
 
@@ -69,16 +69,16 @@ This will enable us to dissassociate a message from an annotation.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ConversationMessageApi();
 final annotation = annotation_example; // String | This is a specific annotation uuid.
 final message = message_example; // String | This is the uuid of a message.
 
 try {
-    api_instance.disassociateAnnotation(annotation, message);
+    api_instance.messageDisassociateAnnotation(annotation, message);
 } catch (e) {
-    print('Exception when calling ConversationMessageApi->disassociateAnnotation: $e\n');
+    print('Exception when calling ConversationMessageApi->messageDisassociateAnnotation: $e\n');
 }
 ```
 
@@ -113,7 +113,7 @@ This will take in a SeededScoreIncrement and will increment the material relativ
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ConversationMessageApi();
 final message = message_example; // String | This is the uuid of a message.
@@ -157,7 +157,7 @@ This will get a specific snapshot of a message
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ConversationMessageApi();
 final message = message_example; // String | This is the uuid of a message.
@@ -202,7 +202,7 @@ This will update a conversation message.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ConversationMessageApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)

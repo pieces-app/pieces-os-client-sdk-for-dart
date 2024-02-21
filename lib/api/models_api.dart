@@ -29,7 +29,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
             /// /models/create [POST]
                 ///
-            /// 
+            /// This will create a ml model, this is aloud however all models will be set to custom: true.  && we will verify we dont have a model that matches this model.
             ///
             /// Note: This method returns the HTTP [Response].
                 ///
@@ -73,7 +73,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
                 /// /models/create [POST]
                     ///
-                /// 
+                /// This will create a ml model, this is aloud however all models will be set to custom: true.  && we will verify we dont have a model that matches this model.
                     ///
                 /// Parameters:
                 ///
@@ -96,7 +96,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
             /// /models/{model}/delete [POST]
                 ///
-            /// 
+            /// This will delete a model, This is only available for custom: true models.
             ///
             /// Note: This method returns the HTTP [Response].
                 ///
@@ -140,7 +140,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
                 /// /models/{model}/delete [POST]
                     ///
-                /// 
+                /// This will delete a model, This is only available for custom: true models.
                     ///
                 /// Parameters:
                 ///
@@ -151,6 +151,78 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }
+            }
+
+            /// /models/{model}/delete/cache [POST]
+                ///
+            /// This is going to delete and sort of data that is associated with the Model itself IE the Assets/Libraries downloaded specifically for this model.  This is only available for the LLLM models for now.
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] model (required):
+                ///   model id
+                ///
+            /// * [ModelDeleteCacheInput] modelDeleteCacheInput:
+        Future<Response> modelsDeleteSpecificModelCacheWithHttpInfo(String model, { ModelDeleteCacheInput? modelDeleteCacheInput, }) async {
+            // ignore: prefer_const_declarations
+            final path = r'/models/{model}/delete/cache'
+                .replaceAll('{model}', model);
+
+
+
+                // is complex ModelDeleteCacheInput
+                    Object? postBody = modelDeleteCacheInput?.toJson() ;
+
+
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>['application/json'];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /models/{model}/delete/cache [POST]
+                    ///
+                /// This is going to delete and sort of data that is associated with the Model itself IE the Assets/Libraries downloaded specifically for this model.  This is only available for the LLLM models for now.
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] model (required):
+                    ///   model id
+                    ///
+                /// * [ModelDeleteCacheInput] modelDeleteCacheInput:
+            Future<ModelDeleteCacheOutput> modelsDeleteSpecificModelCache(String model, { ModelDeleteCacheInput? modelDeleteCacheInput, }) async {
+            final response = await modelsDeleteSpecificModelCacheWithHttpInfo(model,  modelDeleteCacheInput: modelDeleteCacheInput, );
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+                // When a remote server returns no body with a status of 204, we shall not decode it.
+                // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+                // FormatException when trying to decode an empty string.
+                if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+                            return await apiClient.deserializeAsync(await decodeBodyBytes(response), 'ModelDeleteCacheOutput',) as ModelDeleteCacheOutput;
+                    
+                }
+                throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
             }
 
             /// /models [GET]
@@ -211,7 +283,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
             /// /models/unload [POST]
                 ///
-            /// This will unload all of the ml models.
+            /// This will unload all of the ml models.(that are unloadable)
             ///
             /// Note: This method returns the HTTP [Response].
         Future<Response> unloadModelsWithHttpInfo() async {
@@ -249,7 +321,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
                 /// /models/unload [POST]
                     ///
-                /// This will unload all of the ml models.
+                /// This will unload all of the ml models.(that are unloadable)
             Future<void> unloadModels() async {
             final response = await unloadModelsWithHttpInfo();
             if (response.statusCode >= HttpStatus.badRequest) {

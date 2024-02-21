@@ -159,9 +159,75 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
             }
             }
 
+            /// /conversation/{conversation}/websites/associate/{website} [POST]
+                ///
+            /// This will update both the website and the conversation.  and associate the 2 together
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] conversation (required):
+                ///   This is the uuid of a conversation.
+                ///
+            /// * [String] website (required):
+                ///   website id
+        Future<Response> conversationAssociateWebsiteWithHttpInfo(String conversation, String website,) async {
+            // ignore: prefer_const_declarations
+            final path = r'/conversation/{conversation}/websites/associate/{website}'
+                .replaceAll('{conversation}', conversation)
+                .replaceAll('{website}', website);
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /conversation/{conversation}/websites/associate/{website} [POST]
+                    ///
+                /// This will update both the website and the conversation.  and associate the 2 together
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] conversation (required):
+                    ///   This is the uuid of a conversation.
+                    ///
+                /// * [String] website (required):
+                    ///   website id
+            Future<void> conversationAssociateWebsite(String conversation, String website,) async {
+            final response = await conversationAssociateWebsiteWithHttpInfo(conversation, website,);
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+            }
+
             /// /conversation/{conversation}/anchors/delete/{anchor} [POST]
                 ///
-            /// This will update both the anchor and the conversation.  and delete(disacioate) the 2 together
+            /// This will update both the anchor and the conversation.  and delete(disassociate) the 2 together
             ///
             /// Note: This method returns the HTTP [Response].
                 ///
@@ -172,7 +238,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 ///
             /// * [String] anchor (required):
                 ///   This is the specific uuid of an anchor.
-        Future<Response> conversationDeleteAnchorWithHttpInfo(String conversation, String anchor,) async {
+        Future<Response> conversationDisassociateAnchorWithHttpInfo(String conversation, String anchor,) async {
             // ignore: prefer_const_declarations
             final path = r'/conversation/{conversation}/anchors/delete/{anchor}'
                 .replaceAll('{conversation}', conversation)
@@ -209,7 +275,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
                 /// /conversation/{conversation}/anchors/delete/{anchor} [POST]
                     ///
-                /// This will update both the anchor and the conversation.  and delete(disacioate) the 2 together
+                /// This will update both the anchor and the conversation.  and delete(disassociate) the 2 together
                     ///
                 /// Parameters:
                 ///
@@ -218,8 +284,8 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     ///
                 /// * [String] anchor (required):
                     ///   This is the specific uuid of an anchor.
-            Future<void> conversationDeleteAnchor(String conversation, String anchor,) async {
-            final response = await conversationDeleteAnchorWithHttpInfo(conversation, anchor,);
+            Future<void> conversationDisassociateAnchor(String conversation, String anchor,) async {
+            final response = await conversationDisassociateAnchorWithHttpInfo(conversation, anchor,);
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }
@@ -227,7 +293,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
             /// /conversation/{conversation}/assets/delete/{asset} [POST]
                 ///
-            /// This will update both the asset and the conversation.  and delete(disacioate) the 2.
+            /// This will update both the asset and the conversation.  and delete(disassociate) the 2.
             ///
             /// Note: This method returns the HTTP [Response].
                 ///
@@ -238,7 +304,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 ///
             /// * [String] asset (required):
                 ///   The id (uuid) of the asset that you are trying to access.
-        Future<Response> conversationDeleteAssetWithHttpInfo(String conversation, String asset,) async {
+        Future<Response> conversationDisassociateAssetWithHttpInfo(String conversation, String asset,) async {
             // ignore: prefer_const_declarations
             final path = r'/conversation/{conversation}/assets/delete/{asset}'
                 .replaceAll('{conversation}', conversation)
@@ -275,7 +341,7 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
                 /// /conversation/{conversation}/assets/delete/{asset} [POST]
                     ///
-                /// This will update both the asset and the conversation.  and delete(disacioate) the 2.
+                /// This will update both the asset and the conversation.  and delete(disassociate) the 2.
                     ///
                 /// Parameters:
                 ///
@@ -284,8 +350,74 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     ///
                 /// * [String] asset (required):
                     ///   The id (uuid) of the asset that you are trying to access.
-            Future<void> conversationDeleteAsset(String conversation, String asset,) async {
-            final response = await conversationDeleteAssetWithHttpInfo(conversation, asset,);
+            Future<void> conversationDisassociateAsset(String conversation, String asset,) async {
+            final response = await conversationDisassociateAssetWithHttpInfo(conversation, asset,);
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+            }
+
+            /// /website/{website}/websites/disassociate/{website} [POST]
+                ///
+            /// This will enable us to dissassociate a conversation from a website.
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] conversation (required):
+                ///   This is the uuid of a conversation.
+                ///
+            /// * [String] website (required):
+                ///   website id
+        Future<Response> conversationDisassociateWebsiteWithHttpInfo(String conversation, String website,) async {
+            // ignore: prefer_const_declarations
+            final path = r'/conversation/{conversation}/websites/disassociate/{website}'
+                .replaceAll('{conversation}', conversation)
+                .replaceAll('{website}', website);
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /website/{website}/websites/disassociate/{website} [POST]
+                    ///
+                /// This will enable us to dissassociate a conversation from a website.
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] conversation (required):
+                    ///   This is the uuid of a conversation.
+                    ///
+                /// * [String] website (required):
+                    ///   website id
+            Future<void> conversationDisassociateWebsite(String conversation, String website,) async {
+            final response = await conversationDisassociateWebsiteWithHttpInfo(conversation, website,);
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }

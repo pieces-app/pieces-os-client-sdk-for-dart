@@ -93,6 +93,72 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
             }
             }
 
+            /// /asset/{asset}/websites/associate/{website} [POST]
+                ///
+            /// This will associate a website with a asset. This will do the same thing as the website equivilant.
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] asset (required):
+                ///   The id (uuid) of the asset that you are trying to access.
+                ///
+            /// * [String] website (required):
+                ///   website id
+        Future<Response> assetAssociateWebsiteWithHttpInfo(String asset, String website,) async {
+            // ignore: prefer_const_declarations
+            final path = r'/asset/{asset}/websites/associate/{website}'
+                .replaceAll('{asset}', asset)
+                .replaceAll('{website}', website);
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /asset/{asset}/websites/associate/{website} [POST]
+                    ///
+                /// This will associate a website with a asset. This will do the same thing as the website equivilant.
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] asset (required):
+                    ///   The id (uuid) of the asset that you are trying to access.
+                    ///
+                /// * [String] website (required):
+                    ///   website id
+            Future<void> assetAssociateWebsite(String asset, String website,) async {
+            final response = await assetAssociateWebsiteWithHttpInfo(asset, website,);
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+            }
+
             /// /asset/{asset}/tags/disassociate/{tag} [POST]
                 ///
             /// This will enable us to dissassociate a tag from a asset. This will do the same thing as the tag equivilant.
@@ -154,6 +220,72 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     ///   The id (uuid) of the asset that you are trying to access.
             Future<void> assetDisassociateTag(String tag, String asset,) async {
             final response = await assetDisassociateTagWithHttpInfo(tag, asset,);
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+            }
+
+            /// /asset/{asset}/websites/disassociate/{website} [POST]
+                ///
+            /// This will enable us to dissassociate a website from a asset. This will do the same thing as the website equivilant.
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] website (required):
+                ///   website id
+                ///
+            /// * [String] asset (required):
+                ///   The id (uuid) of the asset that you are trying to access.
+        Future<Response> assetDisassociateWebsiteWithHttpInfo(String website, String asset,) async {
+            // ignore: prefer_const_declarations
+            final path = r'/asset/{asset}/websites/disassociate/{website}'
+                .replaceAll('{website}', website)
+                .replaceAll('{asset}', asset);
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /asset/{asset}/websites/disassociate/{website} [POST]
+                    ///
+                /// This will enable us to dissassociate a website from a asset. This will do the same thing as the website equivilant.
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] website (required):
+                    ///   website id
+                    ///
+                /// * [String] asset (required):
+                    ///   The id (uuid) of the asset that you are trying to access.
+            Future<void> assetDisassociateWebsite(String website, String asset,) async {
+            final response = await assetDisassociateWebsiteWithHttpInfo(website, asset,);
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }
@@ -536,6 +668,83 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
             }
 
+            /// /asset/{asset}/activities [GET]
+                ///
+            /// This will get a specific asset's activity events
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] asset (required):
+                ///   The id (uuid) of the asset that you are trying to access.
+                ///
+            /// * [bool] transferables:
+                ///   This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
+        Future<Response> assetSpecificAssetActivitiesWithHttpInfo(String asset, { bool? transferables, }) async {
+            // ignore: prefer_const_declarations
+            final path = r'/asset/{asset}/activities'
+                .replaceAll('{asset}', asset);
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+                        if (transferables != null) {
+                    queryParams.addAll(getQueryParams('', 'transferables', transferables));
+                        }
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'GET',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /asset/{asset}/activities [GET]
+                    ///
+                /// This will get a specific asset's activity events
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] asset (required):
+                    ///   The id (uuid) of the asset that you are trying to access.
+                    ///
+                /// * [bool] transferables:
+                    ///   This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
+            Future<Activities> assetSpecificAssetActivities(String asset, { bool? transferables, }) async {
+            final response = await assetSpecificAssetActivitiesWithHttpInfo(asset,  transferables: transferables, );
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+                // When a remote server returns no body with a status of 204, we shall not decode it.
+                // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+                // FormatException when trying to decode an empty string.
+                if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+                            return await apiClient.deserializeAsync(await decodeBodyBytes(response), 'Activities',) as Activities;
+                    
+                }
+                throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
+            }
+
             /// /asset/{asset}/conversations [GET]
                 ///
             /// This will get a specific asset's conversations
@@ -763,137 +972,5 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     
                 }
                 throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
-            }
-
-            /// /asset/{asset}/websites/associate/{website} [POST]
-                ///
-            /// This will associate a website with a asset. This will do the same thing as the website equivilant.
-            ///
-            /// Note: This method returns the HTTP [Response].
-                ///
-            /// Parameters:
-            ///
-            /// * [String] asset (required):
-                ///   The id (uuid) of the asset that you are trying to access.
-                ///
-            /// * [String] website (required):
-                ///   website id
-        Future<Response> associateWebsiteWithHttpInfo(String asset, String website,) async {
-            // ignore: prefer_const_declarations
-            final path = r'/asset/{asset}/websites/associate/{website}'
-                .replaceAll('{asset}', asset)
-                .replaceAll('{website}', website);
-
-
-
-
-            // ignore: prefer_final_locals
-            Object? postBody;
-
-
-
-
-            final queryParams = <QueryParam>[];
-            final headerParams = <String, String>{};
-            final formParams = <String, String>{};
-
-            const authNames = <String>[];
-            const contentTypes = <String>[];
-
-
-            return apiClient.invokeAPI(
-            path,
-            'POST',
-            queryParams,
-            postBody,
-            headerParams,
-            formParams,
-            contentTypes.isEmpty ? null : contentTypes.first,
-            authNames,
-            );
-            }
-
-                /// /asset/{asset}/websites/associate/{website} [POST]
-                    ///
-                /// This will associate a website with a asset. This will do the same thing as the website equivilant.
-                    ///
-                /// Parameters:
-                ///
-                /// * [String] asset (required):
-                    ///   The id (uuid) of the asset that you are trying to access.
-                    ///
-                /// * [String] website (required):
-                    ///   website id
-            Future<void> associateWebsite(String asset, String website,) async {
-            final response = await associateWebsiteWithHttpInfo(asset, website,);
-            if (response.statusCode >= HttpStatus.badRequest) {
-            throw ApiException(response.statusCode, await decodeBodyBytes(response));
-            }
-            }
-
-            /// /asset/{asset}/websites/disassociate/{website} [POST]
-                ///
-            /// This will enable us to dissassociate a website from a asset. This will do the same thing as the website equivilant.
-            ///
-            /// Note: This method returns the HTTP [Response].
-                ///
-            /// Parameters:
-            ///
-            /// * [String] website (required):
-                ///   website id
-                ///
-            /// * [String] asset (required):
-                ///   The id (uuid) of the asset that you are trying to access.
-        Future<Response> disassociateWebsiteWithHttpInfo(String website, String asset,) async {
-            // ignore: prefer_const_declarations
-            final path = r'/asset/{asset}/websites/disassociate/{website}'
-                .replaceAll('{website}', website)
-                .replaceAll('{asset}', asset);
-
-
-
-
-            // ignore: prefer_final_locals
-            Object? postBody;
-
-
-
-
-            final queryParams = <QueryParam>[];
-            final headerParams = <String, String>{};
-            final formParams = <String, String>{};
-
-            const authNames = <String>[];
-            const contentTypes = <String>[];
-
-
-            return apiClient.invokeAPI(
-            path,
-            'POST',
-            queryParams,
-            postBody,
-            headerParams,
-            formParams,
-            contentTypes.isEmpty ? null : contentTypes.first,
-            authNames,
-            );
-            }
-
-                /// /asset/{asset}/websites/disassociate/{website} [POST]
-                    ///
-                /// This will enable us to dissassociate a website from a asset. This will do the same thing as the website equivilant.
-                    ///
-                /// Parameters:
-                ///
-                /// * [String] website (required):
-                    ///   website id
-                    ///
-                /// * [String] asset (required):
-                    ///   The id (uuid) of the asset that you are trying to access.
-            Future<void> disassociateWebsite(String website, String asset,) async {
-            final response = await disassociateWebsiteWithHttpInfo(website, asset,);
-            if (response.statusCode >= HttpStatus.badRequest) {
-            throw ApiException(response.statusCode, await decodeBodyBytes(response));
-            }
             }
         }

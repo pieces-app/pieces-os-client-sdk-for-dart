@@ -2,7 +2,7 @@
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 ```
 
 ## Properties
@@ -13,6 +13,9 @@ Name | Type | Description | Notes
 **question** | [**QGPTQuestionOutput**](QGPTQuestionOutput.md) |  | [optional] 
 **status** | [**QGPTStreamEnum**](QGPTStreamEnum.md) |  | [optional] 
 **conversation** | **String** | This is the ID of a predefined persisted conversation, if this is not present we will create a new conversation for the input/output.(in the case of a question) | 
+**statusCode** | **num** | This will be provided | [optional] 
+**errorMessage** | **String** | optional error message is the status code is NOT 200 | [optional] 
+**agentRoutes** | [**QGPTAgentRoutes**](QGPTAgentRoutes.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

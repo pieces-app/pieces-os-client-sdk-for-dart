@@ -2,7 +2,7 @@
 
 ## Load the model package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 ```
 
 ## Properties
@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **assets** | [**SeededTrackedAssetsEvent**](SeededTrackedAssetsEvent.md) |  | [optional] 
 **ml** | [**SeededTrackedMachineLearningEvent**](SeededTrackedMachineLearningEvent.md) |  | [optional] 
 **adoption** | [**SeededTrackedAdoptionEvent**](SeededTrackedAdoptionEvent.md) |  | [optional] 
+**conversation** | [**SeededTrackedConversationEvent**](SeededTrackedConversationEvent.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

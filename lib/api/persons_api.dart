@@ -27,6 +27,72 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
     final ApiClient apiClient;
 
+            /// /persons/{person}/assets/delete/{asset} [POST]
+                ///
+            /// This will update both the asset and the person reference, that will remove a person from an asset(only the references).  This will NOT remove the person. This will NOT remove the asset. This will only update the references so that they are disconnected from one another.
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [String] person (required):
+                ///   This is a uuid that represents a person.
+                ///
+            /// * [String] asset (required):
+                ///   The id (uuid) of the asset that you are trying to access.
+        Future<Response> personDisassociateAssetWithHttpInfo(String person, String asset,) async {
+            // ignore: prefer_const_declarations
+            final path = r'/persons/{person}/assets/delete/{asset}'
+                .replaceAll('{person}', person)
+                .replaceAll('{asset}', asset);
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /persons/{person}/assets/delete/{asset} [POST]
+                    ///
+                /// This will update both the asset and the person reference, that will remove a person from an asset(only the references).  This will NOT remove the person. This will NOT remove the asset. This will only update the references so that they are disconnected from one another.
+                    ///
+                /// Parameters:
+                ///
+                /// * [String] person (required):
+                    ///   This is a uuid that represents a person.
+                    ///
+                /// * [String] asset (required):
+                    ///   The id (uuid) of the asset that you are trying to access.
+            Future<void> personDisassociateAsset(String person, String asset,) async {
+            final response = await personDisassociateAssetWithHttpInfo(person, asset,);
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+            }
+
             /// /persons/create [POST]
                 ///
             /// This will create a new person.
@@ -229,71 +295,5 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                     
                 }
                 throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
-            }
-
-            /// /persons/{person}/assets/delete/{asset} [POST]
-                ///
-            /// This will update both the asset and the person reference, that will remove a person from an asset(only the references).  This will NOT remove the person. This will NOT remove the asset. This will only update the references so that they are disconnected from one another.
-            ///
-            /// Note: This method returns the HTTP [Response].
-                ///
-            /// Parameters:
-            ///
-            /// * [String] person (required):
-                ///   This is a uuid that represents a person.
-                ///
-            /// * [String] asset (required):
-                ///   The id (uuid) of the asset that you are trying to access.
-        Future<Response> removePersonReferenceFromAssetWithHttpInfo(String person, String asset,) async {
-            // ignore: prefer_const_declarations
-            final path = r'/persons/{person}/assets/delete/{asset}'
-                .replaceAll('{person}', person)
-                .replaceAll('{asset}', asset);
-
-
-
-
-            // ignore: prefer_final_locals
-            Object? postBody;
-
-
-
-
-            final queryParams = <QueryParam>[];
-            final headerParams = <String, String>{};
-            final formParams = <String, String>{};
-
-            const authNames = <String>[];
-            const contentTypes = <String>[];
-
-
-            return apiClient.invokeAPI(
-            path,
-            'POST',
-            queryParams,
-            postBody,
-            headerParams,
-            formParams,
-            contentTypes.isEmpty ? null : contentTypes.first,
-            authNames,
-            );
-            }
-
-                /// /persons/{person}/assets/delete/{asset} [POST]
-                    ///
-                /// This will update both the asset and the person reference, that will remove a person from an asset(only the references).  This will NOT remove the person. This will NOT remove the asset. This will only update the references so that they are disconnected from one another.
-                    ///
-                /// Parameters:
-                ///
-                /// * [String] person (required):
-                    ///   This is a uuid that represents a person.
-                    ///
-                /// * [String] asset (required):
-                    ///   The id (uuid) of the asset that you are trying to access.
-            Future<void> removePersonReferenceFromAsset(String person, String asset,) async {
-            final response = await removePersonReferenceFromAssetWithHttpInfo(person, asset,);
-            if (response.statusCode >= HttpStatus.badRequest) {
-            throw ApiException(response.statusCode, await decodeBodyBytes(response));
-            }
             }
         }

@@ -2,13 +2,15 @@
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**applicationsExternalRelated**](ApplicationsApi.md#applicationsexternalrelated) | **GET** /applications/external/related | /applications/external/related [GET]
+[**applicationsExternalSnapshot**](ApplicationsApi.md#applicationsexternalsnapshot) | **GET** /applications/external | /applications/external [GET]
 [**applicationsRegister**](ApplicationsApi.md#applicationsregister) | **POST** /applications/register | /applications/register [POST]
 [**applicationsSessionClose**](ApplicationsApi.md#applicationssessionclose) | **POST** /applications/session/close | /applications/session/close [POST]
 [**applicationsSessionOpen**](ApplicationsApi.md#applicationssessionopen) | **POST** /applications/session/open | /applications/session/open [POST]
@@ -21,6 +23,84 @@ Method | HTTP request | Description
 [**postApplicationsUsageUpdated**](ApplicationsApi.md#postapplicationsusageupdated) | **POST** /applications/usage/updated | /applications/usage/updated [POST]
 
 
+# **applicationsExternalRelated**
+> DetectedExternalApplications applicationsExternalRelated()
+
+/applications/external/related [GET]
+
+This will get the Applications that are currently installed on your Machine, that we have detected that we have an available Pieces integration for, however that you as a user have not installed yet. + applications that are installed where Pieces is going to be coming soon.
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+
+final api_instance = ApplicationsApi();
+
+try {
+    final result = api_instance.applicationsExternalRelated();
+    print(result);
+} catch (e) {
+    print('Exception when calling ApplicationsApi->applicationsExternalRelated: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DetectedExternalApplications**](DetectedExternalApplications.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **applicationsExternalSnapshot**
+> DetectedExternalApplications applicationsExternalSnapshot()
+
+/applications/external [GET]
+
+This will get a snapshot of your installed applications on your local Machine. Applications like \"Microsoft Teams classic\", \"Google Chat\", \"Obsidian\", etc...
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+
+final api_instance = ApplicationsApi();
+
+try {
+    final result = api_instance.applicationsExternalSnapshot();
+    print(result);
+} catch (e) {
+    print('Exception when calling ApplicationsApi->applicationsExternalSnapshot: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DetectedExternalApplications**](DetectedExternalApplications.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **applicationsRegister**
 > Application applicationsRegister(application)
 
@@ -30,7 +110,7 @@ This will register a connected applicaiton.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final application = Application(); // Application | This will accept a application.
@@ -73,7 +153,7 @@ This will close your opened session! Going to want to accept a session uuid here
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final body = String(); // String | This will accept a required session uuid.
@@ -116,7 +196,7 @@ This will open a new session. A session is when someone is using the pieces appl
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 
@@ -155,7 +235,7 @@ This is an endpoint to get a snapshot of a specific session.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final session = session_example; // String | This is a uuid that points to a session.
@@ -198,7 +278,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 
@@ -237,7 +317,7 @@ This will retrieve snapshot of a single application.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final application = application_example; // String | This is a uuid that represents an application
@@ -280,7 +360,7 @@ This is an analytics endpoint that will enable us to know when a user engages so
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final seededTrackedInteractionEvent = SeededTrackedInteractionEvent(); // SeededTrackedInteractionEvent | 
@@ -323,7 +403,7 @@ This is an analytics endpoint that will enable us to know when a user uses a key
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final seededTrackedKeyboardEvent = SeededTrackedKeyboardEvent(); // SeededTrackedKeyboardEvent | 
@@ -366,7 +446,7 @@ This is an analytics endpoint that will enable us to know when a user has instal
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final trackedApplicationInstall = TrackedApplicationInstall(); // TrackedApplicationInstall | 
@@ -408,7 +488,7 @@ This is an endpoint to determine when an application has been updated
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final trackedApplicationUpdate = TrackedApplicationUpdate(); // TrackedApplicationUpdate | Sending over the previous application version, the current version, and the user.
