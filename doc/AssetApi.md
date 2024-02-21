@@ -10,17 +10,18 @@ All URIs are relative to *http://localhost:3000*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**assetAssociateTag**](AssetApi.md#assetassociatetag) | **POST** /asset/{asset}/tags/associate/{tag} | /asset/{asset}/tags/associate/{tag} [POST]
+[**assetAssociateWebsite**](AssetApi.md#assetassociatewebsite) | **POST** /asset/{asset}/websites/associate/{website} | /asset/{asset}/websites/associate/{website} [POST]
 [**assetDisassociateTag**](AssetApi.md#assetdisassociatetag) | **POST** /asset/{asset}/tags/disassociate/{tag} | /asset/{asset}/tags/disassociate/{tag} [POST]
+[**assetDisassociateWebsite**](AssetApi.md#assetdisassociatewebsite) | **POST** /asset/{asset}/websites/disassociate/{website} | /asset/{asset}/websites/disassociate/{website} [POST]
 [**assetFormats**](AssetApi.md#assetformats) | **GET** /asset/{asset}/formats | /asset/{asset}/formats [GET] Scoped To Asset
 [**assetReclassify**](AssetApi.md#assetreclassify) | **POST** /asset/reclassify | /asset/reclassify [POST]
 [**assetScoresIncrement**](AssetApi.md#assetscoresincrement) | **POST** /asset/{asset}/scores/increment | '/asset/{asset}/scores/increment' [POST]
 [**assetSnapshot**](AssetApi.md#assetsnapshot) | **GET** /asset/{asset} | /asset/{asset} [GET] Scoped To Asset
 [**assetSnapshotPost**](AssetApi.md#assetsnapshotpost) | **POST** /asset/{asset} | /asset/{asset} [POST] Scoped to an Asset
+[**assetSpecificAssetActivities**](AssetApi.md#assetspecificassetactivities) | **GET** /asset/{asset}/activities | /asset/{asset}/activities [GET]
 [**assetSpecificAssetConversations**](AssetApi.md#assetspecificassetconversations) | **GET** /asset/{asset}/conversations | /asset/{asset}/conversations [GET]
 [**assetSpecificAssetExport**](AssetApi.md#assetspecificassetexport) | **GET** /asset/{asset}/export | [GET] /asset/{asset}/export
 [**assetUpdate**](AssetApi.md#assetupdate) | **POST** /asset/update | /asset/update [POST] Scoped to Asset
-[**associateWebsite**](AssetApi.md#associatewebsite) | **POST** /asset/{asset}/websites/associate/{website} | /asset/{asset}/websites/associate/{website} [POST]
-[**disassociateWebsite**](AssetApi.md#disassociatewebsite) | **POST** /asset/{asset}/websites/disassociate/{website} | /asset/{asset}/websites/disassociate/{website} [POST]
 
 
 # **assetAssociateTag**
@@ -67,6 +68,50 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **assetAssociateWebsite**
+> assetAssociateWebsite(asset, website)
+
+/asset/{asset}/websites/associate/{website} [POST]
+
+This will associate a website with a asset. This will do the same thing as the website equivilant.
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = AssetApi();
+final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
+final website = website_example; // String | website id
+
+try {
+    api_instance.assetAssociateWebsite(asset, website);
+} catch (e) {
+    print('Exception when calling AssetApi->assetAssociateWebsite: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset** | **String**| The id (uuid) of the asset that you are trying to access. | 
+ **website** | **String**| website id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **assetDisassociateTag**
 > assetDisassociateTag(tag, asset)
 
@@ -94,6 +139,50 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tag** | **String**| tag id | 
+ **asset** | **String**| The id (uuid) of the asset that you are trying to access. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **assetDisassociateWebsite**
+> assetDisassociateWebsite(website, asset)
+
+/asset/{asset}/websites/disassociate/{website} [POST]
+
+This will enable us to dissassociate a website from a asset. This will do the same thing as the website equivilant.
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = AssetApi();
+final website = website_example; // String | website id
+final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
+
+try {
+    api_instance.assetDisassociateWebsite(website, asset);
+} catch (e) {
+    print('Exception when calling AssetApi->assetDisassociateWebsite: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **website** | **String**| website id | 
  **asset** | **String**| The id (uuid) of the asset that you are trying to access. | 
 
 ### Return type
@@ -337,6 +426,51 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **assetSpecificAssetActivities**
+> Activities assetSpecificAssetActivities(asset, transferables)
+
+/asset/{asset}/activities [GET]
+
+This will get a specific asset's activity events
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = AssetApi();
+final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
+final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
+
+try {
+    final result = api_instance.assetSpecificAssetActivities(asset, transferables);
+    print(result);
+} catch (e) {
+    print('Exception when calling AssetApi->assetSpecificAssetActivities: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **asset** | **String**| The id (uuid) of the asset that you are trying to access. | 
+ **transferables** | **bool**| This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) | [optional] 
+
+### Return type
+
+[**Activities**](Activities.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **assetSpecificAssetConversations**
 > Conversations assetSpecificAssetConversations(asset, transferables)
 
@@ -468,94 +602,6 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **associateWebsite**
-> associateWebsite(asset, website)
-
-/asset/{asset}/websites/associate/{website} [POST]
-
-This will associate a website with a asset. This will do the same thing as the website equivilant.
-
-### Example
-```dart
-import 'package:core_openapi/api.dart';
-
-final api_instance = AssetApi();
-final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
-final website = website_example; // String | website id
-
-try {
-    api_instance.associateWebsite(asset, website);
-} catch (e) {
-    print('Exception when calling AssetApi->associateWebsite: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **asset** | **String**| The id (uuid) of the asset that you are trying to access. | 
- **website** | **String**| website id | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **disassociateWebsite**
-> disassociateWebsite(website, asset)
-
-/asset/{asset}/websites/disassociate/{website} [POST]
-
-This will enable us to dissassociate a website from a asset. This will do the same thing as the website equivilant.
-
-### Example
-```dart
-import 'package:core_openapi/api.dart';
-
-final api_instance = AssetApi();
-final website = website_example; // String | website id
-final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
-
-try {
-    api_instance.disassociateWebsite(website, asset);
-} catch (e) {
-    print('Exception when calling AssetApi->disassociateWebsite: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **website** | **String**| website id | 
- **asset** | **String**| The id (uuid) of the asset that you are trying to access. | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

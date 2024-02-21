@@ -25,6 +25,8 @@ Name | Type | Description | Notes
 **parameters** | **num** | This is the number of parameters in terms of billions. | [optional] 
 **provider** | [**ExternalMLProviderEnum**](ExternalMLProviderEnum.md) |  | [optional] 
 **cpu** | **bool** | This is an optional bool that is optimized for CPU usage. | [optional] 
+**maxTokens** | [**ModelMaxTokens**](ModelMaxTokens.md) |  | [optional] 
+**custom** | **bool** | This is reserved to custommly registed models. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

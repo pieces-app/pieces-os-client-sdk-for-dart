@@ -62,6 +62,7 @@ import 'package:runtime_common_library/model/assets_search_with_filters_input.da
 import 'package:runtime_common_library/model/assets_search_with_filters_output.dart';
 import 'package:runtime_common_library/model/auth0.dart';
 import 'package:runtime_common_library/model/auth0_identity.dart';
+import 'package:runtime_common_library/model/auth0_open_ai_user_metadata.dart';
 import 'package:runtime_common_library/model/auth0_redirects.dart';
 import 'package:runtime_common_library/model/auth0_user.dart';
 import 'package:runtime_common_library/model/auth0_user_allocation_metadata.dart';
@@ -70,6 +71,7 @@ import 'package:runtime_common_library/model/available_formats.dart';
 import 'package:runtime_common_library/model/byte_descriptor.dart';
 import 'package:runtime_common_library/model/capabilities_enum.dart';
 import 'package:runtime_common_library/model/challenged_pkce.dart';
+import 'package:runtime_common_library/model/checked_os_update.dart';
 import 'package:runtime_common_library/model/classification.dart';
 import 'package:runtime_common_library/model/classification_generic_enum.dart';
 import 'package:runtime_common_library/model/classification_rendering_enum.dart';
@@ -87,6 +89,10 @@ import 'package:runtime_common_library/model/conversation_summarize_output.dart'
 import 'package:runtime_common_library/model/conversation_type_enum.dart';
 import 'package:runtime_common_library/model/conversations.dart';
 import 'package:runtime_common_library/model/conversations_create_from_asset_output.dart';
+import 'package:runtime_common_library/model/created_external_provider_api_key.dart';
+import 'package:runtime_common_library/model/deleted_external_provider_api_key.dart';
+import 'package:runtime_common_library/model/detected_external_application.dart';
+import 'package:runtime_common_library/model/detected_external_applications.dart';
 import 'package:runtime_common_library/model/discovered_asset.dart';
 import 'package:runtime_common_library/model/discovered_assets.dart';
 import 'package:runtime_common_library/model/discovered_html_webpage.dart';
@@ -188,9 +194,12 @@ import 'package:runtime_common_library/model/mailgun_distribution.dart';
 import 'package:runtime_common_library/model/mailgun_metadata.dart';
 import 'package:runtime_common_library/model/mechanism_enum.dart';
 import 'package:runtime_common_library/model/model.dart';
+import 'package:runtime_common_library/model/model_delete_cache_input.dart';
+import 'package:runtime_common_library/model/model_delete_cache_output.dart';
 import 'package:runtime_common_library/model/model_download_progress.dart';
 import 'package:runtime_common_library/model/model_download_progress_status_enum.dart';
 import 'package:runtime_common_library/model/model_foundation_enum.dart';
+import 'package:runtime_common_library/model/model_max_tokens.dart';
 import 'package:runtime_common_library/model/model_type_enum.dart';
 import 'package:runtime_common_library/model/model_usage_enum.dart';
 import 'package:runtime_common_library/model/models.dart';
@@ -202,7 +211,16 @@ import 'package:runtime_common_library/model/o_auth_group.dart';
 import 'package:runtime_common_library/model/o_auth_token.dart';
 import 'package:runtime_common_library/model/ocr_analyses.dart';
 import 'package:runtime_common_library/model/ocr_analysis.dart';
+import 'package:runtime_common_library/model/os_device_cpu_hardware_information.dart';
+import 'package:runtime_common_library/model/os_device_dependencies_information.dart';
+import 'package:runtime_common_library/model/os_device_gpu_hardware_capabilities_information.dart';
+import 'package:runtime_common_library/model/os_device_gpu_hardware_information.dart';
+import 'package:runtime_common_library/model/os_device_hardware_information.dart';
+import 'package:runtime_common_library/model/os_device_information_returnable.dart';
 import 'package:runtime_common_library/model/os_health.dart';
+import 'package:runtime_common_library/model/onboarded_persona_details.dart';
+import 'package:runtime_common_library/model/open_ai_models_list_input.dart';
+import 'package:runtime_common_library/model/open_ai_models_list_output.dart';
 import 'package:runtime_common_library/model/ordered_metrics.dart';
 import 'package:runtime_common_library/model/pkce.dart';
 import 'package:runtime_common_library/model/person.dart';
@@ -213,15 +231,26 @@ import 'package:runtime_common_library/model/person_model.dart';
 import 'package:runtime_common_library/model/person_type.dart';
 import 'package:runtime_common_library/model/persons.dart';
 import 'package:runtime_common_library/model/platform_enum.dart';
+import 'package:runtime_common_library/model/precreated_external_provider_api_key.dart';
+import 'package:runtime_common_library/model/predeleted_external_provider_api_key.dart';
+import 'package:runtime_common_library/model/preonboarded_persona_details.dart';
+import 'package:runtime_common_library/model/preupdated_external_provider_api_key.dart';
 import 'package:runtime_common_library/model/preview.dart';
 import 'package:runtime_common_library/model/privacy_enum.dart';
 import 'package:runtime_common_library/model/pseudo_assets.dart';
+import 'package:runtime_common_library/model/qgpt_agent_related_routes.dart';
+import 'package:runtime_common_library/model/qgpt_agent_routes.dart';
 import 'package:runtime_common_library/model/qgpt_conversation.dart';
 import 'package:runtime_common_library/model/qgpt_conversation_message.dart';
 import 'package:runtime_common_library/model/qgpt_conversation_message_role_enum.dart';
+import 'package:runtime_common_library/model/qgpt_conversation_pipeline.dart';
+import 'package:runtime_common_library/model/qgpt_conversation_pipeline_for_contextualized_code_dialog.dart';
+import 'package:runtime_common_library/model/qgpt_conversation_pipeline_for_contextualized_code_generation.dart';
+import 'package:runtime_common_library/model/qgpt_conversation_pipeline_for_generalized_code_dialog.dart';
 import 'package:runtime_common_library/model/qgpt_hints_input.dart';
 import 'package:runtime_common_library/model/qgpt_persons_related_input.dart';
 import 'package:runtime_common_library/model/qgpt_persons_related_output.dart';
+import 'package:runtime_common_library/model/qgpt_prompt_pipeline.dart';
 import 'package:runtime_common_library/model/qgpt_question_answer.dart';
 import 'package:runtime_common_library/model/qgpt_question_answers.dart';
 import 'package:runtime_common_library/model/qgpt_question_input.dart';
@@ -234,6 +263,12 @@ import 'package:runtime_common_library/model/qgpt_reprompt_output.dart';
 import 'package:runtime_common_library/model/qgpt_stream_enum.dart';
 import 'package:runtime_common_library/model/qgpt_stream_input.dart';
 import 'package:runtime_common_library/model/qgpt_stream_output.dart';
+import 'package:runtime_common_library/model/qgpt_task_pipeline.dart';
+import 'package:runtime_common_library/model/qgpt_task_pipeline_for_code_commentation.dart';
+import 'package:runtime_common_library/model/qgpt_task_pipeline_for_code_completion.dart';
+import 'package:runtime_common_library/model/qgpt_task_pipeline_for_code_explanation.dart';
+import 'package:runtime_common_library/model/qgpt_task_pipeline_for_code_fix.dart';
+import 'package:runtime_common_library/model/qgpt_task_pipeline_for_code_modification.dart';
 import 'package:runtime_common_library/model/reaction.dart';
 import 'package:runtime_common_library/model/recipients.dart';
 import 'package:runtime_common_library/model/referenced_activity.dart';
@@ -275,6 +310,7 @@ import 'package:runtime_common_library/model/seeded_anchor.dart';
 import 'package:runtime_common_library/model/seeded_anchor_point.dart';
 import 'package:runtime_common_library/model/seeded_annotation.dart';
 import 'package:runtime_common_library/model/seeded_asset.dart';
+import 'package:runtime_common_library/model/seeded_asset_enrichment.dart';
 import 'package:runtime_common_library/model/seeded_asset_metadata.dart';
 import 'package:runtime_common_library/model/seeded_asset_sensitive.dart';
 import 'package:runtime_common_library/model/seeded_asset_tag.dart';
@@ -308,6 +344,7 @@ import 'package:runtime_common_library/model/seeded_github_gists_import.dart';
 import 'package:runtime_common_library/model/seeded_hint.dart';
 import 'package:runtime_common_library/model/seeded_mac_os_asset.dart';
 import 'package:runtime_common_library/model/seeded_model.dart';
+import 'package:runtime_common_library/model/seeded_models.dart';
 import 'package:runtime_common_library/model/seeded_pkce.dart';
 import 'package:runtime_common_library/model/seeded_pkceadditionalparameters.dart';
 import 'package:runtime_common_library/model/seeded_person.dart';
@@ -321,6 +358,7 @@ import 'package:runtime_common_library/model/seeded_tracked_application.dart';
 import 'package:runtime_common_library/model/seeded_tracked_asset_event.dart';
 import 'package:runtime_common_library/model/seeded_tracked_assets_event.dart';
 import 'package:runtime_common_library/model/seeded_tracked_assets_event_metadata.dart';
+import 'package:runtime_common_library/model/seeded_tracked_conversation_event.dart';
 import 'package:runtime_common_library/model/seeded_tracked_format_event.dart';
 import 'package:runtime_common_library/model/seeded_tracked_interaction_event.dart';
 import 'package:runtime_common_library/model/seeded_tracked_interaction_event_identifier_description_pairs.dart';
@@ -332,6 +370,8 @@ import 'package:runtime_common_library/model/seeded_ultra_suite_asset.dart';
 import 'package:runtime_common_library/model/seeded_user.dart';
 import 'package:runtime_common_library/model/seeded_website.dart';
 import 'package:runtime_common_library/model/seeds.dart';
+import 'package:runtime_common_library/model/segmented_technical_language.dart';
+import 'package:runtime_common_library/model/segmented_technical_language_fragment.dart';
 import 'package:runtime_common_library/model/sensitive.dart';
 import 'package:runtime_common_library/model/sensitive_category_enum.dart';
 import 'package:runtime_common_library/model/sensitive_metadata.dart';
@@ -388,6 +428,9 @@ import 'package:runtime_common_library/model/tracked_asset_event_rename_metadata
 import 'package:runtime_common_library/model/tracked_assets_event_identifier_description_pairs.dart';
 import 'package:runtime_common_library/model/tracked_assets_event_search_metadata.dart';
 import 'package:runtime_common_library/model/tracked_assets_event_search_metadata_results.dart';
+import 'package:runtime_common_library/model/tracked_conversation_event_identifier_description_pairs.dart';
+import 'package:runtime_common_library/model/tracked_conversation_event_metadata.dart';
+import 'package:runtime_common_library/model/tracked_conversation_event_rename_metadata.dart';
 import 'package:runtime_common_library/model/tracked_format.dart';
 import 'package:runtime_common_library/model/tracked_format_event.dart';
 import 'package:runtime_common_library/model/tracked_format_event_identifier_description_pairs.dart';
@@ -398,6 +441,10 @@ import 'package:runtime_common_library/model/tracked_session_event_identifier_de
 import 'package:runtime_common_library/model/tracked_user_profile.dart';
 import 'package:runtime_common_library/model/transferable_bytes.dart';
 import 'package:runtime_common_library/model/transferable_string.dart';
+import 'package:runtime_common_library/model/unchecked_os_update.dart';
+import 'package:runtime_common_library/model/unsegmented_technical_language.dart';
+import 'package:runtime_common_library/model/updated_external_provider_api_key.dart';
+import 'package:runtime_common_library/model/updating_status_enum.dart';
 import 'package:runtime_common_library/model/user_profile.dart';
 import 'package:runtime_common_library/model/users.dart';
 import 'package:runtime_common_library/model/website.dart';
@@ -699,6 +746,8 @@ class ApiClient {
           return Auth0.fromJson(value);
         case 'Auth0Identity':
           return Auth0Identity.fromJson(value);
+        case 'Auth0OpenAIUserMetadata':
+          return Auth0OpenAIUserMetadata.fromJson(value);
         case 'Auth0Redirects':
           return Auth0Redirects.fromJson(value);
         case 'Auth0User':
@@ -715,6 +764,8 @@ class ApiClient {
           return CapabilitiesEnumTypeTransformer().decode(value);
         case 'ChallengedPKCE':
           return ChallengedPKCE.fromJson(value);
+        case 'CheckedOSUpdate':
+          return CheckedOSUpdate.fromJson(value);
         case 'Classification':
           return Classification.fromJson(value);
         case 'ClassificationGenericEnum':
@@ -749,6 +800,14 @@ class ApiClient {
           return Conversations.fromJson(value);
         case 'ConversationsCreateFromAssetOutput':
           return ConversationsCreateFromAssetOutput.fromJson(value);
+        case 'CreatedExternalProviderApiKey':
+          return CreatedExternalProviderApiKey.fromJson(value);
+        case 'DeletedExternalProviderApiKey':
+          return DeletedExternalProviderApiKey.fromJson(value);
+        case 'DetectedExternalApplication':
+          return DetectedExternalApplication.fromJson(value);
+        case 'DetectedExternalApplications':
+          return DetectedExternalApplications.fromJson(value);
         case 'DiscoveredAsset':
           return DiscoveredAsset.fromJson(value);
         case 'DiscoveredAssets':
@@ -951,12 +1010,18 @@ class ApiClient {
           return MechanismEnumTypeTransformer().decode(value);
         case 'Model':
           return Model.fromJson(value);
+        case 'ModelDeleteCacheInput':
+          return ModelDeleteCacheInput.fromJson(value);
+        case 'ModelDeleteCacheOutput':
+          return ModelDeleteCacheOutput.fromJson(value);
         case 'ModelDownloadProgress':
           return ModelDownloadProgress.fromJson(value);
         case 'ModelDownloadProgressStatusEnum':
           return ModelDownloadProgressStatusEnumTypeTransformer().decode(value);
         case 'ModelFoundationEnum':
           return ModelFoundationEnumTypeTransformer().decode(value);
+        case 'ModelMaxTokens':
+          return ModelMaxTokens.fromJson(value);
         case 'ModelTypeEnum':
           return ModelTypeEnumTypeTransformer().decode(value);
         case 'ModelUsageEnum':
@@ -979,8 +1044,26 @@ class ApiClient {
           return OCRAnalyses.fromJson(value);
         case 'OCRAnalysis':
           return OCRAnalysis.fromJson(value);
+        case 'OSDeviceCPUHardwareInformation':
+          return OSDeviceCPUHardwareInformation.fromJson(value);
+        case 'OSDeviceDependenciesInformation':
+          return OSDeviceDependenciesInformation.fromJson(value);
+        case 'OSDeviceGPUHardwareCapabilitiesInformation':
+          return OSDeviceGPUHardwareCapabilitiesInformation.fromJson(value);
+        case 'OSDeviceGPUHardwareInformation':
+          return OSDeviceGPUHardwareInformation.fromJson(value);
+        case 'OSDeviceHardwareInformation':
+          return OSDeviceHardwareInformation.fromJson(value);
+        case 'OSDeviceInformationReturnable':
+          return OSDeviceInformationReturnable.fromJson(value);
         case 'OSHealth':
           return OSHealth.fromJson(value);
+        case 'OnboardedPersonaDetails':
+          return OnboardedPersonaDetails.fromJson(value);
+        case 'OpenAIModelsListInput':
+          return OpenAIModelsListInput.fromJson(value);
+        case 'OpenAIModelsListOutput':
+          return OpenAIModelsListOutput.fromJson(value);
         case 'OrderedMetrics':
           return OrderedMetrics.fromJson(value);
         case 'PKCE':
@@ -1001,24 +1084,46 @@ class ApiClient {
           return Persons.fromJson(value);
         case 'PlatformEnum':
           return PlatformEnumTypeTransformer().decode(value);
+        case 'PrecreatedExternalProviderApiKey':
+          return PrecreatedExternalProviderApiKey.fromJson(value);
+        case 'PredeletedExternalProviderApiKey':
+          return PredeletedExternalProviderApiKey.fromJson(value);
+        case 'PreonboardedPersonaDetails':
+          return PreonboardedPersonaDetails.fromJson(value);
+        case 'PreupdatedExternalProviderApiKey':
+          return PreupdatedExternalProviderApiKey.fromJson(value);
         case 'Preview':
           return Preview.fromJson(value);
         case 'PrivacyEnum':
           return PrivacyEnumTypeTransformer().decode(value);
         case 'PseudoAssets':
           return PseudoAssets.fromJson(value);
+        case 'QGPTAgentRelatedRoutes':
+          return QGPTAgentRelatedRoutes.fromJson(value);
+        case 'QGPTAgentRoutes':
+          return QGPTAgentRoutes.fromJson(value);
         case 'QGPTConversation':
           return QGPTConversation.fromJson(value);
         case 'QGPTConversationMessage':
           return QGPTConversationMessage.fromJson(value);
         case 'QGPTConversationMessageRoleEnum':
           return QGPTConversationMessageRoleEnumTypeTransformer().decode(value);
+        case 'QGPTConversationPipeline':
+          return QGPTConversationPipeline.fromJson(value);
+        case 'QGPTConversationPipelineForContextualizedCodeDialog':
+          return QGPTConversationPipelineForContextualizedCodeDialog.fromJson(value);
+        case 'QGPTConversationPipelineForContextualizedCodeGeneration':
+          return QGPTConversationPipelineForContextualizedCodeGeneration.fromJson(value);
+        case 'QGPTConversationPipelineForGeneralizedCodeDialog':
+          return QGPTConversationPipelineForGeneralizedCodeDialog.fromJson(value);
         case 'QGPTHintsInput':
           return QGPTHintsInput.fromJson(value);
         case 'QGPTPersonsRelatedInput':
           return QGPTPersonsRelatedInput.fromJson(value);
         case 'QGPTPersonsRelatedOutput':
           return QGPTPersonsRelatedOutput.fromJson(value);
+        case 'QGPTPromptPipeline':
+          return QGPTPromptPipeline.fromJson(value);
         case 'QGPTQuestionAnswer':
           return QGPTQuestionAnswer.fromJson(value);
         case 'QGPTQuestionAnswers':
@@ -1043,6 +1148,18 @@ class ApiClient {
           return QGPTStreamInput.fromJson(value);
         case 'QGPTStreamOutput':
           return QGPTStreamOutput.fromJson(value);
+        case 'QGPTTaskPipeline':
+          return QGPTTaskPipeline.fromJson(value);
+        case 'QGPTTaskPipelineForCodeCommentation':
+          return QGPTTaskPipelineForCodeCommentation.fromJson(value);
+        case 'QGPTTaskPipelineForCodeCompletion':
+          return QGPTTaskPipelineForCodeCompletion.fromJson(value);
+        case 'QGPTTaskPipelineForCodeExplanation':
+          return QGPTTaskPipelineForCodeExplanation.fromJson(value);
+        case 'QGPTTaskPipelineForCodeFix':
+          return QGPTTaskPipelineForCodeFix.fromJson(value);
+        case 'QGPTTaskPipelineForCodeModification':
+          return QGPTTaskPipelineForCodeModification.fromJson(value);
         case 'Reaction':
           return Reaction.fromJson(value);
         case 'Recipients':
@@ -1125,6 +1242,8 @@ class ApiClient {
           return SeededAnnotation.fromJson(value);
         case 'SeededAsset':
           return SeededAsset.fromJson(value);
+        case 'SeededAssetEnrichment':
+          return SeededAssetEnrichment.fromJson(value);
         case 'SeededAssetMetadata':
           return SeededAssetMetadata.fromJson(value);
         case 'SeededAssetSensitive':
@@ -1191,6 +1310,8 @@ class ApiClient {
           return SeededMacOSAsset.fromJson(value);
         case 'SeededModel':
           return SeededModel.fromJson(value);
+        case 'SeededModels':
+          return SeededModels.fromJson(value);
         case 'SeededPKCE':
           return SeededPKCE.fromJson(value);
         case 'SeededPKCEADDITIONALPARAMETERS':
@@ -1217,6 +1338,8 @@ class ApiClient {
           return SeededTrackedAssetsEvent.fromJson(value);
         case 'SeededTrackedAssetsEventMetadata':
           return SeededTrackedAssetsEventMetadata.fromJson(value);
+        case 'SeededTrackedConversationEvent':
+          return SeededTrackedConversationEvent.fromJson(value);
         case 'SeededTrackedFormatEvent':
           return SeededTrackedFormatEvent.fromJson(value);
         case 'SeededTrackedInteractionEvent':
@@ -1239,6 +1362,10 @@ class ApiClient {
           return SeededWebsite.fromJson(value);
         case 'Seeds':
           return Seeds.fromJson(value);
+        case 'SegmentedTechnicalLanguage':
+          return SegmentedTechnicalLanguage.fromJson(value);
+        case 'SegmentedTechnicalLanguageFragment':
+          return SegmentedTechnicalLanguageFragment.fromJson(value);
         case 'Sensitive':
           return Sensitive.fromJson(value);
         case 'SensitiveCategoryEnum':
@@ -1351,6 +1478,12 @@ class ApiClient {
           return TrackedAssetsEventSearchMetadata.fromJson(value);
         case 'TrackedAssetsEventSearchMetadataResults':
           return TrackedAssetsEventSearchMetadataResults.fromJson(value);
+        case 'TrackedConversationEventIdentifierDescriptionPairs':
+          return TrackedConversationEventIdentifierDescriptionPairs.fromJson(value);
+        case 'TrackedConversationEventMetadata':
+          return TrackedConversationEventMetadata.fromJson(value);
+        case 'TrackedConversationEventRenameMetadata':
+          return TrackedConversationEventRenameMetadata.fromJson(value);
         case 'TrackedFormat':
           return TrackedFormat.fromJson(value);
         case 'TrackedFormatEvent':
@@ -1371,6 +1504,14 @@ class ApiClient {
           return TransferableBytes.fromJson(value);
         case 'TransferableString':
           return TransferableString.fromJson(value);
+        case 'UncheckedOSUpdate':
+          return UncheckedOSUpdate.fromJson(value);
+        case 'UnsegmentedTechnicalLanguage':
+          return UnsegmentedTechnicalLanguage.fromJson(value);
+        case 'UpdatedExternalProviderApiKey':
+          return UpdatedExternalProviderApiKey.fromJson(value);
+        case 'UpdatingStatusEnum':
+          return UpdatingStatusEnumTypeTransformer().decode(value);
         case 'UserProfile':
           return UserProfile.fromJson(value);
         case 'Users':

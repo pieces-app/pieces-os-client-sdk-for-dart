@@ -238,6 +238,8 @@ No authorization required
 
 /model/update [POST]
 
+This will update Machinelearning Model, this is only available for \"custom:true\" models.
+
 ### Example
 ```dart
 import 'package:core_openapi/api.dart';

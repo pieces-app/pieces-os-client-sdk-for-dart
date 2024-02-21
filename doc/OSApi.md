@@ -10,7 +10,9 @@ All URIs are relative to *http://localhost:3000*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**linkProvider**](OSApi.md#linkprovider) | **POST** /os/link_provider | /os/link_provider [POST]
+[**osDeviceInformation**](OSApi.md#osdeviceinformation) | **GET** /os/device/information | /os/device/information [GET]
 [**osRestart**](OSApi.md#osrestart) | **GET** /os/restart | Your GET endpoint
+[**osUpdateCheck**](OSApi.md#osupdatecheck) | **POST** /os/update/check | /os/update/check [POST]
 [**pickFiles**](OSApi.md#pickfiles) | **POST** /os/files/pick | /os/files/pick [POST]
 [**pickFolders**](OSApi.md#pickfolders) | **POST** /os/folders/pick | /os/folders/pick [POST]
 [**signIntoOS**](OSApi.md#signintoos) | **POST** /os/sign_in | 
@@ -60,6 +62,45 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **osDeviceInformation**
+> OSDeviceInformationReturnable osDeviceInformation()
+
+/os/device/information [GET]
+
+This will get information related to your specific device.
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = OSApi();
+
+try {
+    final result = api_instance.osDeviceInformation();
+    print(result);
+} catch (e) {
+    print('Exception when calling OSApi->osDeviceInformation: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**OSDeviceInformationReturnable**](OSDeviceInformationReturnable.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **osRestart**
 > osRestart()
 
@@ -94,6 +135,49 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **osUpdateCheck**
+> CheckedOSUpdate osUpdateCheck(uncheckedOSUpdate)
+
+/os/update/check [POST]
+
+This is a helper endpoint that will check the status of an update for PiecesOS. IE if there is an update downloading, if there is one available, but the downloading has not started... etc
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = OSApi();
+final uncheckedOSUpdate = UncheckedOSUpdate(); // UncheckedOSUpdate | 
+
+try {
+    final result = api_instance.osUpdateCheck(uncheckedOSUpdate);
+    print(result);
+} catch (e) {
+    print('Exception when calling OSApi->osUpdateCheck: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uncheckedOSUpdate** | [**UncheckedOSUpdate**](UncheckedOSUpdate.md)|  | [optional] 
+
+### Return type
+
+[**CheckedOSUpdate**](CheckedOSUpdate.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

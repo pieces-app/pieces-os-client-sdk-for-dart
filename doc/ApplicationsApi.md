@@ -9,6 +9,8 @@ All URIs are relative to *http://localhost:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**applicationsExternalRelated**](ApplicationsApi.md#applicationsexternalrelated) | **GET** /applications/external/related | /applications/external/related [GET]
+[**applicationsExternalSnapshot**](ApplicationsApi.md#applicationsexternalsnapshot) | **GET** /applications/external | /applications/external [GET]
 [**applicationsRegister**](ApplicationsApi.md#applicationsregister) | **POST** /applications/register | /applications/register [POST]
 [**applicationsSessionClose**](ApplicationsApi.md#applicationssessionclose) | **POST** /applications/session/close | /applications/session/close [POST]
 [**applicationsSessionOpen**](ApplicationsApi.md#applicationssessionopen) | **POST** /applications/session/open | /applications/session/open [POST]
@@ -20,6 +22,84 @@ Method | HTTP request | Description
 [**applicationsUsageInstallation**](ApplicationsApi.md#applicationsusageinstallation) | **POST** /applications/usage/installation | /applications/usage/installation [POST]
 [**postApplicationsUsageUpdated**](ApplicationsApi.md#postapplicationsusageupdated) | **POST** /applications/usage/updated | /applications/usage/updated [POST]
 
+
+# **applicationsExternalRelated**
+> DetectedExternalApplications applicationsExternalRelated()
+
+/applications/external/related [GET]
+
+This will get the Applications that are currently installed on your Machine, that we have detected that we have an available Pieces integration for, however that you as a user have not installed yet. + applications that are installed where Pieces is going to be coming soon.
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = ApplicationsApi();
+
+try {
+    final result = api_instance.applicationsExternalRelated();
+    print(result);
+} catch (e) {
+    print('Exception when calling ApplicationsApi->applicationsExternalRelated: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DetectedExternalApplications**](DetectedExternalApplications.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **applicationsExternalSnapshot**
+> DetectedExternalApplications applicationsExternalSnapshot()
+
+/applications/external [GET]
+
+This will get a snapshot of your installed applications on your local Machine. Applications like \"Microsoft Teams classic\", \"Google Chat\", \"Obsidian\", etc...
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = ApplicationsApi();
+
+try {
+    final result = api_instance.applicationsExternalSnapshot();
+    print(result);
+} catch (e) {
+    print('Exception when calling ApplicationsApi->applicationsExternalSnapshot: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DetectedExternalApplications**](DetectedExternalApplications.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **applicationsRegister**
 > Application applicationsRegister(application)

@@ -11,8 +11,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**conversationAssociateAnchor**](ConversationApi.md#conversationassociateanchor) | **POST** /conversation/{conversation}/anchors/associate/{anchor} | /conversation/{conversation}/anchors/associate/{anchor} [POST]
 [**conversationAssociateAsset**](ConversationApi.md#conversationassociateasset) | **POST** /conversation/{conversation}/assets/associate/{asset} | /conversation/{conversation}/assets/associate/{asset} [POST]
-[**conversationDeleteAnchor**](ConversationApi.md#conversationdeleteanchor) | **POST** /conversation/{conversation}/anchors/delete/{anchor} | /conversation/{conversation}/anchors/delete/{anchor} [POST]
-[**conversationDeleteAsset**](ConversationApi.md#conversationdeleteasset) | **POST** /conversation/{conversation}/assets/delete/{asset} | /conversation/{conversation}/assets/delete/{asset} [POST]
+[**conversationAssociateWebsite**](ConversationApi.md#conversationassociatewebsite) | **POST** /conversation/{conversation}/websites/associate/{website} | /conversation/{conversation}/websites/associate/{website} [POST]
+[**conversationDisassociateAnchor**](ConversationApi.md#conversationdisassociateanchor) | **POST** /conversation/{conversation}/anchors/delete/{anchor} | /conversation/{conversation}/anchors/delete/{anchor} [POST]
+[**conversationDisassociateAsset**](ConversationApi.md#conversationdisassociateasset) | **POST** /conversation/{conversation}/assets/delete/{asset} | /conversation/{conversation}/assets/delete/{asset} [POST]
+[**conversationDisassociateWebsite**](ConversationApi.md#conversationdisassociatewebsite) | **POST** /conversation/{conversation}/websites/disassociate/{website} | /website/{website}/websites/disassociate/{website} [POST]
 [**conversationGetSpecificConversation**](ConversationApi.md#conversationgetspecificconversation) | **GET** /conversation/{conversation} | /conversation/{conversation} [GET]
 [**conversationGroundingMessagesAssociateMessage**](ConversationApi.md#conversationgroundingmessagesassociatemessage) | **POST** /conversation/{conversation}/grounding/messages/associate/{message} | /conversation/{conversation}/grounding/messages/associate/{message} [POST]
 [**conversationGroundingMessagesDisassociateMessage**](ConversationApi.md#conversationgroundingmessagesdisassociatemessage) | **POST** /conversation/{conversation}/grounding/messages/disassociate/{message} | /conversation/{conversation}/grounding/messages/disassociate/{message} [POST]
@@ -111,12 +113,56 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **conversationDeleteAnchor**
-> conversationDeleteAnchor(conversation, anchor)
+# **conversationAssociateWebsite**
+> conversationAssociateWebsite(conversation, website)
+
+/conversation/{conversation}/websites/associate/{website} [POST]
+
+This will update both the website and the conversation.  and associate the 2 together
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final website = website_example; // String | website id
+
+try {
+    api_instance.conversationAssociateWebsite(conversation, website);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationAssociateWebsite: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **website** | **String**| website id | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationDisassociateAnchor**
+> conversationDisassociateAnchor(conversation, anchor)
 
 /conversation/{conversation}/anchors/delete/{anchor} [POST]
 
-This will update both the anchor and the conversation.  and delete(disacioate) the 2 together
+This will update both the anchor and the conversation.  and delete(disassociate) the 2 together
 
 ### Example
 ```dart
@@ -127,9 +173,9 @@ final conversation = conversation_example; // String | This is the uuid of a con
 final anchor = anchor_example; // String | This is the specific uuid of an anchor.
 
 try {
-    api_instance.conversationDeleteAnchor(conversation, anchor);
+    api_instance.conversationDisassociateAnchor(conversation, anchor);
 } catch (e) {
-    print('Exception when calling ConversationApi->conversationDeleteAnchor: $e\n');
+    print('Exception when calling ConversationApi->conversationDisassociateAnchor: $e\n');
 }
 ```
 
@@ -155,12 +201,12 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **conversationDeleteAsset**
-> conversationDeleteAsset(conversation, asset)
+# **conversationDisassociateAsset**
+> conversationDisassociateAsset(conversation, asset)
 
 /conversation/{conversation}/assets/delete/{asset} [POST]
 
-This will update both the asset and the conversation.  and delete(disacioate) the 2.
+This will update both the asset and the conversation.  and delete(disassociate) the 2.
 
 ### Example
 ```dart
@@ -171,9 +217,9 @@ final conversation = conversation_example; // String | This is the uuid of a con
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
 
 try {
-    api_instance.conversationDeleteAsset(conversation, asset);
+    api_instance.conversationDisassociateAsset(conversation, asset);
 } catch (e) {
-    print('Exception when calling ConversationApi->conversationDeleteAsset: $e\n');
+    print('Exception when calling ConversationApi->conversationDisassociateAsset: $e\n');
 }
 ```
 
@@ -183,6 +229,50 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **conversation** | **String**| This is the uuid of a conversation. | 
  **asset** | **String**| The id (uuid) of the asset that you are trying to access. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationDisassociateWebsite**
+> conversationDisassociateWebsite(conversation, website)
+
+/website/{website}/websites/disassociate/{website} [POST]
+
+This will enable us to dissassociate a conversation from a website.
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final website = website_example; // String | website id
+
+try {
+    api_instance.conversationDisassociateWebsite(conversation, website);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationDisassociateWebsite: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **website** | **String**| website id | 
 
 ### Return type
 

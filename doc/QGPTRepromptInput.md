@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **conversation** | [**QGPTConversation**](QGPTConversation.md) |  | 
 **application** | **String** | optional application id | [optional] 
 **model** | **String** | optional model id | [optional] 
+**pipeline** | [**QGPTPromptPipeline**](QGPTPromptPipeline.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

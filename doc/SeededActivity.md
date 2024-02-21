@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **user** | [**ReferencedUser**](ReferencedUser.md) |  | [optional] 
 **format** | [**ReferencedFormat**](ReferencedFormat.md) |  | [optional] 
 **mechanism** | [**MechanismEnum**](MechanismEnum.md) |  | [optional] 
+**conversation** | [**ReferencedConversation**](ReferencedConversation.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

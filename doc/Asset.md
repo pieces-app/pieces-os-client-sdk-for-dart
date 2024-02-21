@@ -36,6 +36,7 @@ Name | Type | Description | Notes
 **hints** | [**Hints**](Hints.md) |  | [optional] 
 **anchors** | [**Anchors**](Anchors.md) |  | [optional] 
 **conversations** | [**Conversations**](Conversations.md) |  | [optional] 
+**demo** | **bool** | This will let us know if this asset was generated as a 'demo' snippet | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

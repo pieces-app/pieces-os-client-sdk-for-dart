@@ -13,7 +13,7 @@ import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
-import 'package:runtime_common_library/api_helper.dart';
+import 'package:runtime_common_library/api_helper.dart' show decodeBodyBytes, QueryParam, getQueryParams, parameterToString;
 
 import 'package:core_openapi/api_helper.dart';
 export 'package:core_openapi/api_helper.dart';
@@ -26,6 +26,71 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
     MachineLearningApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
     final ApiClient apiClient;
+
+            /// /machine_learning/text/technical_language/generators/personification [GET]
+                ///
+            /// This is going to take in some personification details ie languages & personas.  and will return generated Seeds that can be used as snippets post/pre onboarding.
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [PreonboardedPersonaDetails] preonboardedPersonaDetails:
+        Future<Response> personificationTechnicalLanguageGenerationWithHttpInfo({ PreonboardedPersonaDetails? preonboardedPersonaDetails, }) async {
+            // ignore: prefer_const_declarations
+            final path = r'/machine_learning/text/technical_language/generators/personification';
+
+
+
+                // is complex PreonboardedPersonaDetails
+                    Object? postBody = preonboardedPersonaDetails?.toJson() ;
+
+
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>['application/json'];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /machine_learning/text/technical_language/generators/personification [GET]
+                    ///
+                /// This is going to take in some personification details ie languages & personas.  and will return generated Seeds that can be used as snippets post/pre onboarding.
+                    ///
+                /// Parameters:
+                ///
+                /// * [PreonboardedPersonaDetails] preonboardedPersonaDetails:
+            Future<OnboardedPersonaDetails> personificationTechnicalLanguageGeneration({ PreonboardedPersonaDetails? preonboardedPersonaDetails, }) async {
+            final response = await personificationTechnicalLanguageGenerationWithHttpInfo( preonboardedPersonaDetails: preonboardedPersonaDetails, );
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+                // When a remote server returns no body with a status of 204, we shall not decode it.
+                // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+                // FormatException when trying to decode an empty string.
+                if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+                            return await apiClient.deserializeAsync(await decodeBodyBytes(response), 'OnboardedPersonaDetails',) as OnboardedPersonaDetails;
+                    
+                }
+                throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
+            }
 
             /// /machine_learning/text/technical_language/parsers/segmentation [POST]
                 ///

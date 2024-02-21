@@ -9,17 +9,19 @@ All URIs are relative to *http://localhost:3000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**associateAsset**](WebsiteApi.md#associateasset) | **POST** /website/{website}/assets/associate/{asset} | /website/{website}/assets/associate/{asset} [POST]
-[**associatePerson**](WebsiteApi.md#associateperson) | **POST** /website/{website}/persons/associate/{person} | /website/{website}/persons/associate/{person} [POST]
-[**disassociateAsset**](WebsiteApi.md#disassociateasset) | **POST** /website/{website}/assets/disassociate/{asset} | /website/{website}/assets/disassociate/{asset} [POST]
-[**disassociatePerson**](WebsiteApi.md#disassociateperson) | **POST** /website/{website}/persons/disassociate/{person} | /website/{website}/persons/disassociate/{person} [POST]
+[**websiteAssociateAsset**](WebsiteApi.md#websiteassociateasset) | **POST** /website/{website}/assets/associate/{asset} | /website/{website}/assets/associate/{asset} [POST]
+[**websiteAssociateConversation**](WebsiteApi.md#websiteassociateconversation) | **POST** /website/{website}/conversations/associate/{conversation} | /website/{website}/conversations/associate/{conversation} [POST]
+[**websiteAssociatePerson**](WebsiteApi.md#websiteassociateperson) | **POST** /website/{website}/persons/associate/{person} | /website/{website}/persons/associate/{person} [POST]
+[**websiteDisassociateAsset**](WebsiteApi.md#websitedisassociateasset) | **POST** /website/{website}/assets/disassociate/{asset} | /website/{website}/assets/disassociate/{asset} [POST]
+[**websiteDisassociateConversation**](WebsiteApi.md#websitedisassociateconversation) | **POST** /website/{website}/conversations/disassociate/{conversation} | /website/{website}/conversations/disassociate/{conversation} [POST]
+[**websiteDisassociatePerson**](WebsiteApi.md#websitedisassociateperson) | **POST** /website/{website}/persons/disassociate/{person} | /website/{website}/persons/disassociate/{person} [POST]
 [**websiteScoresIncrement**](WebsiteApi.md#websitescoresincrement) | **POST** /website/{website}/scores/increment | '/website/{website}/scores/increment' [POST]
 [**websiteUpdate**](WebsiteApi.md#websiteupdate) | **POST** /website/update | /website/update [POST]
 [**websitesSpecificWebsiteSnapshot**](WebsiteApi.md#websitesspecificwebsitesnapshot) | **GET** /website/{website} | /website/{website} [GET]
 
 
-# **associateAsset**
-> associateAsset(asset, website)
+# **websiteAssociateAsset**
+> websiteAssociateAsset(asset, website)
 
 /website/{website}/assets/associate/{asset} [POST]
 
@@ -34,9 +36,9 @@ final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of
 final website = website_example; // String | website id
 
 try {
-    api_instance.associateAsset(asset, website);
+    api_instance.websiteAssociateAsset(asset, website);
 } catch (e) {
-    print('Exception when calling WebsiteApi->associateAsset: $e\n');
+    print('Exception when calling WebsiteApi->websiteAssociateAsset: $e\n');
 }
 ```
 
@@ -62,8 +64,52 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **associatePerson**
-> associatePerson(website, person)
+# **websiteAssociateConversation**
+> websiteAssociateConversation(website, conversation)
+
+/website/{website}/conversations/associate/{conversation} [POST]
+
+This will associate a website with a conversation.
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = WebsiteApi();
+final website = website_example; // String | website id
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+
+try {
+    api_instance.websiteAssociateConversation(website, conversation);
+} catch (e) {
+    print('Exception when calling WebsiteApi->websiteAssociateConversation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **website** | **String**| website id | 
+ **conversation** | **String**| This is the uuid of a conversation. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **websiteAssociatePerson**
+> websiteAssociatePerson(website, person)
 
 /website/{website}/persons/associate/{person} [POST]
 
@@ -78,9 +124,9 @@ final website = website_example; // String | website id
 final person = person_example; // String | This is a uuid that represents a person.
 
 try {
-    api_instance.associatePerson(website, person);
+    api_instance.websiteAssociatePerson(website, person);
 } catch (e) {
-    print('Exception when calling WebsiteApi->associatePerson: $e\n');
+    print('Exception when calling WebsiteApi->websiteAssociatePerson: $e\n');
 }
 ```
 
@@ -106,8 +152,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **disassociateAsset**
-> disassociateAsset(website, asset)
+# **websiteDisassociateAsset**
+> websiteDisassociateAsset(website, asset)
 
 /website/{website}/assets/disassociate/{asset} [POST]
 
@@ -122,9 +168,9 @@ final website = website_example; // String | website id
 final asset = 2254f2c8-5797-40e8-ac56-41166dc0e159; // String | The id (uuid) of the asset that you are trying to access.
 
 try {
-    api_instance.disassociateAsset(website, asset);
+    api_instance.websiteDisassociateAsset(website, asset);
 } catch (e) {
-    print('Exception when calling WebsiteApi->disassociateAsset: $e\n');
+    print('Exception when calling WebsiteApi->websiteDisassociateAsset: $e\n');
 }
 ```
 
@@ -150,8 +196,52 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **disassociatePerson**
-> disassociatePerson(website, person)
+# **websiteDisassociateConversation**
+> websiteDisassociateConversation(website, conversation)
+
+/website/{website}/conversations/disassociate/{conversation} [POST]
+
+This will enable us to dissassociate a website from a conversation.
+
+### Example
+```dart
+import 'package:core_openapi/api.dart';
+
+final api_instance = WebsiteApi();
+final website = website_example; // String | website id
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+
+try {
+    api_instance.websiteDisassociateConversation(website, conversation);
+} catch (e) {
+    print('Exception when calling WebsiteApi->websiteDisassociateConversation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **website** | **String**| website id | 
+ **conversation** | **String**| This is the uuid of a conversation. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **websiteDisassociatePerson**
+> websiteDisassociatePerson(website, person)
 
 /website/{website}/persons/disassociate/{person} [POST]
 
@@ -166,9 +256,9 @@ final website = website_example; // String | website id
 final person = person_example; // String | This is a uuid that represents a person.
 
 try {
-    api_instance.disassociatePerson(website, person);
+    api_instance.websiteDisassociatePerson(website, person);
 } catch (e) {
-    print('Exception when calling WebsiteApi->disassociatePerson: $e\n');
+    print('Exception when calling WebsiteApi->websiteDisassociatePerson: $e\n');
 }
 ```
 

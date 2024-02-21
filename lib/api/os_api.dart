@@ -92,6 +92,62 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
                 throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
             }
 
+            /// /os/device/information [GET]
+                ///
+            /// This will get information related to your specific device.
+            ///
+            /// Note: This method returns the HTTP [Response].
+        Future<Response> osDeviceInformationWithHttpInfo() async {
+            // ignore: prefer_const_declarations
+            final path = r'/os/device/information';
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'GET',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /os/device/information [GET]
+                    ///
+                /// This will get information related to your specific device.
+            Future<OSDeviceInformationReturnable> osDeviceInformation() async {
+            final response = await osDeviceInformationWithHttpInfo();
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+                // When a remote server returns no body with a status of 204, we shall not decode it.
+                // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+                // FormatException when trying to decode an empty string.
+                if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+                            return await apiClient.deserializeAsync(await decodeBodyBytes(response), 'OSDeviceInformationReturnable',) as OSDeviceInformationReturnable;
+                    
+                }
+                throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
+            }
+
             /// Your GET endpoint
                 ///
             /// This will restart PiecesOS, if successfull with return a 204. This is a LOCALOS Only Endpoint.
@@ -138,6 +194,71 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
             if (response.statusCode >= HttpStatus.badRequest) {
             throw ApiException(response.statusCode, await decodeBodyBytes(response));
             }
+            }
+
+            /// /os/update/check [POST]
+                ///
+            /// This is a helper endpoint that will check the status of an update for PiecesOS. IE if there is an update downloading, if there is one available, but the downloading has not started... etc
+            ///
+            /// Note: This method returns the HTTP [Response].
+                ///
+            /// Parameters:
+            ///
+            /// * [UncheckedOSUpdate] uncheckedOSUpdate:
+        Future<Response> osUpdateCheckWithHttpInfo({ UncheckedOSUpdate? uncheckedOSUpdate, }) async {
+            // ignore: prefer_const_declarations
+            final path = r'/os/update/check';
+
+
+
+                // is complex UncheckedOSUpdate
+                    Object? postBody = uncheckedOSUpdate?.toJson() ;
+
+
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>['application/json'];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'POST',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /os/update/check [POST]
+                    ///
+                /// This is a helper endpoint that will check the status of an update for PiecesOS. IE if there is an update downloading, if there is one available, but the downloading has not started... etc
+                    ///
+                /// Parameters:
+                ///
+                /// * [UncheckedOSUpdate] uncheckedOSUpdate:
+            Future<CheckedOSUpdate> osUpdateCheck({ UncheckedOSUpdate? uncheckedOSUpdate, }) async {
+            final response = await osUpdateCheckWithHttpInfo( uncheckedOSUpdate: uncheckedOSUpdate, );
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+                // When a remote server returns no body with a status of 204, we shall not decode it.
+                // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+                // FormatException when trying to decode an empty string.
+                if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+                            return await apiClient.deserializeAsync(await decodeBodyBytes(response), 'CheckedOSUpdate',) as CheckedOSUpdate;
+                    
+                }
+                throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
             }
 
             /// /os/files/pick [POST]

@@ -27,6 +27,118 @@ import 'package:core_openapi/api.dart' show defaultApiClient, ApiException;
 
     final ApiClient apiClient;
 
+            /// /applications/external/related [GET]
+                ///
+            /// This will get the Applications that are currently installed on your Machine, that we have detected that we have an available Pieces integration for, however that you as a user have not installed yet. + applications that are installed where Pieces is going to be coming soon.
+            ///
+            /// Note: This method returns the HTTP [Response].
+        Future<Response> applicationsExternalRelatedWithHttpInfo() async {
+            // ignore: prefer_const_declarations
+            final path = r'/applications/external/related';
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'GET',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /applications/external/related [GET]
+                    ///
+                /// This will get the Applications that are currently installed on your Machine, that we have detected that we have an available Pieces integration for, however that you as a user have not installed yet. + applications that are installed where Pieces is going to be coming soon.
+            Future<DetectedExternalApplications> applicationsExternalRelated() async {
+            final response = await applicationsExternalRelatedWithHttpInfo();
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+                // When a remote server returns no body with a status of 204, we shall not decode it.
+                // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+                // FormatException when trying to decode an empty string.
+                if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+                            return await apiClient.deserializeAsync(await decodeBodyBytes(response), 'DetectedExternalApplications',) as DetectedExternalApplications;
+                    
+                }
+                throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
+            }
+
+            /// /applications/external [GET]
+                ///
+            /// This will get a snapshot of your installed applications on your local Machine. Applications like \"Microsoft Teams classic\", \"Google Chat\", \"Obsidian\", etc...
+            ///
+            /// Note: This method returns the HTTP [Response].
+        Future<Response> applicationsExternalSnapshotWithHttpInfo() async {
+            // ignore: prefer_const_declarations
+            final path = r'/applications/external';
+
+
+
+
+            // ignore: prefer_final_locals
+            Object? postBody;
+
+
+
+
+            final queryParams = <QueryParam>[];
+            final headerParams = <String, String>{};
+            final formParams = <String, String>{};
+
+            const authNames = <String>[];
+            const contentTypes = <String>[];
+
+
+            return apiClient.invokeAPI(
+            path,
+            'GET',
+            queryParams,
+            postBody,
+            headerParams,
+            formParams,
+            contentTypes.isEmpty ? null : contentTypes.first,
+            authNames,
+            );
+            }
+
+                /// /applications/external [GET]
+                    ///
+                /// This will get a snapshot of your installed applications on your local Machine. Applications like \"Microsoft Teams classic\", \"Google Chat\", \"Obsidian\", etc...
+            Future<DetectedExternalApplications> applicationsExternalSnapshot() async {
+            final response = await applicationsExternalSnapshotWithHttpInfo();
+            if (response.statusCode >= HttpStatus.badRequest) {
+            throw ApiException(response.statusCode, await decodeBodyBytes(response));
+            }
+                // When a remote server returns no body with a status of 204, we shall not decode it.
+                // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+                // FormatException when trying to decode an empty string.
+                if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+                            return await apiClient.deserializeAsync(await decodeBodyBytes(response), 'DetectedExternalApplications',) as DetectedExternalApplications;
+                    
+                }
+                throw ApiException(response.statusCode, 'Received an empty body (not in a 204)');
+            }
+
             /// /applications/register [POST]
                 ///
             /// This will register a connected applicaiton.

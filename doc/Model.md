@@ -28,6 +28,8 @@ Name | Type | Description | Notes
 **provider** | [**ExternalMLProviderEnum**](ExternalMLProviderEnum.md) |  | [optional] 
 **cpu** | **bool** | This is an optional bool that is optimized for CPU usage. | [optional] 
 **downloading** | **bool** | This is a calculated property, that will say if this is currently downloading. | [optional] 
+**maxTokens** | [**ModelMaxTokens**](ModelMaxTokens.md) |  | [optional] 
+**custom** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
