@@ -2,7 +2,7 @@
 
 ## Load the API package
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost:3000*
@@ -32,7 +32,7 @@ This will get the Applications that are currently installed on your Machine, tha
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 
@@ -71,7 +71,7 @@ This will get a snapshot of your installed applications on your local Machine. A
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 
@@ -110,7 +110,7 @@ This will register a connected applicaiton.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final application = Application(); // Application | This will accept a application.
@@ -153,7 +153,7 @@ This will close your opened session! Going to want to accept a session uuid here
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final body = String(); // String | This will accept a required session uuid.
@@ -196,7 +196,7 @@ This will open a new session. A session is when someone is using the pieces appl
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 
@@ -235,7 +235,7 @@ This is an endpoint to get a snapshot of a specific session.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final session = session_example; // String | This is a uuid that points to a session.
@@ -278,7 +278,7 @@ No authorization required
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 
@@ -317,7 +317,7 @@ This will retrieve snapshot of a single application.
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final application = application_example; // String | This is a uuid that represents an application
@@ -360,7 +360,7 @@ This is an analytics endpoint that will enable us to know when a user engages so
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final seededTrackedInteractionEvent = SeededTrackedInteractionEvent(); // SeededTrackedInteractionEvent | 
@@ -403,7 +403,7 @@ This is an analytics endpoint that will enable us to know when a user uses a key
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final seededTrackedKeyboardEvent = SeededTrackedKeyboardEvent(); // SeededTrackedKeyboardEvent | 
@@ -446,7 +446,7 @@ This is an analytics endpoint that will enable us to know when a user has instal
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final trackedApplicationInstall = TrackedApplicationInstall(); // TrackedApplicationInstall | 
@@ -488,7 +488,7 @@ This is an endpoint to determine when an application has been updated
 
 ### Example
 ```dart
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 
 final api_instance = ApplicationsApi();
 final trackedApplicationUpdate = TrackedApplicationUpdate(); // TrackedApplicationUpdate | Sending over the previous application version, the current version, and the user.
