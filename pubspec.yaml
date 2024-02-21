@@ -2,19 +2,21 @@
 # AUTO-GENERATED FILE, DO NOT MODIFY!
 #
 
-name: 'core_openapi'
+name: 'pieces_os_client'
 version: '0.0.1'
-description: 'OpenAPI API client'
-homepage: 'homepage'
+description: 'Dart SDK for communicating and interacting with the Pieces OS endpoints.'
+homepage: 'https://pieces.app'
+repository: 'https://github.com/pieces-app/sdk-dart'
+issue_tracker: 'https://github.com/pieces-app/sdk-dart/issues'
 environment:
   sdk: '>=3.0.0 <3.3.0'
 dependencies:
-  http: '>=0.13.0'
+  http: '>=0.13.0 <1.1.1'
   intl: '^0.17.0'
   meta: '^1.1.8'
-  runtime_common_library:
-    git:
-     url: git@github.com:open-runtime/generated_runtime.git
-     path: ./sdk/http/dart/common
+#  runtime_common_library:
+#    git:
+#     url: git@github.com:open-runtime/generated_runtime.git
+#     path: ./sdk/http/dart/common
 dev_dependencies:
   test: '>=1.16.0 <1.18.0'
