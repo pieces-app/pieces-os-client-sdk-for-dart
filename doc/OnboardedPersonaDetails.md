@@ -1,4 +1,4 @@
-# core_openapi.model.OnboardedPersonaDetails
+# pieces_os_client.model.OnboardedPersonaDetails
 
 ## Load the model package
 ```dart

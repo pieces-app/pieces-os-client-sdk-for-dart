@@ -1,4 +1,4 @@
-# core_openapi.model.ClassificationGenericEnum
+# pieces_os_client.model.ClassificationGenericEnum
 
 ## Load the model package
 ```dart

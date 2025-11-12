@@ -1,4 +1,4 @@
-# core_openapi.model.QGPTTaskPipelineForCodeExplanation
+# pieces_os_client.model.QGPTTaskPipelineForCodeExplanation
 
 ## Load the model package
 ```dart

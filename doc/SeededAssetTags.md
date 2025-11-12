@@ -1,4 +1,4 @@
-# core_openapi.model.SeededAssetTags
+# pieces_os_client.model.SeededAssetTags
 
 ## Load the model package
 ```dart

@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for GithubApi
@@ -9,7 +9,7 @@ void main() {
 
     // /github/gists/import [POST]
     //
-    // This will attempt to get all the gist availble and return them to the user as a DiscoveredAssets.  if automatic is true we will automatically create the asset.  v1. will just get all the users' gists. <- implemented. v2. can get specific a public gist.
+    // This will attempt to get all the gist availble and return them to the user as a DiscoveredAssets.  if automatic is true we will automatically create the asset.  v1. will just get all the users' gists. implemented. v2. can get specific a public gist.
     //
     test('Test /importGithubGists Endpoint', () async {
     Future<Seeds ? > importGithubGists({ bool? automatic, SeededGithubGistsImport? seededGithubGistsImport }) async {

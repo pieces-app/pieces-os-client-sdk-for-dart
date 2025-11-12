@@ -1,4 +1,4 @@
-# core_openapi.model.Auth0UserAllocationMetadata
+# pieces_os_client.model.Auth0UserAllocationMetadata
 
 ## Load the model package
 ```dart

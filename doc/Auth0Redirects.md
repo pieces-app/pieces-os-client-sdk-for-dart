@@ -1,4 +1,4 @@
-# core_openapi.model.Auth0Redirects
+# pieces_os_client.model.Auth0Redirects
 
 ## Load the model package
 ```dart

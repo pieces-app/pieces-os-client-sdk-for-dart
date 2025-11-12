@@ -1,4 +1,4 @@
-# core_openapi.model.InteractedAsset
+# pieces_os_client.model.InteractedAsset
 
 ## Load the model package
 ```dart

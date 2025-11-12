@@ -1,28 +1,38 @@
-# core_openapi.api.ConversationApi
+# pieces_os_client.api.ConversationApi
 
 ## Load the API package
 ```dart
 import 'package:pieces_os_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3000*
+All URIs are relative to *http://localhost:1000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**conversationAssociateAnchor**](ConversationApi.md#conversationassociateanchor) | **POST** /conversation/{conversation}/anchors/associate/{anchor} | /conversation/{conversation}/anchors/associate/{anchor} [POST]
+[**conversationAssociateAnnotation**](ConversationApi.md#conversationassociateannotation) | **POST** /conversation/{conversation}/annotations/associate/{annotation} | /conversation/{conversation}/annotations/associate/{annotation} [POST]
 [**conversationAssociateAsset**](ConversationApi.md#conversationassociateasset) | **POST** /conversation/{conversation}/assets/associate/{asset} | /conversation/{conversation}/assets/associate/{asset} [POST]
+[**conversationAssociateGroundingTemporalRangeWorkstream**](ConversationApi.md#conversationassociategroundingtemporalrangeworkstream) | **POST** /conversation/{conversation}/grounding/temporal_range/workstreams/associate/{range} | /conversation/{conversation}/grounding/temporal/ranges/associate/{range} [POST]
+[**conversationAssociateGroundingWorkstreamPatternEngineSource**](ConversationApi.md#conversationassociategroundingworkstreampatternenginesource) | **POST** /conversation/{conversation}/grounding/workstream_pattern_engine/sources/associate/{source} | /conversation/{conversation}/grounding/workstream_pattern_engine/sources/associate/{source} [POST]
 [**conversationAssociateWebsite**](ConversationApi.md#conversationassociatewebsite) | **POST** /conversation/{conversation}/websites/associate/{website} | /conversation/{conversation}/websites/associate/{website} [POST]
-[**conversationDisassociateAnchor**](ConversationApi.md#conversationdisassociateanchor) | **POST** /conversation/{conversation}/anchors/delete/{anchor} | /conversation/{conversation}/anchors/delete/{anchor} [POST]
-[**conversationDisassociateAsset**](ConversationApi.md#conversationdisassociateasset) | **POST** /conversation/{conversation}/assets/delete/{asset} | /conversation/{conversation}/assets/delete/{asset} [POST]
+[**conversationAssociateWorkstreamSummary**](ConversationApi.md#conversationassociateworkstreamsummary) | **POST** /conversation/{conversation}/workstream_summaries/associate/{workstream_summary} | /conversation/{conversation}/workstream_summaries/associate/{workstream_summary} [POST]
+[**conversationDisassociateAnchor**](ConversationApi.md#conversationdisassociateanchor) | **POST** /conversation/{conversation}/anchors/disassociate/{anchor} | /conversation/{conversation}/anchors/disassociate/{anchor} [POST]
+[**conversationDisassociateAnnotation**](ConversationApi.md#conversationdisassociateannotation) | **POST** /conversation/{conversation}/annotations/disassociate/{annotation} | /conversation/{conversation}/annotations/disassociate/{annotation} [POST]
+[**conversationDisassociateAsset**](ConversationApi.md#conversationdisassociateasset) | **POST** /conversation/{conversation}/assets/disassociate/{asset} | /conversation/{conversation}/assets/disassociate/{asset} [POST]
+[**conversationDisassociateGroundingTemporalRangeWorkstream**](ConversationApi.md#conversationdisassociategroundingtemporalrangeworkstream) | **POST** /conversation/{conversation}/grounding/temporal_range/workstreams/disassociate/{range} | /conversation/{conversation}/grounding/temporal_range/workstreams/disassociate/{range} [POST]
+[**conversationDisassociateGroundingWorkstreamPatternEngineSource**](ConversationApi.md#conversationdisassociategroundingworkstreampatternenginesource) | **POST** /conversation/{conversation}/grounding/workstream_pattern_engine/sources/disassociate/{source} | /conversation/{conversation}/grounding/workstream_pattern_engine/sources/disassociate/{source} [POST]
 [**conversationDisassociateWebsite**](ConversationApi.md#conversationdisassociatewebsite) | **POST** /conversation/{conversation}/websites/disassociate/{website} | /website/{website}/websites/disassociate/{website} [POST]
+[**conversationDisassociateWorkstreamSummary**](ConversationApi.md#conversationdisassociateworkstreamsummary) | **POST** /conversation/{conversation}/workstream_summaries/disassociate/{workstream_summary} | /conversation/{conversation}/workstream_summaries/disassociate/{workstream_summary} [POST]
 [**conversationGetSpecificConversation**](ConversationApi.md#conversationgetspecificconversation) | **GET** /conversation/{conversation} | /conversation/{conversation} [GET]
 [**conversationGroundingMessagesAssociateMessage**](ConversationApi.md#conversationgroundingmessagesassociatemessage) | **POST** /conversation/{conversation}/grounding/messages/associate/{message} | /conversation/{conversation}/grounding/messages/associate/{message} [POST]
 [**conversationGroundingMessagesDisassociateMessage**](ConversationApi.md#conversationgroundingmessagesdisassociatemessage) | **POST** /conversation/{conversation}/grounding/messages/disassociate/{message} | /conversation/{conversation}/grounding/messages/disassociate/{message} [POST]
-[**conversationScoresIncrement**](ConversationApi.md#conversationscoresincrement) | **POST** /conversation/{conversation}/scores/increment | '/conversation/{conversation}/scores/increment' [POST]
+[**conversationScoresIncrement**](ConversationApi.md#conversationscoresincrement) | **POST** /conversation/{conversation}/scores/increment | /conversation/{conversation}/scores/increment [POST]
 [**conversationSpecificConversationMessages**](ConversationApi.md#conversationspecificconversationmessages) | **GET** /conversation/{conversation}/messages | /conversation/{conversation}/messages [GET]
+[**conversationSpecificConversationPrepare**](ConversationApi.md#conversationspecificconversationprepare) | **POST** /conversation/{conversation}/prepare | /conversation/{conversation}/prepare [POST]
 [**conversationSpecificConversationRename**](ConversationApi.md#conversationspecificconversationrename) | **POST** /conversation/{conversation}/rename | /conversation/{conversation}/rename [POST]
 [**conversationSummarize**](ConversationApi.md#conversationsummarize) | **POST** /conversation/{conversation}/summarize | /conversation/{conversation}/summarize [POST]
 [**conversationUpdate**](ConversationApi.md#conversationupdate) | **POST** /conversation/update | /conversation/update [POST]
+[**searchConversationSpecificMessages**](ConversationApi.md#searchconversationspecificmessages) | **POST** /conversation/{conversation}/search | /conversation/{conversation}/search [POST]
 
 
 # **conversationAssociateAnchor**
@@ -30,11 +40,15 @@ Method | HTTP request | Description
 
 /conversation/{conversation}/anchors/associate/{anchor} [POST]
 
-This will update both the anchor and the conversation.  and associate the 2 together
+Updates both the anchor and the conversation, associating them together.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -60,12 +74,60 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationAssociateAnnotation**
+> conversationAssociateAnnotation(conversation, annotation)
+
+/conversation/{conversation}/annotations/associate/{annotation} [POST]
+
+This will enable us to associate an annotation with a conversation.
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final annotation = annotation_example; // String | This is a specific annotation uuid.
+
+try {
+    api_instance.conversationAssociateAnnotation(conversation, annotation);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationAssociateAnnotation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **annotation** | **String**| This is a specific annotation uuid. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -74,11 +136,15 @@ No authorization required
 
 /conversation/{conversation}/assets/associate/{asset} [POST]
 
-This will update both the asset and the conversation.  and associate the 2 together
+Updates both the asset and the conversation, associating the two together.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -104,12 +170,108 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationAssociateGroundingTemporalRangeWorkstream**
+> conversationAssociateGroundingTemporalRangeWorkstream(conversation, range)
+
+/conversation/{conversation}/grounding/temporal/ranges/associate/{range} [POST]
+
+This will associate a workstream(range) with a conversation. This will do the same thing as the range equivalent.
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final range = range_example; // String | This is a identifier that is used to identify a specific range.
+
+try {
+    api_instance.conversationAssociateGroundingTemporalRangeWorkstream(conversation, range);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationAssociateGroundingTemporalRangeWorkstream: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **range** | **String**| This is a identifier that is used to identify a specific range. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationAssociateGroundingWorkstreamPatternEngineSource**
+> conversationAssociateGroundingWorkstreamPatternEngineSource(conversation, source_)
+
+/conversation/{conversation}/grounding/workstream_pattern_engine/sources/associate/{source} [POST]
+
+This will associate a conversation with a workstream_pattern_engine_source. This will do the same thing as the workstream_pattern_engine_source equivalent.
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final source_ = source__example; // String | This is a identifier that is used to identify a specific WorkstreamPatternEngineSource
+
+try {
+    api_instance.conversationAssociateGroundingWorkstreamPatternEngineSource(conversation, source_);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationAssociateGroundingWorkstreamPatternEngineSource: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **source_** | **String**| This is a identifier that is used to identify a specific WorkstreamPatternEngineSource | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -118,11 +280,15 @@ No authorization required
 
 /conversation/{conversation}/websites/associate/{website} [POST]
 
-This will update both the website and the conversation.  and associate the 2 together
+Updates both the website and the conversation, and associate them together.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -148,25 +314,77 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationAssociateWorkstreamSummary**
+> conversationAssociateWorkstreamSummary(conversation, workstreamSummary)
+
+/conversation/{conversation}/workstream_summaries/associate/{workstream_summary} [POST]
+
+This will associate a conversation with a workstream summary. This will do the same thing as the workstreamSummary equivalent.
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final workstreamSummary = workstreamSummary_example; // String | This is a identifier that is used to identify a specific workstream_summary.
+
+try {
+    api_instance.conversationAssociateWorkstreamSummary(conversation, workstreamSummary);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationAssociateWorkstreamSummary: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **workstreamSummary** | **String**| This is a identifier that is used to identify a specific workstream_summary. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **conversationDisassociateAnchor**
 > conversationDisassociateAnchor(conversation, anchor)
 
-/conversation/{conversation}/anchors/delete/{anchor} [POST]
+/conversation/{conversation}/anchors/disassociate/{anchor} [POST]
 
-This will update both the anchor and the conversation.  and delete(disassociate) the 2 together
+Updates both the anchor and the conversation, deleting (disassociating) them simultaneously.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -192,25 +410,77 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationDisassociateAnnotation**
+> conversationDisassociateAnnotation(conversation, annotation)
+
+/conversation/{conversation}/annotations/disassociate/{annotation} [POST]
+
+This will enable us to dissassociate an annotation from a conversation.
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final annotation = annotation_example; // String | This is a specific annotation uuid.
+
+try {
+    api_instance.conversationDisassociateAnnotation(conversation, annotation);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationDisassociateAnnotation: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **annotation** | **String**| This is a specific annotation uuid. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **conversationDisassociateAsset**
 > conversationDisassociateAsset(conversation, asset)
 
-/conversation/{conversation}/assets/delete/{asset} [POST]
+/conversation/{conversation}/assets/disassociate/{asset} [POST]
 
-This will update both the asset and the conversation.  and delete(disassociate) the 2.
+Updates both the asset and the conversation, effectively disassociating them.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -236,12 +506,108 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationDisassociateGroundingTemporalRangeWorkstream**
+> conversationDisassociateGroundingTemporalRangeWorkstream(conversation, range)
+
+/conversation/{conversation}/grounding/temporal_range/workstreams/disassociate/{range} [POST]
+
+This will enable us to disassociate a workstream(range) from a conversation. This will do the same thing as the range equivalent.
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final range = range_example; // String | This is a identifier that is used to identify a specific range.
+
+try {
+    api_instance.conversationDisassociateGroundingTemporalRangeWorkstream(conversation, range);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationDisassociateGroundingTemporalRangeWorkstream: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **range** | **String**| This is a identifier that is used to identify a specific range. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationDisassociateGroundingWorkstreamPatternEngineSource**
+> conversationDisassociateGroundingWorkstreamPatternEngineSource(conversation, source_)
+
+/conversation/{conversation}/grounding/workstream_pattern_engine/sources/disassociate/{source} [POST]
+
+This will enable us to disassociate a conversation from a workstream_pattern_engine_source. This will do the same thing as the workstream_pattern_engine_source equivalent.
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final source_ = source__example; // String | This is a identifier that is used to identify a specific WorkstreamPatternEngineSource
+
+try {
+    api_instance.conversationDisassociateGroundingWorkstreamPatternEngineSource(conversation, source_);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationDisassociateGroundingWorkstreamPatternEngineSource: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **source_** | **String**| This is a identifier that is used to identify a specific WorkstreamPatternEngineSource | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -250,11 +616,15 @@ No authorization required
 
 /website/{website}/websites/disassociate/{website} [POST]
 
-This will enable us to dissassociate a conversation from a website.
+Allows us to disassociate a conversation from a specific website
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -280,12 +650,60 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationDisassociateWorkstreamSummary**
+> conversationDisassociateWorkstreamSummary(conversation, workstreamSummary)
+
+/conversation/{conversation}/workstream_summaries/disassociate/{workstream_summary} [POST]
+
+This will enable us to disassociate an conversation from a workstream summary. This will do the same thing as the workstreamSummary equivalent.
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final workstreamSummary = workstreamSummary_example; // String | This is a identifier that is used to identify a specific workstream_summary.
+
+try {
+    api_instance.conversationDisassociateWorkstreamSummary(conversation, workstreamSummary);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationDisassociateWorkstreamSummary: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **workstreamSummary** | **String**| This is a identifier that is used to identify a specific workstream_summary. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -294,11 +712,15 @@ No authorization required
 
 /conversation/{conversation} [GET]
 
-This will get a specific conversation.
+Retrieves a specific conversation.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -325,12 +747,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -339,11 +761,15 @@ No authorization required
 
 /conversation/{conversation}/grounding/messages/associate/{message} [POST]
 
-This will save the grounding context for a conversation. This will enable us to associate a message to the conversation.grounding object.
+Stores the grounding context for a conversation. It allows to associate a message with the conversation's grounding object, facilitating contextual understanding and management of the conversation.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -369,12 +795,12 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -383,11 +809,15 @@ No authorization required
 
 /conversation/{conversation}/grounding/messages/disassociate/{message} [POST]
 
-This will remove specific grounding context for a conversation. This will enable us to dissassociate a message from the conversation.grounding object.
+Removes a specific grounding context for a conversation, and allows us to disassociate a message from the conversation's grounding object.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -413,25 +843,29 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **conversationScoresIncrement**
 > conversationScoresIncrement(conversation, seededScoreIncrement)
 
-'/conversation/{conversation}/scores/increment' [POST]
+/conversation/{conversation}/scores/increment [POST]
 
-This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+Increment scores associated with a conversation. It accepts a SeededScoreIncrement object as input to adjust the scores accordingly based on the provided data.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -457,12 +891,12 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -471,11 +905,15 @@ No authorization required
 
 /conversation/{conversation}/messages [GET]
 
-This will get a specific conversations messages
+Retrieves messages specific to a particular conversation.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -502,12 +940,58 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **conversationSpecificConversationPrepare**
+> conversationSpecificConversationPrepare(conversation)
+
+/conversation/{conversation}/prepare [POST]
+
+This endpoint will prepare a conversation within the copilot and should be called on a focus in the input
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+
+try {
+    api_instance.conversationSpecificConversationPrepare(conversation);
+} catch (e) {
+    print('Exception when calling ConversationApi->conversationSpecificConversationPrepare: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -516,11 +1000,15 @@ No authorization required
 
 /conversation/{conversation}/rename [POST]
 
-This will take a specific converssation and it will rename using ML.
+Renames a specific conversation using machine learning (ML) techniques.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -547,12 +1035,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -561,11 +1049,15 @@ No authorization required
 
 /conversation/{conversation}/summarize [POST]
 
-This will take a current conversation and create a summary of the conversation and save it as an annotation on the conversation.  will return the annotation reference used as the summary.
+Generates a summary of a given conversation and saves it as an annotation associated with the conversation. It returns a reference to the annotation, which serves as the summary.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final conversation = conversation_example; // String | This is the uuid of a conversation.
@@ -592,12 +1084,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -606,11 +1098,15 @@ No authorization required
 
 /conversation/update [POST]
 
-This will update a specific conversation.
+Updates a specific conversation.
 
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ConversationApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -637,12 +1133,63 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **searchConversationSpecificMessages**
+> SearchedConversationMessages searchConversationSpecificMessages(conversation, transferables, searchInput)
+
+/conversation/{conversation}/search [POST]
+
+This will search a specific conversation for a match  note: here we will only search the conversationMessages for this given Conversation
+
+### Example
+```dart
+import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
+
+final api_instance = ConversationApi();
+final conversation = conversation_example; // String | This is the uuid of a conversation.
+final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
+final searchInput = SearchInput(); // SearchInput | 
+
+try {
+    final result = api_instance.searchConversationSpecificMessages(conversation, transferables, searchInput);
+    print(result);
+} catch (e) {
+    print('Exception when calling ConversationApi->searchConversationSpecificMessages: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **conversation** | **String**| This is the uuid of a conversation. | 
+ **transferables** | **bool**| This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) | [optional] 
+ **searchInput** | [**SearchInput**](SearchInput.md)|  | [optional] 
+
+### Return type
+
+[**SearchedConversationMessages**](SearchedConversationMessages.md)
+
+### Authorization
+
+[application](../README.md#application)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

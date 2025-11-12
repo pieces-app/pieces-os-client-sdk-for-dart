@@ -1,11 +1,11 @@
-# core_openapi.api.Auth0Api
+# pieces_os_client.api.Auth0Api
 
 ## Load the API package
 ```dart
 import 'package:pieces_os_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3000*
+All URIs are relative to *http://localhost:1000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,6 +25,10 @@ https://auth0.com/docs/api/authentication#logout
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = Auth0Api();
 final clientId = clientId_example; // String | The client ID of the Auth0 Instance
@@ -51,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -70,6 +74,10 @@ An endpoint that is used locally authenticate via a PKCE Flow.  Example https://
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = Auth0Api();
 final audience = https://pieces.us.auth0.com/api/v2/; // String |  The unique identifier of the target API you want to access.
@@ -114,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -124,7 +132,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **exchangeForAuth0Token**
-> OAuthToken exchangeForAuth0Token(grantType, clientId, code, redirectUri, codeVerifier, schema, audience)
+> OAuthToken exchangeForAuth0Token(clientId, code, codeVerifier, grantType, redirectUri, audience, schema)
 
 https://auth.pieces.services/oauth/token [POST]
 
@@ -133,18 +141,22 @@ An endpoint to generate a OAuth Token for an authentication flow.
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = Auth0Api();
-final grantType = grantType_example; // String | Denotes the flow you are using. For Authorization Code, use authorization_code or refresh_token.
 final clientId = clientId_example; // String | Your application's Client ID.
 final code = code_example; // String | The Authorization Code received from the initial /authorize call.
-final redirectUri = redirectUri_example; // String | This is required only if it was set at the GET /authorize endpoint. The values must match.
 final codeVerifier = codeVerifier_example; // String | Cryptographically random key that was used to generate the code_challenge passed to /authorize.
-final schema = ; // EmbeddedModelSchema | 
+final grantType = grantType_example; // String | Denotes the flow you are using. For Authorization Code, use authorization_code or refresh_token.
+final redirectUri = redirectUri_example; // String | This is required only if it was set at the GET /authorize endpoint. The values must match.
 final audience = audience_example; // String | The audience domain: i.e. https://pieces.us.auth0.com
+final schema = ; // EmbeddedModelSchema | 
 
 try {
-    final result = api_instance.exchangeForAuth0Token(grantType, clientId, code, redirectUri, codeVerifier, schema, audience);
+    final result = api_instance.exchangeForAuth0Token(clientId, code, codeVerifier, grantType, redirectUri, audience, schema);
     print(result);
 } catch (e) {
     print('Exception when calling Auth0Api->exchangeForAuth0Token: $e\n');
@@ -155,13 +167,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **grantType** | **String**| Denotes the flow you are using. For Authorization Code, use authorization_code or refresh_token. | 
  **clientId** | **String**| Your application's Client ID. | 
  **code** | **String**| The Authorization Code received from the initial /authorize call. | 
- **redirectUri** | **String**| This is required only if it was set at the GET /authorize endpoint. The values must match. | 
  **codeVerifier** | **String**| Cryptographically random key that was used to generate the code_challenge passed to /authorize. | 
- **schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md)|  | [optional] 
+ **grantType** | **String**| Denotes the flow you are using. For Authorization Code, use authorization_code or refresh_token. | [default to 'UNKNOWN']
+ **redirectUri** | **String**| This is required only if it was set at the GET /authorize endpoint. The values must match. | 
  **audience** | **String**| The audience domain: i.e. https://pieces.us.auth0.com | [optional] 
+ **schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md)|  | [optional] 
 
 ### Return type
 
@@ -169,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 

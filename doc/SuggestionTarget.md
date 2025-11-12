@@ -1,4 +1,4 @@
-# core_openapi.model.SuggestionTarget
+# pieces_os_client.model.SuggestionTarget
 
 ## Load the model package
 ```dart

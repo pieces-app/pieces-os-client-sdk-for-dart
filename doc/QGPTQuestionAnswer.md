@@ -1,4 +1,4 @@
-# core_openapi.model.QGPTQuestionAnswer
+# pieces_os_client.model.QGPTQuestionAnswer
 
 ## Load the model package
 ```dart

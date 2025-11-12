@@ -1,4 +1,4 @@
-# core_openapi.model.UpdatingStatusEnum
+# pieces_os_client.model.UpdatingStatusEnum
 
 ## Load the model package
 ```dart

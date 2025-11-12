@@ -1,0 +1,144 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.18
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
+part of pieces_os_client;
+
+class PrecreatedExternalProviderApiKey {
+  /// Returns a new [PrecreatedExternalProviderApiKey] instance.
+  PrecreatedExternalProviderApiKey({
+    this.openAI,
+    this.schema,
+    required this.user,
+  });
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  Auth0OpenAIUserMetadata? openAI;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  EmbeddedModelSchema? schema;
+
+  /// This is the ID of the User.
+  String user;
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is PrecreatedExternalProviderApiKey &&
+    other.openAI == openAI &&
+    other.schema == schema &&
+    other.user == user;
+
+  @override
+  int get hashCode =>
+    // ignore: unnecessary_parenthesis
+    (openAI == null ? 0 : openAI!.hashCode) +
+    (schema == null ? 0 : schema!.hashCode) +
+    (user.hashCode);
+
+  @override
+  String toString() => 'PrecreatedExternalProviderApiKey[openAI=$openAI, schema=$schema, user=$user]';
+
+  Map<String, dynamic> toJson() {
+    final json = <String, dynamic>{};
+    if (this.openAI != null) {
+      json[r'open_AI'] = this.openAI;
+    } else {
+      json[r'open_AI'] = null;
+    }
+    if (this.schema != null) {
+      json[r'schema'] = this.schema;
+    } else {
+      json[r'schema'] = null;
+    }
+      json[r'user'] = this.user;
+    return json;
+  }
+
+  /// Returns a new [PrecreatedExternalProviderApiKey] instance and imports its values from
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static PrecreatedExternalProviderApiKey? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "PrecreatedExternalProviderApiKey[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "PrecreatedExternalProviderApiKey[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return PrecreatedExternalProviderApiKey(
+        openAI: Auth0OpenAIUserMetadata.fromJson(json[r'open_AI']),
+        schema: EmbeddedModelSchema.fromJson(json[r'schema']),
+        user: mapValueOfType<String>(json, r'user')!,
+      );
+    }
+    return null;
+  }
+
+  static List<PrecreatedExternalProviderApiKey> listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <PrecreatedExternalProviderApiKey>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = PrecreatedExternalProviderApiKey.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
+
+  static Map<String, PrecreatedExternalProviderApiKey> mapFromJson(dynamic json) {
+    final map = <String, PrecreatedExternalProviderApiKey>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = PrecreatedExternalProviderApiKey.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
+  }
+
+  // maps a json object with a list of PrecreatedExternalProviderApiKey-objects as value to a dart map
+  static Map<String, List<PrecreatedExternalProviderApiKey>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<PrecreatedExternalProviderApiKey>>{};
+    if (json is Map && json.isNotEmpty) {
+      // ignore: parameter_assignments
+      json = json.cast<String, dynamic>();
+      for (final entry in json.entries) {
+        map[entry.key] = PrecreatedExternalProviderApiKey.listFromJson(entry.value, growable: growable,);
+      }
+    }
+    return map;
+  }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'user',
+  };
+}
+

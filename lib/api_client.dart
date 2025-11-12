@@ -1,474 +1,23 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.12
+// @dart=2.18
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-
-import 'dart:convert';
-import 'dart:io';
-import 'package:http/http.dart';
-import 'package:core_openapi/api_exception.dart';
-import 'package:runtime_common_library/api_helper.dart';
-
-import '../api_helper.dart';
-import 'package:core_openapi/api_helper.dart';
-
-import 'package:core_openapi/auth/authentication.dart';
-import 'package:core_openapi/auth/oauth.dart';
-import 'package:core_openapi/auth/http_bearer_auth.dart';
-import 'package:core_openapi/auth/http_basic_auth.dart';
-import 'package:core_openapi/auth/api_key_auth.dart';
-
-import '../model/access_enum.dart';
-import '../model/accessor.dart';
-import '../model/accessors.dart';
-import '../model/activities.dart';
-import '../model/activity.dart';
-import '../model/aesthetics.dart';
-import '../model/allocation_cloud.dart';
-import '../model/allocation_cloud_status.dart';
-import '../model/allocation_cloud_url.dart';
-import '../model/allocation_cloud_urls.dart';
-import '../model/allocation_status_enum.dart';
-import '../model/allocations.dart';
-import '../model/analyses.dart';
-import '../model/analysis.dart';
-import '../model/analytics_tracked_adoption_event_identifier_description_pairs.dart';
-import '../model/anchor.dart';
-import '../model/anchor_point.dart';
-import '../model/anchor_points.dart';
-import '../model/anchor_type_enum.dart';
-import '../model/anchors.dart';
-import '../model/annotation.dart';
-import '../model/annotation_type_enum.dart';
-import '../model/annotations.dart';
-import '../model/application.dart';
-import '../model/application_name_enum.dart';
-import '../model/applications.dart';
-import '../model/asset.dart';
-import '../model/asset_filter.dart';
-import '../model/asset_filter_phrase.dart';
-import '../model/asset_filter_phrase_options.dart';
-import '../model/asset_filter_timestamp.dart';
-import '../model/asset_filters.dart';
-import '../model/asset_reclassification.dart';
-import '../model/asset_search_space.dart';
-import '../model/assets.dart';
-import '../model/assets_search_with_filters_input.dart';
-import '../model/assets_search_with_filters_output.dart';
-import '../model/auth0.dart';
-import '../model/auth0_identity.dart';
-import '../model/auth0_open_ai_user_metadata.dart';
-import '../model/auth0_redirects.dart';
-import '../model/auth0_user.dart';
-import '../model/auth0_user_allocation_metadata.dart';
-import '../model/auth0_user_metadata.dart';
-import '../model/available_formats.dart';
-import '../model/byte_descriptor.dart';
-import '../model/capabilities_enum.dart';
-import '../model/challenged_pkce.dart';
-import '../model/checked_os_update.dart';
-import '../model/classification.dart';
-import '../model/classification_generic_enum.dart';
-import '../model/classification_rendering_enum.dart';
-import '../model/classification_specific_enum.dart';
-import '../model/code_analyses.dart';
-import '../model/code_analysis.dart';
-import '../model/context.dart';
-import '../model/conversation.dart';
-import '../model/conversation_grounding.dart';
-import '../model/conversation_message.dart';
-import '../model/conversation_message_sentiment_enum.dart';
-import '../model/conversation_messages.dart';
-import '../model/conversation_summarize_input.dart';
-import '../model/conversation_summarize_output.dart';
-import '../model/conversation_type_enum.dart';
-import '../model/conversations.dart';
-import '../model/conversations_create_from_asset_output.dart';
-import '../model/created_external_provider_api_key.dart';
-import '../model/deleted_external_provider_api_key.dart';
-import '../model/detected_external_application.dart';
-import '../model/detected_external_applications.dart';
-import '../model/discovered_asset.dart';
-import '../model/discovered_assets.dart';
-import '../model/discovered_html_webpage.dart';
-import '../model/discovered_html_webpages.dart';
-import '../model/discovered_related_tag.dart';
-import '../model/discovered_related_tags.dart';
-import '../model/discovered_sensitive.dart';
-import '../model/discovered_sensitives.dart';
-import '../model/distribution.dart';
-import '../model/distributions.dart';
-import '../model/edges.dart';
-import '../model/embedded_model_schema.dart';
-import '../model/embedded_model_schema_semantic_version_enum.dart';
-import '../model/embedding.dart';
-import '../model/embeddings.dart';
-import '../model/existent_metadata.dart';
-import '../model/existing_metadata.dart';
-import '../model/exported_asset.dart';
-import '../model/exported_database.dart';
-import '../model/exported_database_format.dart';
-import '../model/exported_database_formats.dart';
-import '../model/external_ml_provider_enum.dart';
-import '../model/external_provider.dart';
-import '../model/external_provider_profile_data.dart';
-import '../model/external_provider_type_enum.dart';
-import '../model/external_providers.dart';
-import '../model/externally_sourced_enum.dart';
-import '../model/file_format.dart';
-import '../model/file_metadata.dart';
-import '../model/file_picker_input.dart';
-import '../model/filter_operation_type_enum.dart';
-import '../model/flattened_activities.dart';
-import '../model/flattened_activity.dart';
-import '../model/flattened_analysis.dart';
-import '../model/flattened_anchor.dart';
-import '../model/flattened_anchor_point.dart';
-import '../model/flattened_anchor_points.dart';
-import '../model/flattened_anchors.dart';
-import '../model/flattened_annotation.dart';
-import '../model/flattened_annotations.dart';
-import '../model/flattened_asset.dart';
-import '../model/flattened_assets.dart';
-import '../model/flattened_conversation.dart';
-import '../model/flattened_conversation_message.dart';
-import '../model/flattened_conversation_messages.dart';
-import '../model/flattened_conversations.dart';
-import '../model/flattened_distribution.dart';
-import '../model/flattened_distributions.dart';
-import '../model/flattened_format.dart';
-import '../model/flattened_formats.dart';
-import '../model/flattened_hint.dart';
-import '../model/flattened_hints.dart';
-import '../model/flattened_image_analysis.dart';
-import '../model/flattened_ocr_analysis.dart';
-import '../model/flattened_person.dart';
-import '../model/flattened_persons.dart';
-import '../model/flattened_preview.dart';
-import '../model/flattened_sensitive.dart';
-import '../model/flattened_sensitives.dart';
-import '../model/flattened_share.dart';
-import '../model/flattened_shares.dart';
-import '../model/flattened_tag.dart';
-import '../model/flattened_tags.dart';
-import '../model/flattened_user_profile.dart';
-import '../model/flattened_website.dart';
-import '../model/flattened_websites.dart';
-import '../model/font.dart';
-import '../model/format.dart';
-import '../model/format_metric.dart';
-import '../model/format_reclassification.dart';
-import '../model/formats.dart';
-import '../model/formats_metrics.dart';
-import '../model/fragment_format.dart';
-import '../model/fragment_metadata.dart';
-import '../model/git_hub_distribution.dart';
-import '../model/git_hub_gist_distribution.dart';
-import '../model/graphical_image_descriptive_statistics.dart';
-import '../model/graphical_image_processing.dart';
-import '../model/graphical_image_statistics.dart';
-import '../model/graphical_machine_learning_processing_event.dart';
-import '../model/graphical_ocr_descriptive_statistics.dart';
-import '../model/graphical_ocr_descriptive_statistics_confidence.dart';
-import '../model/graphical_ocr_processing.dart';
-import '../model/graphical_ocr_statistics.dart';
-import '../model/graphical_svg_statistics.dart';
-import '../model/grouped_timestamp.dart';
-import '../model/health.dart';
-import '../model/hint.dart';
-import '../model/hint_type_enum.dart';
-import '../model/hints.dart';
-import '../model/image_analyses.dart';
-import '../model/image_analysis.dart';
-import '../model/interacted_asset.dart';
-import '../model/interacted_asset_interactions.dart';
-import '../model/interacted_assets.dart';
-import '../model/linkify.dart';
-import '../model/linkify_multiple.dart';
-import '../model/mailgun_distribution.dart';
-import '../model/mailgun_metadata.dart';
-import '../model/mechanism_enum.dart';
-import '../model/model.dart';
-import '../model/model_delete_cache_input.dart';
-import '../model/model_delete_cache_output.dart';
-import '../model/model_download_progress.dart';
-import '../model/model_download_progress_status_enum.dart';
-import '../model/model_foundation_enum.dart';
-import '../model/model_max_tokens.dart';
-import '../model/model_type_enum.dart';
-import '../model/model_usage_enum.dart';
-import '../model/models.dart';
-import '../model/node.dart';
-import '../model/node_type_enum.dart';
-import '../model/notification.dart';
-import '../model/o_auth_account.dart';
-import '../model/o_auth_group.dart';
-import '../model/o_auth_token.dart';
-import '../model/ocr_analyses.dart';
-import '../model/ocr_analysis.dart';
-import '../model/os_device_cpu_hardware_information.dart';
-import '../model/os_device_dependencies_information.dart';
-import '../model/os_device_gpu_hardware_capabilities_information.dart';
-import '../model/os_device_gpu_hardware_information.dart';
-import '../model/os_device_hardware_information.dart';
-import '../model/os_device_information_returnable.dart';
-import '../model/os_health.dart';
-import '../model/onboarded_persona_details.dart';
-import '../model/open_ai_models_list_input.dart';
-import '../model/open_ai_models_list_output.dart';
-import '../model/ordered_metrics.dart';
-import '../model/pkce.dart';
-import '../model/person.dart';
-import '../model/person_access.dart';
-import '../model/person_access_scoped_enum.dart';
-import '../model/person_basic_type.dart';
-import '../model/person_model.dart';
-import '../model/person_type.dart';
-import '../model/persons.dart';
-import '../model/platform_enum.dart';
-import '../model/precreated_external_provider_api_key.dart';
-import '../model/predeleted_external_provider_api_key.dart';
-import '../model/preonboarded_persona_details.dart';
-import '../model/preupdated_external_provider_api_key.dart';
-import '../model/preview.dart';
-import '../model/privacy_enum.dart';
-import '../model/pseudo_assets.dart';
-import '../model/qgpt_agent_related_routes.dart';
-import '../model/qgpt_agent_routes.dart';
-import '../model/qgpt_conversation.dart';
-import '../model/qgpt_conversation_message.dart';
-import '../model/qgpt_conversation_message_role_enum.dart';
-import '../model/qgpt_conversation_pipeline.dart';
-import '../model/qgpt_conversation_pipeline_for_contextualized_code_dialog.dart';
-import '../model/qgpt_conversation_pipeline_for_contextualized_code_generation.dart';
-import '../model/qgpt_conversation_pipeline_for_generalized_code_dialog.dart';
-import '../model/qgpt_hints_input.dart';
-import '../model/qgpt_persons_related_input.dart';
-import '../model/qgpt_persons_related_output.dart';
-import '../model/qgpt_prompt_pipeline.dart';
-import '../model/qgpt_question_answer.dart';
-import '../model/qgpt_question_answers.dart';
-import '../model/qgpt_question_input.dart';
-import '../model/qgpt_question_output.dart';
-import '../model/qgpt_relevance_input.dart';
-import '../model/qgpt_relevance_input_options.dart';
-import '../model/qgpt_relevance_output.dart';
-import '../model/qgpt_reprompt_input.dart';
-import '../model/qgpt_reprompt_output.dart';
-import '../model/qgpt_stream_enum.dart';
-import '../model/qgpt_stream_input.dart';
-import '../model/qgpt_stream_output.dart';
-import '../model/qgpt_task_pipeline.dart';
-import '../model/qgpt_task_pipeline_for_code_commentation.dart';
-import '../model/qgpt_task_pipeline_for_code_completion.dart';
-import '../model/qgpt_task_pipeline_for_code_explanation.dart';
-import '../model/qgpt_task_pipeline_for_code_fix.dart';
-import '../model/qgpt_task_pipeline_for_code_modification.dart';
-import '../model/reaction.dart';
-import '../model/recipients.dart';
-import '../model/referenced_activity.dart';
-import '../model/referenced_anchor.dart';
-import '../model/referenced_anchor_point.dart';
-import '../model/referenced_annotation.dart';
-import '../model/referenced_asset.dart';
-import '../model/referenced_conversation.dart';
-import '../model/referenced_conversation_message.dart';
-import '../model/referenced_distribution.dart';
-import '../model/referenced_format.dart';
-import '../model/referenced_hint.dart';
-import '../model/referenced_model.dart';
-import '../model/referenced_person.dart';
-import '../model/referenced_sensitive.dart';
-import '../model/referenced_share.dart';
-import '../model/referenced_tag.dart';
-import '../model/referenced_user.dart';
-import '../model/referenced_website.dart';
-import '../model/relationship.dart';
-import '../model/relationships.dart';
-import '../model/relevant_qgpt_seed.dart';
-import '../model/relevant_qgpt_seeds.dart';
-import '../model/resulted_pkce.dart';
-import '../model/returned_user_profile.dart';
-import '../model/reuse_reaction.dart';
-import '../model/reuse_suggestion.dart';
-import '../model/revoked_pkce.dart';
-import '../model/role.dart';
-import '../model/save_suggestion.dart';
-import '../model/score.dart';
-import '../model/searched_asset.dart';
-import '../model/searched_assets.dart';
-import '../model/searched_match_enum.dart';
-import '../model/seed.dart';
-import '../model/seeded_accessor.dart';
-import '../model/seeded_activity.dart';
-import '../model/seeded_anchor.dart';
-import '../model/seeded_anchor_point.dart';
-import '../model/seeded_annotation.dart';
-import '../model/seeded_asset.dart';
-import '../model/seeded_asset_enrichment.dart';
-import '../model/seeded_asset_metadata.dart';
-import '../model/seeded_asset_sensitive.dart';
-import '../model/seeded_asset_tag.dart';
-import '../model/seeded_asset_tags.dart';
-import '../model/seeded_asset_website.dart';
-import '../model/seeded_assets_recommendation.dart';
-import '../model/seeded_classification.dart';
-import '../model/seeded_connector_asset.dart';
-import '../model/seeded_connector_connection.dart';
-import '../model/seeded_connector_creation.dart';
-import '../model/seeded_connector_tracking.dart';
-import '../model/seeded_conversation.dart';
-import '../model/seeded_conversation_message.dart';
-import '../model/seeded_discoverable_asset.dart';
-import '../model/seeded_discoverable_assets.dart';
-import '../model/seeded_discoverable_html_webpage.dart';
-import '../model/seeded_discoverable_html_webpages.dart';
-import '../model/seeded_discoverable_related_tag.dart';
-import '../model/seeded_discoverable_related_tags.dart';
-import '../model/seeded_discoverable_sensitive.dart';
-import '../model/seeded_discoverable_sensitives.dart';
-import '../model/seeded_distribution.dart';
-import '../model/seeded_distributions.dart';
-import '../model/seeded_external_provider.dart';
-import '../model/seeded_file.dart';
-import '../model/seeded_format.dart';
-import '../model/seeded_fragment.dart';
-import '../model/seeded_git_hub_distribution.dart';
-import '../model/seeded_git_hub_gist_distribution.dart';
-import '../model/seeded_github_gists_import.dart';
-import '../model/seeded_hint.dart';
-import '../model/seeded_mac_os_asset.dart';
-import '../model/seeded_model.dart';
-import '../model/seeded_models.dart';
-import '../model/seeded_pkce.dart';
-import '../model/seeded_pkceadditionalparameters.dart';
-import '../model/seeded_person.dart';
-import '../model/seeded_score.dart';
-import '../model/seeded_score_increment.dart';
-import '../model/seeded_sensitive.dart';
-import '../model/seeded_share.dart';
-import '../model/seeded_tag.dart';
-import '../model/seeded_tracked_adoption_event.dart';
-import '../model/seeded_tracked_application.dart';
-import '../model/seeded_tracked_asset_event.dart';
-import '../model/seeded_tracked_assets_event.dart';
-import '../model/seeded_tracked_assets_event_metadata.dart';
-import '../model/seeded_tracked_conversation_event.dart';
-import '../model/seeded_tracked_format_event.dart';
-import '../model/seeded_tracked_interaction_event.dart';
-import '../model/seeded_tracked_interaction_event_identifier_description_pairs.dart';
-import '../model/seeded_tracked_keyboard_event.dart';
-import '../model/seeded_tracked_keyboard_event_identifier_description_pairs.dart';
-import '../model/seeded_tracked_machine_learning_event.dart';
-import '../model/seeded_tracked_session_event.dart';
-import '../model/seeded_ultra_suite_asset.dart';
-import '../model/seeded_user.dart';
-import '../model/seeded_website.dart';
-import '../model/seeds.dart';
-import '../model/segmented_technical_language.dart';
-import '../model/segmented_technical_language_fragment.dart';
-import '../model/sensitive.dart';
-import '../model/sensitive_category_enum.dart';
-import '../model/sensitive_metadata.dart';
-import '../model/sensitive_severity_enum.dart';
-import '../model/sensitives.dart';
-import '../model/session.dart';
-import '../model/share.dart';
-import '../model/shares.dart';
-import '../model/space.dart';
-import '../model/streamed_identifier.dart';
-import '../model/streamed_identifiers.dart';
-import '../model/suggestion.dart';
-import '../model/suggestion_target.dart';
-import '../model/system_execution_cpu_information.dart';
-import '../model/system_execution_information.dart';
-import '../model/tlp_code_directory_analytics.dart';
-import '../model/tlp_code_file_analytics.dart';
-import '../model/tlp_code_fragment_classification.dart';
-import '../model/tlp_code_fragment_classification_metadata.dart';
-import '../model/tlp_code_fragment_description.dart';
-import '../model/tlp_code_fragment_descriptive_statistics.dart';
-import '../model/tlp_code_fragment_reclassification.dart';
-import '../model/tlp_code_fragment_reclassification_updates.dart';
-import '../model/tlp_code_fragment_statistics.dart';
-import '../model/tlp_code_fragment_suggested_reuse.dart';
-import '../model/tlp_code_fragment_suggested_save.dart';
-import '../model/tlp_code_fragment_tagify.dart';
-import '../model/tlp_code_processing.dart';
-import '../model/tlp_code_repository_analytics.dart';
-import '../model/tlp_code_snippet_analytics.dart';
-import '../model/tlp_code_snippet_suggested_interactions.dart';
-import '../model/tlp_code_snippet_tagify_code.dart';
-import '../model/tlp_directed_discovery_filter.dart';
-import '../model/tlp_directed_discovery_filter_enum.dart';
-import '../model/tlp_directed_discovery_filters.dart';
-import '../model/tlp_machine_learning_processing_event.dart';
-import '../model/tag.dart';
-import '../model/tag_category_enum.dart';
-import '../model/tags.dart';
-import '../model/text_location.dart';
-import '../model/text_match.dart';
-import '../model/theme.dart';
-import '../model/tokenized_pkce.dart';
-import '../model/tracked_application.dart';
-import '../model/tracked_application_install.dart';
-import '../model/tracked_application_update.dart';
-import '../model/tracked_asset_event_creation_metadata.dart';
-import '../model/tracked_asset_event_creation_metadata_clipboard.dart';
-import '../model/tracked_asset_event_creation_metadata_file.dart';
-import '../model/tracked_asset_event_format_reclassification_metadata.dart';
-import '../model/tracked_asset_event_identifier_description_pairs.dart';
-import '../model/tracked_asset_event_metadata.dart';
-import '../model/tracked_asset_event_rename_metadata.dart';
-import '../model/tracked_assets_event_identifier_description_pairs.dart';
-import '../model/tracked_assets_event_search_metadata.dart';
-import '../model/tracked_assets_event_search_metadata_results.dart';
-import '../model/tracked_conversation_event_identifier_description_pairs.dart';
-import '../model/tracked_conversation_event_metadata.dart';
-import '../model/tracked_conversation_event_rename_metadata.dart';
-import '../model/tracked_format.dart';
-import '../model/tracked_format_event.dart';
-import '../model/tracked_format_event_identifier_description_pairs.dart';
-import '../model/tracked_format_event_metadata.dart';
-import '../model/tracked_interaction_event.dart';
-import '../model/tracked_keyboard_event.dart';
-import '../model/tracked_session_event_identifier_description_pairs.dart';
-import '../model/tracked_user_profile.dart';
-import '../model/transferable_bytes.dart';
-import '../model/transferable_string.dart';
-import '../model/unchecked_os_update.dart';
-import '../model/unsegmented_technical_language.dart';
-import '../model/updated_external_provider_api_key.dart';
-import '../model/updating_status_enum.dart';
-import '../model/user_profile.dart';
-import '../model/users.dart';
-import '../model/website.dart';
-import '../model/websites.dart';
-
-final _regList = RegExp(r'^List<(.*)>$');
-final _regSet = RegExp(r'^Set<(.*)>$');
-final _regMap = RegExp(r'^Map<String,(.*)>$');
+part of pieces_os_client;
 
 class ApiClient {
-  ApiClient({this.basePath = 'http://localhost:3000'}) {
-    // Setup authentications (key: authentication name, value: authentication).
-    _authentications[r'auth0'] = OAuth();
-    _authentications[r'auth0'] = OAuth();
-    _authentications[r'auth0'] = OAuth();
-    _authentications[r'authorization'] = OAuth();
-    _authentications[r'authorization'] = OAuth();
-    _authentications[r'authorization'] = OAuth();
-  }
+  ApiClient({this.basePath = 'http://localhost:1000', this.authentication,});
 
   final String basePath;
+  final Authentication? authentication;
 
   var _client = Client();
+  final _defaultHeaderMap = <String, String>{};
 
   /// Returns the current HTTP [Client] instance to use in this class.
   ///
@@ -480,22 +29,10 @@ class ApiClient {
     _client = newClient;
   }
 
-  final _defaultHeaderMap = <String, String>{};
-  final _authentications = <String, Authentication>{};
+  Map<String, String> get defaultHeaderMap => _defaultHeaderMap;
 
   void addDefaultHeader(String key, String value) {
      _defaultHeaderMap[key] = value;
-  }
-
-  Map<String,String> get defaultHeaderMap => _defaultHeaderMap;
-
-  /// Returns an unmodifiable [Map] of the authentications, since none should be added
-  /// or deleted.
-  Map<String, Authentication> get authentications => Map.unmodifiable(_authentications);
-
-  T? getAuthentication<T extends Authentication>(String name) {
-    final authentication = _authentications[name];
-    return authentication is T ? authentication : null;
   }
 
   // We don't use a Map<String, String> for queryParams.
@@ -508,9 +45,8 @@ class ApiClient {
     Map<String, String> headerParams,
     Map<String, String> formParams,
     String? contentType,
-    List<String> authNames,
   ) async {
-    _updateParamsForAuth(authNames, queryParams, headerParams);
+    await authentication?.applyToParams(queryParams, headerParams);
 
     headerParams.addAll(_defaultHeaderMap);
     if (contentType != null) {
@@ -556,18 +92,8 @@ class ApiClient {
         : await serializeAsync(body);
       final nullableHeaderParams = headerParams.isEmpty ? null : headerParams;
 
-      if (method == 'POST') {
-        Request request = Request(method, uri);
-        request.headers.addAll(headerParams);
-        // Sending everything as bytes
-        request.bodyBytes = JsonUtf8Encoder().convert(body);
-        final response = await _client.send(request);
-        return Response.fromStream(response);
-      }
-
       switch(method) {
-        // Sending POST Requests above as bytes
-        // case 'POST': return await _client.post(uri, headers: nullableHeaderParams, body: msgBody,);
+        case 'POST': return await _client.post(uri, headers: nullableHeaderParams, body: msgBody,);
         case 'PUT': return await _client.put(uri, headers: nullableHeaderParams, body: msgBody,);
         case 'DELETE': return await _client.delete(uri, headers: nullableHeaderParams, body: msgBody,);
         case 'PATCH': return await _client.patch(uri, headers: nullableHeaderParams, body: msgBody,);
@@ -617,19 +143,19 @@ class ApiClient {
     );
   }
 
-  Future<dynamic> deserializeAsync(String json, String targetType, {bool growable = false,}) async =>
+  Future<dynamic> deserializeAsync(String value, String targetType, {bool growable = false,}) async =>
     // ignore: deprecated_member_use_from_same_package
-    deserialize(json, targetType, growable: growable);
+    deserialize(value, targetType, growable: growable);
 
   @Deprecated('Scheduled for removal in OpenAPI Generator 6.x. Use deserializeAsync() instead.')
-  dynamic deserialize(String json, String targetType, {bool growable = false,}) {
+  dynamic deserialize(String value, String targetType, {bool growable = false,}) {
     // Remove all spaces. Necessary for regular expressions as well.
     targetType = targetType.replaceAll(' ', ''); // ignore: parameter_assignments
 
     // If the expected target type is String, nothing to do...
     return targetType == 'String'
-      ? json
-      : _deserialize(jsonDecode(json), targetType, growable: growable);
+      ? value
+      : fromJson(json.decode(value), targetType, growable: growable);
   }
 
   // ignore: deprecated_member_use_from_same_package
@@ -638,23 +164,8 @@ class ApiClient {
   @Deprecated('Scheduled for removal in OpenAPI Generator 6.x. Use serializeAsync() instead.')
   String serialize(Object? value) => value == null ? '' : json.encode(value);
 
-  /// Update query and header parameters based on authentication settings.
-  /// @param authNames The authentications to apply
-  void _updateParamsForAuth(
-    List<String> authNames,
-    List<QueryParam> queryParams,
-    Map<String, String> headerParams,
-  ) {
-    for(final authName in authNames) {
-      final auth = _authentications[authName];
-      if (auth == null) {
-        throw ArgumentError('Authentication undefined: $authName');
-      }
-      auth.applyToParams(queryParams, headerParams);
-    }
-  }
-
-  static dynamic _deserialize(dynamic value, String targetType, {bool growable = false}) {
+  /// Returns a native instance of an OpenAPI class matching the [specified type][targetType].
+  static dynamic fromJson(dynamic value, String targetType, {bool growable = false,}) {
     try {
       switch (targetType) {
         case 'String':
@@ -669,12 +180,16 @@ class ApiClient {
           }
           final valueString = '$value'.toLowerCase();
           return valueString == 'true' || valueString == '1';
+        case 'DateTime':
+          return value is DateTime ? value : DateTime.tryParse(value);
         case 'AccessEnum':
           return AccessEnumTypeTransformer().decode(value);
         case 'Accessor':
           return Accessor.fromJson(value);
         case 'Accessors':
           return Accessors.fromJson(value);
+        case 'ActiveOSServerApplet':
+          return ActiveOSServerApplet.fromJson(value);
         case 'Activities':
           return Activities.fromJson(value);
         case 'Activity':
@@ -697,8 +212,6 @@ class ApiClient {
           return Analyses.fromJson(value);
         case 'Analysis':
           return Analysis.fromJson(value);
-        case 'AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs':
-          return AnalyticsTrackedAdoptionEventIdentifierDescriptionPairs.fromJson(value);
         case 'Anchor':
           return Anchor.fromJson(value);
         case 'AnchorPoint':
@@ -715,12 +228,20 @@ class ApiClient {
           return AnnotationTypeEnumTypeTransformer().decode(value);
         case 'Annotations':
           return Annotations.fromJson(value);
+        case 'AnonymousTemporalRange':
+          return AnonymousTemporalRange.fromJson(value);
+        case 'AppletOTAServerError':
+          return AppletOTAServerError.fromJson(value);
+        case 'AppletServingHandlerType':
+          return AppletServingHandlerType.fromJson(value);
         case 'Application':
           return Application.fromJson(value);
         case 'ApplicationNameEnum':
           return ApplicationNameEnumTypeTransformer().decode(value);
         case 'Applications':
           return Applications.fromJson(value);
+        case 'ApplicationsBulkUpdateCapabilitiesInput':
+          return ApplicationsBulkUpdateCapabilitiesInput.fromJson(value);
         case 'Asset':
           return Asset.fromJson(value);
         case 'AssetFilter':
@@ -755,18 +276,44 @@ class ApiClient {
           return Auth0User.fromJson(value);
         case 'Auth0UserAllocationMetadata':
           return Auth0UserAllocationMetadata.fromJson(value);
+        case 'Auth0UserBetaStatus':
+          return Auth0UserBetaStatus.fromJson(value);
         case 'Auth0UserMetadata':
           return Auth0UserMetadata.fromJson(value);
+        case 'AutoGeneratedWorkstreamSummaryInput':
+          return AutoGeneratedWorkstreamSummaryInput.fromJson(value);
         case 'AvailableFormats':
           return AvailableFormats.fromJson(value);
+        case 'Backup':
+          return Backup.fromJson(value);
+        case 'BackupStatus':
+          return BackupStatus.fromJson(value);
+        case 'BackupStatusEnum':
+          return BackupStatusEnumTypeTransformer().decode(value);
+        case 'BackupStreamedProgress':
+          return BackupStreamedProgress.fromJson(value);
+        case 'Backups':
+          return Backups.fromJson(value);
+        case 'BackupsStreamedProgress':
+          return BackupsStreamedProgress.fromJson(value);
+        case 'BehaviorSpecificRetrievalActivation':
+          return BehaviorSpecificRetrievalActivation.fromJson(value);
+        case 'BrowserSelection':
+          return BrowserSelection.fromJson(value);
+        case 'BrowserTab':
+          return BrowserTab.fromJson(value);
+        case 'BrowserTabValue':
+          return BrowserTabValue.fromJson(value);
+        case 'BrowserTabValues':
+          return BrowserTabValues.fromJson(value);
+        case 'BrowserTabs':
+          return BrowserTabs.fromJson(value);
         case 'ByteDescriptor':
           return ByteDescriptor.fromJson(value);
         case 'CapabilitiesEnum':
           return CapabilitiesEnumTypeTransformer().decode(value);
         case 'ChallengedPKCE':
           return ChallengedPKCE.fromJson(value);
-        case 'CheckedOSUpdate':
-          return CheckedOSUpdate.fromJson(value);
         case 'Classification':
           return Classification.fromJson(value);
         case 'ClassificationGenericEnum':
@@ -775,6 +322,8 @@ class ApiClient {
           return ClassificationRenderingEnumTypeTransformer().decode(value);
         case 'ClassificationSpecificEnum':
           return ClassificationSpecificEnumTypeTransformer().decode(value);
+        case 'Classifications':
+          return Classifications.fromJson(value);
         case 'CodeAnalyses':
           return CodeAnalyses.fromJson(value);
         case 'CodeAnalysis':
@@ -787,6 +336,8 @@ class ApiClient {
           return ConversationGrounding.fromJson(value);
         case 'ConversationMessage':
           return ConversationMessage.fromJson(value);
+        case 'ConversationMessageAgent':
+          return ConversationMessageAgent.fromJson(value);
         case 'ConversationMessageSentimentEnum':
           return ConversationMessageSentimentEnumTypeTransformer().decode(value);
         case 'ConversationMessages':
@@ -801,10 +352,28 @@ class ApiClient {
           return Conversations.fromJson(value);
         case 'ConversationsCreateFromAssetOutput':
           return ConversationsCreateFromAssetOutput.fromJson(value);
+        case 'ConversationsCreateFromWorkstreamSummaryOutput':
+          return ConversationsCreateFromWorkstreamSummaryOutput.fromJson(value);
         case 'CreatedExternalProviderApiKey':
           return CreatedExternalProviderApiKey.fromJson(value);
+        case 'DeepResearchStreamEnum':
+          return DeepResearchStreamEnumTypeTransformer().decode(value);
+        case 'DeepResearchStreamInput':
+          return DeepResearchStreamInput.fromJson(value);
+        case 'DeepResearchStreamOutput':
+          return DeepResearchStreamOutput.fromJson(value);
         case 'DeletedExternalProviderApiKey':
           return DeletedExternalProviderApiKey.fromJson(value);
+        case 'Descope':
+          return Descope.fromJson(value);
+        case 'DescopeUser':
+          return DescopeUser.fromJson(value);
+        case 'DescopeUserMetadata':
+          return DescopeUserMetadata.fromJson(value);
+        case 'DescopeUserSubscription':
+          return DescopeUserSubscription.fromJson(value);
+        case 'DescopeUserSubscriptions':
+          return DescopeUserSubscriptions.fromJson(value);
         case 'DetectedExternalApplication':
           return DetectedExternalApplication.fromJson(value);
         case 'DetectedExternalApplications':
@@ -829,6 +398,10 @@ class ApiClient {
           return Distribution.fromJson(value);
         case 'Distributions':
           return Distributions.fromJson(value);
+        case 'DocumentContributor':
+          return DocumentContributor.fromJson(value);
+        case 'DocumentContributors':
+          return DocumentContributors.fromJson(value);
         case 'Edges':
           return Edges.fromJson(value);
         case 'EmbeddedModelSchema':
@@ -839,6 +412,22 @@ class ApiClient {
           return Embedding.fromJson(value);
         case 'Embeddings':
           return Embeddings.fromJson(value);
+        case 'EmbeddingsSearchOptions':
+          return EmbeddingsSearchOptions.fromJson(value);
+        case 'EmbeddingsSearchOptionsEmbeddingTypeEnum':
+          return EmbeddingsSearchOptionsEmbeddingTypeEnumTypeTransformer().decode(value);
+        case 'Entities':
+          return Entities.fromJson(value);
+        case 'Entity':
+          return Entity.fromJson(value);
+        case 'EntityAssociateToSubscriptionInput':
+          return EntityAssociateToSubscriptionInput.fromJson(value);
+        case 'EntityAssociateToUserInput':
+          return EntityAssociateToUserInput.fromJson(value);
+        case 'EntityConfiguration':
+          return EntityConfiguration.fromJson(value);
+        case 'EntityTypeEnum':
+          return EntityTypeEnumTypeTransformer().decode(value);
         case 'ExistentMetadata':
           return ExistentMetadata.fromJson(value);
         case 'ExistingMetadata':
@@ -889,6 +478,8 @@ class ApiClient {
           return FlattenedAnnotation.fromJson(value);
         case 'FlattenedAnnotations':
           return FlattenedAnnotations.fromJson(value);
+        case 'FlattenedApplication':
+          return FlattenedApplication.fromJson(value);
         case 'FlattenedAsset':
           return FlattenedAsset.fromJson(value);
         case 'FlattenedAssets':
@@ -905,6 +496,14 @@ class ApiClient {
           return FlattenedDistribution.fromJson(value);
         case 'FlattenedDistributions':
           return FlattenedDistributions.fromJson(value);
+        case 'FlattenedEntities':
+          return FlattenedEntities.fromJson(value);
+        case 'FlattenedEntity':
+          return FlattenedEntity.fromJson(value);
+        case 'FlattenedEntityToSubscriptionAssociation':
+          return FlattenedEntityToSubscriptionAssociation.fromJson(value);
+        case 'FlattenedEntityToUserAssociation':
+          return FlattenedEntityToUserAssociation.fromJson(value);
         case 'FlattenedFormat':
           return FlattenedFormat.fromJson(value);
         case 'FlattenedFormats':
@@ -913,6 +512,10 @@ class ApiClient {
           return FlattenedHint.fromJson(value);
         case 'FlattenedHints':
           return FlattenedHints.fromJson(value);
+        case 'FlattenedIdentifiedWorkstreamPatternEngineSource':
+          return FlattenedIdentifiedWorkstreamPatternEngineSource.fromJson(value);
+        case 'FlattenedIdentifiedWorkstreamPatternEngineSources':
+          return FlattenedIdentifiedWorkstreamPatternEngineSources.fromJson(value);
         case 'FlattenedImageAnalysis':
           return FlattenedImageAnalysis.fromJson(value);
         case 'FlattenedOCRAnalysis':
@@ -923,6 +526,10 @@ class ApiClient {
           return FlattenedPersons.fromJson(value);
         case 'FlattenedPreview':
           return FlattenedPreview.fromJson(value);
+        case 'FlattenedRange':
+          return FlattenedRange.fromJson(value);
+        case 'FlattenedRanges':
+          return FlattenedRanges.fromJson(value);
         case 'FlattenedSensitive':
           return FlattenedSensitive.fromJson(value);
         case 'FlattenedSensitives':
@@ -931,16 +538,40 @@ class ApiClient {
           return FlattenedShare.fromJson(value);
         case 'FlattenedShares':
           return FlattenedShares.fromJson(value);
+        case 'FlattenedSubscription':
+          return FlattenedSubscription.fromJson(value);
+        case 'FlattenedSubscriptions':
+          return FlattenedSubscriptions.fromJson(value);
         case 'FlattenedTag':
           return FlattenedTag.fromJson(value);
         case 'FlattenedTags':
           return FlattenedTags.fromJson(value);
         case 'FlattenedUserProfile':
           return FlattenedUserProfile.fromJson(value);
+        case 'FlattenedUsers':
+          return FlattenedUsers.fromJson(value);
         case 'FlattenedWebsite':
           return FlattenedWebsite.fromJson(value);
         case 'FlattenedWebsites':
           return FlattenedWebsites.fromJson(value);
+        case 'FlattenedWorkstreamEvent':
+          return FlattenedWorkstreamEvent.fromJson(value);
+        case 'FlattenedWorkstreamEvents':
+          return FlattenedWorkstreamEvents.fromJson(value);
+        case 'FlattenedWorkstreamPatternEngineSourceWindow':
+          return FlattenedWorkstreamPatternEngineSourceWindow.fromJson(value);
+        case 'FlattenedWorkstreamPatternEngineSourceWindows':
+          return FlattenedWorkstreamPatternEngineSourceWindows.fromJson(value);
+        case 'FlattenedWorkstreamPatternEngineVisionEvent':
+          return FlattenedWorkstreamPatternEngineVisionEvent.fromJson(value);
+        case 'FlattenedWorkstreamPatternEngineVisionEvents':
+          return FlattenedWorkstreamPatternEngineVisionEvents.fromJson(value);
+        case 'FlattenedWorkstreamSummaries':
+          return FlattenedWorkstreamSummaries.fromJson(value);
+        case 'FlattenedWorkstreamSummary':
+          return FlattenedWorkstreamSummary.fromJson(value);
+        case 'FlattenedWorkstreamSummaryToWorkstreamSummaryAssociation':
+          return FlattenedWorkstreamSummaryToWorkstreamSummaryAssociation.fromJson(value);
         case 'Font':
           return Font.fromJson(value);
         case 'Format':
@@ -953,32 +584,26 @@ class ApiClient {
           return Formats.fromJson(value);
         case 'FormatsMetrics':
           return FormatsMetrics.fromJson(value);
+        case 'FoundryDeployment':
+          return FoundryDeployment.fromJson(value);
+        case 'FoundryDeploymentStatusEnum':
+          return FoundryDeploymentStatusEnumTypeTransformer().decode(value);
+        case 'FoundryDeployments':
+          return FoundryDeployments.fromJson(value);
+        case 'FoundryRecommendation':
+          return FoundryRecommendation.fromJson(value);
+        case 'FoundryStatus':
+          return FoundryStatus.fromJson(value);
         case 'FragmentFormat':
           return FragmentFormat.fromJson(value);
         case 'FragmentMetadata':
           return FragmentMetadata.fromJson(value);
+        case 'FullTextSearchOptions':
+          return FullTextSearchOptions.fromJson(value);
         case 'GitHubDistribution':
           return GitHubDistribution.fromJson(value);
         case 'GitHubGistDistribution':
           return GitHubGistDistribution.fromJson(value);
-        case 'GraphicalImageDescriptiveStatistics':
-          return GraphicalImageDescriptiveStatistics.fromJson(value);
-        case 'GraphicalImageProcessing':
-          return GraphicalImageProcessing.fromJson(value);
-        case 'GraphicalImageStatistics':
-          return GraphicalImageStatistics.fromJson(value);
-        case 'GraphicalMachineLearningProcessingEvent':
-          return GraphicalMachineLearningProcessingEvent.fromJson(value);
-        case 'GraphicalOCRDescriptiveStatistics':
-          return GraphicalOCRDescriptiveStatistics.fromJson(value);
-        case 'GraphicalOCRDescriptiveStatisticsConfidence':
-          return GraphicalOCRDescriptiveStatisticsConfidence.fromJson(value);
-        case 'GraphicalOCRProcessing':
-          return GraphicalOCRProcessing.fromJson(value);
-        case 'GraphicalOCRStatistics':
-          return GraphicalOCRStatistics.fromJson(value);
-        case 'GraphicalSVGStatistics':
-          return GraphicalSVGStatistics.fromJson(value);
         case 'GroupedTimestamp':
           return GroupedTimestamp.fromJson(value);
         case 'Health':
@@ -989,28 +614,72 @@ class ApiClient {
           return HintTypeEnumTypeTransformer().decode(value);
         case 'Hints':
           return Hints.fromJson(value);
+        case 'IDESelection':
+          return IDESelection.fromJson(value);
+        case 'IDESelections':
+          return IDESelections.fromJson(value);
+        case 'IDETab':
+          return IDETab.fromJson(value);
+        case 'IDETabs':
+          return IDETabs.fromJson(value);
+        case 'IdentifiedWorkstreamPatternEngineSource':
+          return IdentifiedWorkstreamPatternEngineSource.fromJson(value);
+        case 'IdentifiedWorkstreamPatternEngineSources':
+          return IdentifiedWorkstreamPatternEngineSources.fromJson(value);
         case 'ImageAnalyses':
           return ImageAnalyses.fromJson(value);
         case 'ImageAnalysis':
           return ImageAnalysis.fromJson(value);
+        case 'InactiveOSServerApplet':
+          return InactiveOSServerApplet.fromJson(value);
         case 'InteractedAsset':
           return InteractedAsset.fromJson(value);
         case 'InteractedAssetInteractions':
           return InteractedAssetInteractions.fromJson(value);
         case 'InteractedAssets':
           return InteractedAssets.fromJson(value);
+        case 'LanguageServerProtocol':
+          return LanguageServerProtocol.fromJson(value);
+        case 'LanguageServerProtocolCode':
+          return LanguageServerProtocolCode.fromJson(value);
+        case 'LanguageServerProtocolCodeDescription':
+          return LanguageServerProtocolCodeDescription.fromJson(value);
+        case 'LanguageServerProtocolDiagnostic':
+          return LanguageServerProtocolDiagnostic.fromJson(value);
+        case 'LanguageServerProtocolDiagnostics':
+          return LanguageServerProtocolDiagnostics.fromJson(value);
+        case 'LanguageServerProtocolLocation':
+          return LanguageServerProtocolLocation.fromJson(value);
+        case 'LanguageServerProtocolLocationRange':
+          return LanguageServerProtocolLocationRange.fromJson(value);
+        case 'LanguageServerProtocolLocationRangePosition':
+          return LanguageServerProtocolLocationRangePosition.fromJson(value);
+        case 'LanguageServerProtocolSeverityEnum':
+          return LanguageServerProtocolSeverityEnumTypeTransformer().decode(value);
         case 'Linkify':
           return Linkify.fromJson(value);
         case 'LinkifyMultiple':
           return LinkifyMultiple.fromJson(value);
+        case 'LocalNotificationResponse':
+          return LocalNotificationResponse.fromJson(value);
         case 'MailgunDistribution':
           return MailgunDistribution.fromJson(value);
         case 'MailgunMetadata':
           return MailgunMetadata.fromJson(value);
         case 'MechanismEnum':
           return MechanismEnumTypeTransformer().decode(value);
+        case 'MigrationProgress':
+          return MigrationProgress.fromJson(value);
+        case 'MigrationStatusEnum':
+          return MigrationStatusEnumTypeTransformer().decode(value);
         case 'Model':
           return Model.fromJson(value);
+        case 'ModelCapabilities':
+          return ModelCapabilities.fromJson(value);
+        case 'ModelContextProtocolSchemaVersion':
+          return ModelContextProtocolSchemaVersion.fromJson(value);
+        case 'ModelContextProtocolSchemaVersions':
+          return ModelContextProtocolSchemaVersions.fromJson(value);
         case 'ModelDeleteCacheInput':
           return ModelDeleteCacheInput.fromJson(value);
         case 'ModelDeleteCacheOutput':
@@ -1029,6 +698,18 @@ class ApiClient {
           return ModelUsageEnumTypeTransformer().decode(value);
         case 'Models':
           return Models.fromJson(value);
+        case 'NanoModelsPreparationInput':
+          return NanoModelsPreparationInput.fromJson(value);
+        case 'NanoModelsPreparationTasks':
+          return NanoModelsPreparationTasks.fromJson(value);
+        case 'NativeAccessibility':
+          return NativeAccessibility.fromJson(value);
+        case 'NativeClipboard':
+          return NativeClipboard.fromJson(value);
+        case 'NativeClipboardContent':
+          return NativeClipboardContent.fromJson(value);
+        case 'NativeOCR':
+          return NativeOCR.fromJson(value);
         case 'Node':
           return Node.fromJson(value);
         case 'NodeTypeEnum':
@@ -1045,6 +726,8 @@ class ApiClient {
           return OCRAnalyses.fromJson(value);
         case 'OCRAnalysis':
           return OCRAnalysis.fromJson(value);
+        case 'OSAppletEnum':
+          return OSAppletEnumTypeTransformer().decode(value);
         case 'OSDeviceCPUHardwareInformation':
           return OSDeviceCPUHardwareInformation.fromJson(value);
         case 'OSDeviceDependenciesInformation':
@@ -1057,8 +740,42 @@ class ApiClient {
           return OSDeviceHardwareInformation.fromJson(value);
         case 'OSDeviceInformationReturnable':
           return OSDeviceInformationReturnable.fromJson(value);
+        case 'OSDeviceRAMHardwareInformation':
+          return OSDeviceRAMHardwareInformation.fromJson(value);
+        case 'OSDeviceRAMTypeEnum':
+          return OSDeviceRAMTypeEnumTypeTransformer().decode(value);
+        case 'OSFileStreamingRead':
+          return OSFileStreamingRead.fromJson(value);
+        case 'OSFileStreamingReadAttempt':
+          return OSFileStreamingReadAttempt.fromJson(value);
+        case 'OSFileStreamingReadProgress':
+          return OSFileStreamingReadProgress.fromJson(value);
         case 'OSHealth':
           return OSHealth.fromJson(value);
+        case 'OSMigrationInformation':
+          return OSMigrationInformation.fromJson(value);
+        case 'OSMigrationStatusEnum':
+          return OSMigrationStatusEnumTypeTransformer().decode(value);
+        case 'OSMigrationStatusResponse':
+          return OSMigrationStatusResponse.fromJson(value);
+        case 'OSPermissions':
+          return OSPermissions.fromJson(value);
+        case 'OSProcessingPermissions':
+          return OSProcessingPermissions.fromJson(value);
+        case 'OSServerSettings':
+          return OSServerSettings.fromJson(value);
+        case 'OSServerUpdateStatus':
+          return OSServerUpdateStatus.fromJson(value);
+        case 'OllamaDeployment':
+          return OllamaDeployment.fromJson(value);
+        case 'OllamaDeploymentStatusEnum':
+          return OllamaDeploymentStatusEnumTypeTransformer().decode(value);
+        case 'OllamaDeployments':
+          return OllamaDeployments.fromJson(value);
+        case 'OllamaRecommendation':
+          return OllamaRecommendation.fromJson(value);
+        case 'OllamaStatus':
+          return OllamaStatus.fromJson(value);
         case 'OnboardedPersonaDetails':
           return OnboardedPersonaDetails.fromJson(value);
         case 'OpenAIModelsListInput':
@@ -1069,6 +786,48 @@ class ApiClient {
           return OrderedMetrics.fromJson(value);
         case 'PKCE':
           return PKCE.fromJson(value);
+        case 'PaddleCheckoutAddress':
+          return PaddleCheckoutAddress.fromJson(value);
+        case 'PaddleCheckoutBillingCycle':
+          return PaddleCheckoutBillingCycle.fromJson(value);
+        case 'PaddleCheckoutBusiness':
+          return PaddleCheckoutBusiness.fromJson(value);
+        case 'PaddleCheckoutClosedEvent':
+          return PaddleCheckoutClosedEvent.fromJson(value);
+        case 'PaddleCheckoutCompletedEvent':
+          return PaddleCheckoutCompletedEvent.fromJson(value);
+        case 'PaddleCheckoutCustomer':
+          return PaddleCheckoutCustomer.fromJson(value);
+        case 'PaddleCheckoutErrorDetail':
+          return PaddleCheckoutErrorDetail.fromJson(value);
+        case 'PaddleCheckoutErrorEvent':
+          return PaddleCheckoutErrorEvent.fromJson(value);
+        case 'PaddleCheckoutErrorEventError':
+          return PaddleCheckoutErrorEventError.fromJson(value);
+        case 'PaddleCheckoutEvent':
+          return PaddleCheckoutEvent.fromJson(value);
+        case 'PaddleCheckoutItem':
+          return PaddleCheckoutItem.fromJson(value);
+        case 'PaddleCheckoutLoadedEvent':
+          return PaddleCheckoutLoadedEvent.fromJson(value);
+        case 'PaddleCheckoutLoadedEventData':
+          return PaddleCheckoutLoadedEventData.fromJson(value);
+        case 'PaddleCheckoutPayment':
+          return PaddleCheckoutPayment.fromJson(value);
+        case 'PaddleCheckoutPaymentMethodDetails':
+          return PaddleCheckoutPaymentMethodDetails.fromJson(value);
+        case 'PaddleCheckoutPaymentMethodDetailsCard':
+          return PaddleCheckoutPaymentMethodDetailsCard.fromJson(value);
+        case 'PaddleCheckoutProduct':
+          return PaddleCheckoutProduct.fromJson(value);
+        case 'PaddleCheckoutSettings':
+          return PaddleCheckoutSettings.fromJson(value);
+        case 'PaddleCheckoutTotals':
+          return PaddleCheckoutTotals.fromJson(value);
+        case 'PaddleCheckoutUpdatedEvent':
+          return PaddleCheckoutUpdatedEvent.fromJson(value);
+        case 'PaddleCheckoutWarningEvent':
+          return PaddleCheckoutWarningEvent.fromJson(value);
         case 'Person':
           return Person.fromJson(value);
         case 'PersonAccess':
@@ -1097,12 +856,18 @@ class ApiClient {
           return Preview.fromJson(value);
         case 'PrivacyEnum':
           return PrivacyEnumTypeTransformer().decode(value);
+        case 'ProjectModule':
+          return ProjectModule.fromJson(value);
+        case 'ProjectModules':
+          return ProjectModules.fromJson(value);
         case 'PseudoAssets':
           return PseudoAssets.fromJson(value);
         case 'QGPTAgentRelatedRoutes':
           return QGPTAgentRelatedRoutes.fromJson(value);
         case 'QGPTAgentRoutes':
           return QGPTAgentRoutes.fromJson(value);
+        case 'QGPTBehaviorSpecificRetrievalActivationsOutput':
+          return QGPTBehaviorSpecificRetrievalActivationsOutput.fromJson(value);
         case 'QGPTConversation':
           return QGPTConversation.fromJson(value);
         case 'QGPTConversationMessage':
@@ -1115,6 +880,8 @@ class ApiClient {
           return QGPTConversationPipelineForContextualizedCodeDialog.fromJson(value);
         case 'QGPTConversationPipelineForContextualizedCodeGeneration':
           return QGPTConversationPipelineForContextualizedCodeGeneration.fromJson(value);
+        case 'QGPTConversationPipelineForContextualizedCodeWorkstreamDialog':
+          return QGPTConversationPipelineForContextualizedCodeWorkstreamDialog.fromJson(value);
         case 'QGPTConversationPipelineForGeneralizedCodeDialog':
           return QGPTConversationPipelineForGeneralizedCodeDialog.fromJson(value);
         case 'QGPTHintsInput':
@@ -1149,6 +916,16 @@ class ApiClient {
           return QGPTStreamInput.fromJson(value);
         case 'QGPTStreamOutput':
           return QGPTStreamOutput.fromJson(value);
+        case 'QGPTStreamedOutputExtractedMaterials':
+          return QGPTStreamedOutputExtractedMaterials.fromJson(value);
+        case 'QGPTStreamedOutputExtractedTextualMaterials':
+          return QGPTStreamedOutputExtractedTextualMaterials.fromJson(value);
+        case 'QGPTStreamedOutputIntermediateMessages':
+          return QGPTStreamedOutputIntermediateMessages.fromJson(value);
+        case 'QGPTStreamedOutputPromptContextMaterial':
+          return QGPTStreamedOutputPromptContextMaterial.fromJson(value);
+        case 'QGPTStreamedOutputPromptContextMaterials':
+          return QGPTStreamedOutputPromptContextMaterials.fromJson(value);
         case 'QGPTTaskPipeline':
           return QGPTTaskPipeline.fromJson(value);
         case 'QGPTTaskPipelineForCodeCommentation':
@@ -1161,6 +938,10 @@ class ApiClient {
           return QGPTTaskPipelineForCodeFix.fromJson(value);
         case 'QGPTTaskPipelineForCodeModification':
           return QGPTTaskPipelineForCodeModification.fromJson(value);
+        case 'Range':
+          return Range.fromJson(value);
+        case 'Ranges':
+          return Ranges.fromJson(value);
         case 'Reaction':
           return Reaction.fromJson(value);
         case 'Recipients':
@@ -1173,6 +954,8 @@ class ApiClient {
           return ReferencedAnchorPoint.fromJson(value);
         case 'ReferencedAnnotation':
           return ReferencedAnnotation.fromJson(value);
+        case 'ReferencedApplication':
+          return ReferencedApplication.fromJson(value);
         case 'ReferencedAsset':
           return ReferencedAsset.fromJson(value);
         case 'ReferencedConversation':
@@ -1181,24 +964,46 @@ class ApiClient {
           return ReferencedConversationMessage.fromJson(value);
         case 'ReferencedDistribution':
           return ReferencedDistribution.fromJson(value);
+        case 'ReferencedEntity':
+          return ReferencedEntity.fromJson(value);
+        case 'ReferencedEntityToSubscriptionAssociation':
+          return ReferencedEntityToSubscriptionAssociation.fromJson(value);
+        case 'ReferencedEntityToUserAssociation':
+          return ReferencedEntityToUserAssociation.fromJson(value);
         case 'ReferencedFormat':
           return ReferencedFormat.fromJson(value);
         case 'ReferencedHint':
           return ReferencedHint.fromJson(value);
+        case 'ReferencedIdentifiedWorkstreamPatternEngineSource':
+          return ReferencedIdentifiedWorkstreamPatternEngineSource.fromJson(value);
         case 'ReferencedModel':
           return ReferencedModel.fromJson(value);
         case 'ReferencedPerson':
           return ReferencedPerson.fromJson(value);
+        case 'ReferencedRange':
+          return ReferencedRange.fromJson(value);
         case 'ReferencedSensitive':
           return ReferencedSensitive.fromJson(value);
-        case 'ReferencedShare':
-          return ReferencedShare.fromJson(value);
+        case 'ReferencedSubscription':
+          return ReferencedSubscription.fromJson(value);
         case 'ReferencedTag':
           return ReferencedTag.fromJson(value);
         case 'ReferencedUser':
           return ReferencedUser.fromJson(value);
         case 'ReferencedWebsite':
           return ReferencedWebsite.fromJson(value);
+        case 'ReferencedWorkstreamEvent':
+          return ReferencedWorkstreamEvent.fromJson(value);
+        case 'ReferencedWorkstreamPatternEngineSourceWindow':
+          return ReferencedWorkstreamPatternEngineSourceWindow.fromJson(value);
+        case 'ReferencedWorkstreamPatternEngineVisionEvent':
+          return ReferencedWorkstreamPatternEngineVisionEvent.fromJson(value);
+        case 'ReferencedWorkstreamSummary':
+          return ReferencedWorkstreamSummary.fromJson(value);
+        case 'ReferencedWorkstreamSummaryToWorkstreamSummaryAssociation':
+          return ReferencedWorkstreamSummaryToWorkstreamSummaryAssociation.fromJson(value);
+        case 'RefreshedPaddleUser':
+          return RefreshedPaddleUser.fromJson(value);
         case 'Relationship':
           return Relationship.fromJson(value);
         case 'Relationships':
@@ -1223,14 +1028,86 @@ class ApiClient {
           return SaveSuggestion.fromJson(value);
         case 'Score':
           return Score.fromJson(value);
+        case 'SearchEngine':
+          return SearchEngine.fromJson(value);
+        case 'SearchEngines':
+          return SearchEngines.fromJson(value);
+        case 'SearchInput':
+          return SearchInput.fromJson(value);
+        case 'SearchedAnchor':
+          return SearchedAnchor.fromJson(value);
+        case 'SearchedAnchorPoint':
+          return SearchedAnchorPoint.fromJson(value);
+        case 'SearchedAnchorPoints':
+          return SearchedAnchorPoints.fromJson(value);
+        case 'SearchedAnchors':
+          return SearchedAnchors.fromJson(value);
+        case 'SearchedAnnotation':
+          return SearchedAnnotation.fromJson(value);
+        case 'SearchedAnnotations':
+          return SearchedAnnotations.fromJson(value);
         case 'SearchedAsset':
           return SearchedAsset.fromJson(value);
         case 'SearchedAssets':
           return SearchedAssets.fromJson(value);
+        case 'SearchedConversation':
+          return SearchedConversation.fromJson(value);
+        case 'SearchedConversationMessage':
+          return SearchedConversationMessage.fromJson(value);
+        case 'SearchedConversationMessages':
+          return SearchedConversationMessages.fromJson(value);
+        case 'SearchedConversations':
+          return SearchedConversations.fromJson(value);
+        case 'SearchedEntities':
+          return SearchedEntities.fromJson(value);
+        case 'SearchedEntity':
+          return SearchedEntity.fromJson(value);
+        case 'SearchedHint':
+          return SearchedHint.fromJson(value);
+        case 'SearchedHints':
+          return SearchedHints.fromJson(value);
+        case 'SearchedIdentifiedWorkstreamPatternEngineSource':
+          return SearchedIdentifiedWorkstreamPatternEngineSource.fromJson(value);
+        case 'SearchedIdentifiedWorkstreamPatternEngineSources':
+          return SearchedIdentifiedWorkstreamPatternEngineSources.fromJson(value);
         case 'SearchedMatchEnum':
           return SearchedMatchEnumTypeTransformer().decode(value);
+        case 'SearchedPerson':
+          return SearchedPerson.fromJson(value);
+        case 'SearchedPersons':
+          return SearchedPersons.fromJson(value);
+        case 'SearchedSensitive':
+          return SearchedSensitive.fromJson(value);
+        case 'SearchedSensitives':
+          return SearchedSensitives.fromJson(value);
+        case 'SearchedSubscription':
+          return SearchedSubscription.fromJson(value);
+        case 'SearchedSubscriptions':
+          return SearchedSubscriptions.fromJson(value);
+        case 'SearchedTag':
+          return SearchedTag.fromJson(value);
+        case 'SearchedTags':
+          return SearchedTags.fromJson(value);
+        case 'SearchedWebsite':
+          return SearchedWebsite.fromJson(value);
+        case 'SearchedWebsites':
+          return SearchedWebsites.fromJson(value);
+        case 'SearchedWorkstreamPatternEngineSourceWindow':
+          return SearchedWorkstreamPatternEngineSourceWindow.fromJson(value);
+        case 'SearchedWorkstreamPatternEngineSourceWindows':
+          return SearchedWorkstreamPatternEngineSourceWindows.fromJson(value);
+        case 'SearchedWorkstreamPatternEngineVisionEvent':
+          return SearchedWorkstreamPatternEngineVisionEvent.fromJson(value);
+        case 'SearchedWorkstreamPatternEngineVisionEvents':
+          return SearchedWorkstreamPatternEngineVisionEvents.fromJson(value);
+        case 'SearchedWorkstreamSummaries':
+          return SearchedWorkstreamSummaries.fromJson(value);
+        case 'SearchedWorkstreamSummary':
+          return SearchedWorkstreamSummary.fromJson(value);
         case 'Seed':
           return Seed.fromJson(value);
+        case 'SeedTypeEnum':
+          return SeedTypeEnumTypeTransformer().decode(value);
         case 'SeededAccessor':
           return SeededAccessor.fromJson(value);
         case 'SeededActivity':
@@ -1257,6 +1134,8 @@ class ApiClient {
           return SeededAssetWebsite.fromJson(value);
         case 'SeededAssetsRecommendation':
           return SeededAssetsRecommendation.fromJson(value);
+        case 'SeededBackup':
+          return SeededBackup.fromJson(value);
         case 'SeededClassification':
           return SeededClassification.fromJson(value);
         case 'SeededConnectorAsset':
@@ -1291,6 +1170,8 @@ class ApiClient {
           return SeededDistribution.fromJson(value);
         case 'SeededDistributions':
           return SeededDistributions.fromJson(value);
+        case 'SeededEntity':
+          return SeededEntity.fromJson(value);
         case 'SeededExternalProvider':
           return SeededExternalProvider.fromJson(value);
         case 'SeededFile':
@@ -1319,6 +1200,14 @@ class ApiClient {
           return SeededPKCEADDITIONALPARAMETERS.fromJson(value);
         case 'SeededPerson':
           return SeededPerson.fromJson(value);
+        case 'SeededRange':
+          return SeededRange.fromJson(value);
+        case 'SeededRangeConversationAssociation':
+          return SeededRangeConversationAssociation.fromJson(value);
+        case 'SeededRangeConversationGroundingAssociation':
+          return SeededRangeConversationGroundingAssociation.fromJson(value);
+        case 'SeededRangeConversationGroundingTemporalAssociation':
+          return SeededRangeConversationGroundingTemporalAssociation.fromJson(value);
         case 'SeededScore':
           return SeededScore.fromJson(value);
         case 'SeededScoreIncrement':
@@ -1327,46 +1216,32 @@ class ApiClient {
           return SeededSensitive.fromJson(value);
         case 'SeededShare':
           return SeededShare.fromJson(value);
+        case 'SeededSubscription':
+          return SeededSubscription.fromJson(value);
         case 'SeededTag':
           return SeededTag.fromJson(value);
-        case 'SeededTrackedAdoptionEvent':
-          return SeededTrackedAdoptionEvent.fromJson(value);
         case 'SeededTrackedApplication':
           return SeededTrackedApplication.fromJson(value);
-        case 'SeededTrackedAssetEvent':
-          return SeededTrackedAssetEvent.fromJson(value);
-        case 'SeededTrackedAssetsEvent':
-          return SeededTrackedAssetsEvent.fromJson(value);
-        case 'SeededTrackedAssetsEventMetadata':
-          return SeededTrackedAssetsEventMetadata.fromJson(value);
-        case 'SeededTrackedConversationEvent':
-          return SeededTrackedConversationEvent.fromJson(value);
-        case 'SeededTrackedFormatEvent':
-          return SeededTrackedFormatEvent.fromJson(value);
-        case 'SeededTrackedInteractionEvent':
-          return SeededTrackedInteractionEvent.fromJson(value);
-        case 'SeededTrackedInteractionEventIdentifierDescriptionPairs':
-          return SeededTrackedInteractionEventIdentifierDescriptionPairs.fromJson(value);
-        case 'SeededTrackedKeyboardEvent':
-          return SeededTrackedKeyboardEvent.fromJson(value);
-        case 'SeededTrackedKeyboardEventIdentifierDescriptionPairs':
-          return SeededTrackedKeyboardEventIdentifierDescriptionPairs.fromJson(value);
-        case 'SeededTrackedMachineLearningEvent':
-          return SeededTrackedMachineLearningEvent.fromJson(value);
-        case 'SeededTrackedSessionEvent':
-          return SeededTrackedSessionEvent.fromJson(value);
         case 'SeededUltraSuiteAsset':
           return SeededUltraSuiteAsset.fromJson(value);
         case 'SeededUser':
           return SeededUser.fromJson(value);
         case 'SeededWebsite':
           return SeededWebsite.fromJson(value);
+        case 'SeededWorkstreamEvent':
+          return SeededWorkstreamEvent.fromJson(value);
+        case 'SeededWorkstreamIngestion':
+          return SeededWorkstreamIngestion.fromJson(value);
+        case 'SeededWorkstreamPatternEngineSource':
+          return SeededWorkstreamPatternEngineSource.fromJson(value);
+        case 'SeededWorkstreamPatternEngineSourceWindow':
+          return SeededWorkstreamPatternEngineSourceWindow.fromJson(value);
+        case 'SeededWorkstreamSuggestionsRefresh':
+          return SeededWorkstreamSuggestionsRefresh.fromJson(value);
+        case 'SeededWorkstreamSummary':
+          return SeededWorkstreamSummary.fromJson(value);
         case 'Seeds':
           return Seeds.fromJson(value);
-        case 'SegmentedTechnicalLanguage':
-          return SegmentedTechnicalLanguage.fromJson(value);
-        case 'SegmentedTechnicalLanguageFragment':
-          return SegmentedTechnicalLanguageFragment.fromJson(value);
         case 'Sensitive':
           return Sensitive.fromJson(value);
         case 'SensitiveCategoryEnum':
@@ -1383,160 +1258,208 @@ class ApiClient {
           return Share.fromJson(value);
         case 'Shares':
           return Shares.fromJson(value);
-        case 'Space':
-          return Space.fromJson(value);
         case 'StreamedIdentifier':
           return StreamedIdentifier.fromJson(value);
         case 'StreamedIdentifiers':
           return StreamedIdentifiers.fromJson(value);
+        case 'Subscription':
+          return Subscription.fromJson(value);
+        case 'SubscriptionTermEnum':
+          return SubscriptionTermEnumTypeTransformer().decode(value);
+        case 'Subscriptions':
+          return Subscriptions.fromJson(value);
         case 'Suggestion':
           return Suggestion.fromJson(value);
         case 'SuggestionTarget':
           return SuggestionTarget.fromJson(value);
-        case 'SystemExecutionCpuInformation':
-          return SystemExecutionCpuInformation.fromJson(value);
-        case 'SystemExecutionInformation':
-          return SystemExecutionInformation.fromJson(value);
-        case 'TLPCodeDirectoryAnalytics':
-          return TLPCodeDirectoryAnalytics.fromJson(value);
-        case 'TLPCodeFileAnalytics':
-          return TLPCodeFileAnalytics.fromJson(value);
-        case 'TLPCodeFragmentClassification':
-          return TLPCodeFragmentClassification.fromJson(value);
-        case 'TLPCodeFragmentClassificationMetadata':
-          return TLPCodeFragmentClassificationMetadata.fromJson(value);
-        case 'TLPCodeFragmentDescription':
-          return TLPCodeFragmentDescription.fromJson(value);
-        case 'TLPCodeFragmentDescriptiveStatistics':
-          return TLPCodeFragmentDescriptiveStatistics.fromJson(value);
-        case 'TLPCodeFragmentReclassification':
-          return TLPCodeFragmentReclassification.fromJson(value);
-        case 'TLPCodeFragmentReclassificationUpdates':
-          return TLPCodeFragmentReclassificationUpdates.fromJson(value);
-        case 'TLPCodeFragmentStatistics':
-          return TLPCodeFragmentStatistics.fromJson(value);
-        case 'TLPCodeFragmentSuggestedReuse':
-          return TLPCodeFragmentSuggestedReuse.fromJson(value);
-        case 'TLPCodeFragmentSuggestedSave':
-          return TLPCodeFragmentSuggestedSave.fromJson(value);
-        case 'TLPCodeFragmentTagify':
-          return TLPCodeFragmentTagify.fromJson(value);
-        case 'TLPCodeProcessing':
-          return TLPCodeProcessing.fromJson(value);
-        case 'TLPCodeRepositoryAnalytics':
-          return TLPCodeRepositoryAnalytics.fromJson(value);
-        case 'TLPCodeSnippetAnalytics':
-          return TLPCodeSnippetAnalytics.fromJson(value);
-        case 'TLPCodeSnippetSuggestedInteractions':
-          return TLPCodeSnippetSuggestedInteractions.fromJson(value);
-        case 'TLPCodeSnippetTagifyCode':
-          return TLPCodeSnippetTagifyCode.fromJson(value);
         case 'TLPDirectedDiscoveryFilter':
           return TLPDirectedDiscoveryFilter.fromJson(value);
         case 'TLPDirectedDiscoveryFilterEnum':
           return TLPDirectedDiscoveryFilterEnumTypeTransformer().decode(value);
         case 'TLPDirectedDiscoveryFilters':
           return TLPDirectedDiscoveryFilters.fromJson(value);
-        case 'TLPMachineLearningProcessingEvent':
-          return TLPMachineLearningProcessingEvent.fromJson(value);
         case 'Tag':
           return Tag.fromJson(value);
         case 'TagCategoryEnum':
           return TagCategoryEnumTypeTransformer().decode(value);
         case 'Tags':
           return Tags.fromJson(value);
+        case 'TemporalRangeGrounding':
+          return TemporalRangeGrounding.fromJson(value);
+        case 'TemporalSearchOptions':
+          return TemporalSearchOptions.fromJson(value);
+        case 'TerminatingOSServerApplet':
+          return TerminatingOSServerApplet.fromJson(value);
         case 'TextLocation':
           return TextLocation.fromJson(value);
         case 'TextMatch':
           return TextMatch.fromJson(value);
+        case 'TextuallyExtractedMaterial':
+          return TextuallyExtractedMaterial.fromJson(value);
+        case 'TextuallyExtractedMaterials':
+          return TextuallyExtractedMaterials.fromJson(value);
         case 'Theme':
           return Theme.fromJson(value);
         case 'TokenizedPKCE':
           return TokenizedPKCE.fromJson(value);
-        case 'TrackedApplication':
-          return TrackedApplication.fromJson(value);
-        case 'TrackedApplicationInstall':
-          return TrackedApplicationInstall.fromJson(value);
-        case 'TrackedApplicationUpdate':
-          return TrackedApplicationUpdate.fromJson(value);
-        case 'TrackedAssetEventCreationMetadata':
-          return TrackedAssetEventCreationMetadata.fromJson(value);
-        case 'TrackedAssetEventCreationMetadataClipboard':
-          return TrackedAssetEventCreationMetadataClipboard.fromJson(value);
-        case 'TrackedAssetEventCreationMetadataFile':
-          return TrackedAssetEventCreationMetadataFile.fromJson(value);
-        case 'TrackedAssetEventFormatReclassificationMetadata':
-          return TrackedAssetEventFormatReclassificationMetadata.fromJson(value);
-        case 'TrackedAssetEventIdentifierDescriptionPairs':
-          return TrackedAssetEventIdentifierDescriptionPairs.fromJson(value);
-        case 'TrackedAssetEventMetadata':
-          return TrackedAssetEventMetadata.fromJson(value);
-        case 'TrackedAssetEventRenameMetadata':
-          return TrackedAssetEventRenameMetadata.fromJson(value);
-        case 'TrackedAssetsEventIdentifierDescriptionPairs':
-          return TrackedAssetsEventIdentifierDescriptionPairs.fromJson(value);
-        case 'TrackedAssetsEventSearchMetadata':
-          return TrackedAssetsEventSearchMetadata.fromJson(value);
-        case 'TrackedAssetsEventSearchMetadataResults':
-          return TrackedAssetsEventSearchMetadataResults.fromJson(value);
-        case 'TrackedConversationEventIdentifierDescriptionPairs':
-          return TrackedConversationEventIdentifierDescriptionPairs.fromJson(value);
-        case 'TrackedConversationEventMetadata':
-          return TrackedConversationEventMetadata.fromJson(value);
-        case 'TrackedConversationEventRenameMetadata':
-          return TrackedConversationEventRenameMetadata.fromJson(value);
-        case 'TrackedFormat':
-          return TrackedFormat.fromJson(value);
-        case 'TrackedFormatEvent':
-          return TrackedFormatEvent.fromJson(value);
-        case 'TrackedFormatEventIdentifierDescriptionPairs':
-          return TrackedFormatEventIdentifierDescriptionPairs.fromJson(value);
-        case 'TrackedFormatEventMetadata':
-          return TrackedFormatEventMetadata.fromJson(value);
-        case 'TrackedInteractionEvent':
-          return TrackedInteractionEvent.fromJson(value);
-        case 'TrackedKeyboardEvent':
-          return TrackedKeyboardEvent.fromJson(value);
-        case 'TrackedSessionEventIdentifierDescriptionPairs':
-          return TrackedSessionEventIdentifierDescriptionPairs.fromJson(value);
-        case 'TrackedUserProfile':
-          return TrackedUserProfile.fromJson(value);
         case 'TransferableBytes':
           return TransferableBytes.fromJson(value);
         case 'TransferableString':
           return TransferableString.fromJson(value);
-        case 'UncheckedOSUpdate':
-          return UncheckedOSUpdate.fromJson(value);
-        case 'UnsegmentedTechnicalLanguage':
-          return UnsegmentedTechnicalLanguage.fromJson(value);
+        case 'TunnelConnectionInput':
+          return TunnelConnectionInput.fromJson(value);
+        case 'TunnelConnectionOutput':
+          return TunnelConnectionOutput.fromJson(value);
+        case 'TunnelDisconnectionInput':
+          return TunnelDisconnectionInput.fromJson(value);
+        case 'TunnelDisconnectionOutput':
+          return TunnelDisconnectionOutput.fromJson(value);
+        case 'TunnelInformation':
+          return TunnelInformation.fromJson(value);
+        case 'TunnelRefreshInput':
+          return TunnelRefreshInput.fromJson(value);
+        case 'TunnelRefreshOutput':
+          return TunnelRefreshOutput.fromJson(value);
+        case 'TunnelStatus':
+          return TunnelStatus.fromJson(value);
+        case 'TunnelStatusEnum':
+          return TunnelStatusEnumTypeTransformer().decode(value);
+        case 'UncheckedOSServerUpdate':
+          return UncheckedOSServerUpdate.fromJson(value);
         case 'UpdatedExternalProviderApiKey':
           return UpdatedExternalProviderApiKey.fromJson(value);
         case 'UpdatingStatusEnum':
           return UpdatingStatusEnumTypeTransformer().decode(value);
+        case 'UserBetaStatus':
+          return UserBetaStatus.fromJson(value);
+        case 'UserCheckoutInput':
+          return UserCheckoutInput.fromJson(value);
+        case 'UserCheckoutOutput':
+          return UserCheckoutOutput.fromJson(value);
+        case 'UserLastCheckedInStreamOutput':
+          return UserLastCheckedInStreamOutput.fromJson(value);
+        case 'UserManageSubscriptionsInput':
+          return UserManageSubscriptionsInput.fromJson(value);
+        case 'UserManageSubscriptionsOutput':
+          return UserManageSubscriptionsOutput.fromJson(value);
         case 'UserProfile':
           return UserProfile.fromJson(value);
         case 'Users':
           return Users.fromJson(value);
+        case 'VerifiedOSFilesystemPath':
+          return VerifiedOSFilesystemPath.fromJson(value);
         case 'Website':
           return Website.fromJson(value);
         case 'Websites':
           return Websites.fromJson(value);
+        case 'WindowDimensions':
+          return WindowDimensions.fromJson(value);
+        case 'WorkstreamEvent':
+          return WorkstreamEvent.fromJson(value);
+        case 'WorkstreamEventContext':
+          return WorkstreamEventContext.fromJson(value);
+        case 'WorkstreamEventTrigger':
+          return WorkstreamEventTrigger.fromJson(value);
+        case 'WorkstreamEventTriggerContextBrowser':
+          return WorkstreamEventTriggerContextBrowser.fromJson(value);
+        case 'WorkstreamEventTriggerContextIDE':
+          return WorkstreamEventTriggerContextIDE.fromJson(value);
+        case 'WorkstreamEvents':
+          return WorkstreamEvents.fromJson(value);
+        case 'WorkstreamEventsBatchFetchInput':
+          return WorkstreamEventsBatchFetchInput.fromJson(value);
+        case 'WorkstreamEventsBatchFetchOutput':
+          return WorkstreamEventsBatchFetchOutput.fromJson(value);
+        case 'WorkstreamIngestion':
+          return WorkstreamIngestion.fromJson(value);
+        case 'WorkstreamPatternEngineClipboardStatus':
+          return WorkstreamPatternEngineClipboardStatus.fromJson(value);
+        case 'WorkstreamPatternEngineDataCleanupRequest':
+          return WorkstreamPatternEngineDataCleanupRequest.fromJson(value);
+        case 'WorkstreamPatternEngineSource':
+          return WorkstreamPatternEngineSource.fromJson(value);
+        case 'WorkstreamPatternEngineSourceSupportedAccessibility':
+          return WorkstreamPatternEngineSourceSupportedAccessibility.fromJson(value);
+        case 'WorkstreamPatternEngineSourceWindow':
+          return WorkstreamPatternEngineSourceWindow.fromJson(value);
+        case 'WorkstreamPatternEngineSourceWindows':
+          return WorkstreamPatternEngineSourceWindows.fromJson(value);
+        case 'WorkstreamPatternEngineSources':
+          return WorkstreamPatternEngineSources.fromJson(value);
+        case 'WorkstreamPatternEngineStatus':
+          return WorkstreamPatternEngineStatus.fromJson(value);
+        case 'WorkstreamPatternEngineVisionCalibration':
+          return WorkstreamPatternEngineVisionCalibration.fromJson(value);
+        case 'WorkstreamPatternEngineVisionCalibrations':
+          return WorkstreamPatternEngineVisionCalibrations.fromJson(value);
+        case 'WorkstreamPatternEngineVisionEvent':
+          return WorkstreamPatternEngineVisionEvent.fromJson(value);
+        case 'WorkstreamPatternEngineVisionEventDeletions':
+          return WorkstreamPatternEngineVisionEventDeletions.fromJson(value);
+        case 'WorkstreamPatternEngineVisionEventTextualValue':
+          return WorkstreamPatternEngineVisionEventTextualValue.fromJson(value);
+        case 'WorkstreamPatternEngineVisionEvents':
+          return WorkstreamPatternEngineVisionEvents.fromJson(value);
+        case 'WorkstreamPatternEngineVisionEventsMetadata':
+          return WorkstreamPatternEngineVisionEventsMetadata.fromJson(value);
+        case 'WorkstreamPatternEngineVisionMetadata':
+          return WorkstreamPatternEngineVisionMetadata.fromJson(value);
+        case 'WorkstreamPatternEngineVisionStatus':
+          return WorkstreamPatternEngineVisionStatus.fromJson(value);
+        case 'WorkstreamSearchOptions':
+          return WorkstreamSearchOptions.fromJson(value);
+        case 'WorkstreamSuggestion':
+          return WorkstreamSuggestion.fromJson(value);
+        case 'WorkstreamSuggestionType':
+          return WorkstreamSuggestionType.fromJson(value);
+        case 'WorkstreamSuggestions':
+          return WorkstreamSuggestions.fromJson(value);
+        case 'WorkstreamSuggestionsRefresh':
+          return WorkstreamSuggestionsRefresh.fromJson(value);
+        case 'WorkstreamSummaries':
+          return WorkstreamSummaries.fromJson(value);
+        case 'WorkstreamSummariesBatchInput':
+          return WorkstreamSummariesBatchInput.fromJson(value);
+        case 'WorkstreamSummariesBatchOutput':
+          return WorkstreamSummariesBatchOutput.fromJson(value);
+        case 'WorkstreamSummariesCreateFromMessageInput':
+          return WorkstreamSummariesCreateFromMessageInput.fromJson(value);
+        case 'WorkstreamSummariesCreateFromMessageOutput':
+          return WorkstreamSummariesCreateFromMessageOutput.fromJson(value);
+        case 'WorkstreamSummariesMergeInput':
+          return WorkstreamSummariesMergeInput.fromJson(value);
+        case 'WorkstreamSummariesMergeOutput':
+          return WorkstreamSummariesMergeOutput.fromJson(value);
+        case 'WorkstreamSummary':
+          return WorkstreamSummary.fromJson(value);
+        case 'WorkstreamSummaryAssociateWorkstreamSummaryInput':
+          return WorkstreamSummaryAssociateWorkstreamSummaryInput.fromJson(value);
+        case 'WorkstreamSummaryBehaviorEnum':
+          return WorkstreamSummaryBehaviorEnumTypeTransformer().decode(value);
+        case 'WorkstreamSummaryHierarchicalParentTypeEnum':
+          return WorkstreamSummaryHierarchicalParentTypeEnumTypeTransformer().decode(value);
+        case 'WorkstreamSummaryPhaseEnum':
+          return WorkstreamSummaryPhaseEnumTypeTransformer().decode(value);
+        case 'WorkstreamSummaryUpdateValueInput':
+          return WorkstreamSummaryUpdateValueInput.fromJson(value);
+        case 'WorkstreamSummaryUpdateValueOutput':
+          return WorkstreamSummaryUpdateValueOutput.fromJson(value);
         default:
           dynamic match;
           if (value is List && (match = _regList.firstMatch(targetType)?.group(1)) != null) {
             return value
-              .map<dynamic>((dynamic v) => _deserialize(v, match, growable: growable,))
+              .map<dynamic>((dynamic v) => fromJson(v, match, growable: growable,))
               .toList(growable: growable);
           }
           if (value is Set && (match = _regSet.firstMatch(targetType)?.group(1)) != null) {
             return value
-              .map<dynamic>((dynamic v) => _deserialize(v, match, growable: growable,))
+              .map<dynamic>((dynamic v) => fromJson(v, match, growable: growable,))
               .toSet();
           }
           if (value is Map && (match = _regMap.firstMatch(targetType)?.group(1)) != null) {
             return Map<String, dynamic>.fromIterables(
               value.keys.cast<String>(),
-              value.values.map<dynamic>((dynamic v) => _deserialize(v, match, growable: growable,)),
+              value.values.map<dynamic>((dynamic v) => fromJson(v, match, growable: growable,)),
             );
           }
       }
@@ -1566,6 +1489,17 @@ class DeserializationMessage {
 }
 
 /// Primarily intended for use in an isolate.
+Future<dynamic> decodeAsync(DeserializationMessage message) async {
+  // Remove all spaces. Necessary for regular expressions as well.
+  final targetType = message.targetType.replaceAll(' ', '');
+
+  // If the expected target type is String, nothing to do...
+  return targetType == 'String'
+    ? message.json
+    : json.decode(message.json);
+}
+
+/// Primarily intended for use in an isolate.
 Future<dynamic> deserializeAsync(DeserializationMessage message) async {
   // Remove all spaces. Necessary for regular expressions as well.
   final targetType = message.targetType.replaceAll(' ', '');
@@ -1573,8 +1507,8 @@ Future<dynamic> deserializeAsync(DeserializationMessage message) async {
   // If the expected target type is String, nothing to do...
   return targetType == 'String'
     ? message.json
-    : ApiClient._deserialize(
-        jsonDecode(message.json),
+    : ApiClient.fromJson(
+        json.decode(message.json),
         targetType,
         growable: message.growable,
       );

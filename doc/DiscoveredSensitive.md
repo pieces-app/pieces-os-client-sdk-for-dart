@@ -1,4 +1,4 @@
-# core_openapi.model.DiscoveredSensitive
+# pieces_os_client.model.DiscoveredSensitive
 
 ## Load the model package
 ```dart

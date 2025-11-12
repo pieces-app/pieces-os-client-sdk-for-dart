@@ -1,4 +1,4 @@
-# core_openapi.model.EmbeddedModelSchema
+# pieces_os_client.model.EmbeddedModelSchema
 
 ## Load the model package
 ```dart

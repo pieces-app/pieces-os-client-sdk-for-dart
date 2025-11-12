@@ -1,4 +1,4 @@
-# core_openapi.model.Recipients
+# pieces_os_client.model.Recipients
 
 ## Load the model package
 ```dart

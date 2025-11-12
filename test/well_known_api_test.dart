@@ -1,40 +1,76 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for WellKnownApi
 void main() {
   // final instance = WellKnownApi();
 
-  group('tests for WellKnownApi', () {
+  group('[Localhost] Tests for WellKnownApi', () {
+
+    // /.well-known/installation/path [Get]
+    //
+    // This endpoint will return the installation path of PiecesOS
+    //
+    test('Test /getInstallationPath Endpoint', () async {
+    Future<String ? > getInstallationPath() async {
+            String?  returnable = String.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        getInstallationPath();
+    });
+
     // /.well-known/health [GET]
     //
-    // This will get the health of the server.
+    // Retrieves the health status of the server.
     //
-    //Future<String> getWellKnownHealth() async
-    test('test getWellKnownHealth', () async {
-      // TODO
+    test('Test /getWellKnownHealth Endpoint', () async {
+    Future<String ? > getWellKnownHealth() async {
+            String?  returnable = String.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        getWellKnownHealth();
+    });
+
+    // /.well-known/stream/health [WS]
+    //
+    // This is a Streamed endpoint please use a WS connection to call this Endpoint.
+    //
+    test('Test /getWellKnownStreamHealth Endpoint', () async {
+    Future<String ? > getWellKnownStreamHealth() async {
+            String?  returnable = String.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        getWellKnownStreamHealth();
     });
 
     // /.well-known/version [Get]
     //
-    // This will get the version of the server. This will return a string of current version.
-    //
-    //Future<String> getWellKnownVersion() async
-    test('test getWellKnownVersion', () async {
-      // TODO
-    });
+    test('Test /getWellKnownVersion Endpoint', () async {
+    Future<String ? > getWellKnownVersion() async {
+            String?  returnable = String.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        getWellKnownVersion();
+    });
   });
 }

@@ -1,4 +1,4 @@
-# core_openapi.model.QGPTConversationPipelineForContextualizedCodeGeneration
+# pieces_os_client.model.QGPTConversationPipelineForContextualizedCodeGeneration
 
 ## Load the model package
 ```dart

@@ -1,4 +1,4 @@
-# core_openapi.model.Font
+# pieces_os_client.model.Font
 
 ## Load the model package
 ```dart

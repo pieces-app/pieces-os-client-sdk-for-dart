@@ -1,4 +1,4 @@
-# core_openapi.model.ExistentMetadata
+# pieces_os_client.model.ExistentMetadata
 
 ## Load the model package
 ```dart

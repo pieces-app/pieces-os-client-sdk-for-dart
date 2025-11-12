@@ -1,4 +1,4 @@
-# core_openapi.model.AnchorTypeEnum
+# pieces_os_client.model.AnchorTypeEnum
 
 ## Load the model package
 ```dart

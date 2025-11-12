@@ -1,4 +1,4 @@
-# core_openapi.model.QGPTConversationPipelineForGeneralizedCodeDialog
+# pieces_os_client.model.QGPTConversationPipelineForGeneralizedCodeDialog
 
 ## Load the model package
 ```dart

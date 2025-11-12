@@ -1,4 +1,4 @@
-# core_openapi.model.ModelDeleteCacheInput
+# pieces_os_client.model.ModelDeleteCacheInput
 
 ## Load the model package
 ```dart

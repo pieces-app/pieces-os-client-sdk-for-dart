@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for RelationshipApi
@@ -9,11 +9,11 @@ void main() {
 
     // /relationship/{relationship} [GET]
     //
-    // This will return a single instance of a series of relationships.
+    // This will return a single relationship object.
     //
     test('Test /relationshipsSpecificRelationshipSnapshot Endpoint', () async {
-    Future<Relationships ? > relationshipsSpecificRelationshipSnapshot( String relationship) async {
-            Relationships?  returnable = Relationships.fromJson();
+    Future<Relationship ? > relationshipsSpecificRelationshipSnapshot( String relationship) async {
+            Relationship?  returnable = Relationship.fromJson();
             print(returnable?.toJson());
             return returnable;
         }

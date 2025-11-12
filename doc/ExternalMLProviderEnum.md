@@ -1,4 +1,4 @@
-# core_openapi.model.ExternalMLProviderEnum
+# pieces_os_client.model.ExternalMLProviderEnum
 
 ## Load the model package
 ```dart
