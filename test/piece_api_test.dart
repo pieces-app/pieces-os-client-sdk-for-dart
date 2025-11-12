@@ -1,31 +1,27 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for PieceApi
 void main() {
   // final instance = PieceApi();
 
-  group('tests for PieceApi', () {
+  group('[Localhost] Tests for PieceApi', () {
+
     // / [GET]
     //
     // This is a cloud only Api. This will get a preview of your publically accessble Piece.
     //
-    //Future<String> htmlShare(String p) async
-    test('test htmlShare', () async {
-      // TODO
-    });
+    test('Test /htmlShare Endpoint', () async {
+    Future<String ? > htmlShare( String p) async {
+            String?  returnable = String.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        htmlShare(p );
+    });
   });
 }

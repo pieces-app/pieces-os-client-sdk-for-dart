@@ -1,4 +1,4 @@
-# core_openapi.model.ReuseSuggestion
+# pieces_os_client.model.ReuseSuggestion
 
 ## Load the model package
 ```dart
@@ -8,9 +8,9 @@ import 'package:pieces_os_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**assets** | [**Assets**](Assets.md) |  | 
 **schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
 **suggested** | **bool** | This is a boolean, that will say if you should or should not take action. | 
-**assets** | [**Assets**](Assets.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

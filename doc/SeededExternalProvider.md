@@ -1,4 +1,4 @@
-# core_openapi.model.SeededExternalProvider
+# pieces_os_client.model.SeededExternalProvider
 
 ## Load the model package
 ```dart

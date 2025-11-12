@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for MachineLearningApi
@@ -7,13 +7,13 @@ void main() {
 
   group('[Localhost] Tests for MachineLearningApi', () {
 
-    // /machine_learning/text/technical_language/parsers/segmentation [POST]
+    // /machine_learning/text/technical_language/generators/personification [GET]
     //
-    // This is a functional endpoint that will parse a message or text in to text or code.  if the optional query param is passed along 'classify' then we will optionally classify the just the code that is segmented.
+    // This is going to take in some personification details ie languages & personas.  and will return generated Seeds that can be used as snippets post/pre onboarding.
     //
-    test('Test /segmentTechnicalLanguage Endpoint', () async {
-    Future<SegmentedTechnicalLanguage ? > segmentTechnicalLanguage({ bool? classify, UnsegmentedTechnicalLanguage? unsegmentedTechnicalLanguage }) async {
-            SegmentedTechnicalLanguage?  returnable = SegmentedTechnicalLanguage.fromJson();
+    test('Test /personificationTechnicalLanguageGeneration Endpoint', () async {
+    Future<OnboardedPersonaDetails ? > personificationTechnicalLanguageGeneration({ PreonboardedPersonaDetails? preonboardedPersonaDetails }) async {
+            OnboardedPersonaDetails?  returnable = OnboardedPersonaDetails.fromJson();
             print(returnable?.toJson());
             return returnable;
         }
@@ -21,7 +21,7 @@ void main() {
         // Helpful Variables here for use with responses below
         // TODO - Need to check if it is nullable or not
 
-        segmentTechnicalLanguage(  classify: classify ,  unsegmentedTechnicalLanguage: unsegmentedTechnicalLanguage  );
+        personificationTechnicalLanguageGeneration(  preonboardedPersonaDetails: preonboardedPersonaDetails  );
     });
   });
 }

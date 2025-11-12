@@ -1,11 +1,11 @@
-# core_openapi.api.MetricsApi
+# pieces_os_client.api.MetricsApi
 
 ## Load the API package
 ```dart
 import 'package:pieces_os_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3000*
+All URIs are relative to *http://localhost:1000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,6 +23,10 @@ This is going to get a snapshot of our FormatsMetrics
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = MetricsApi();
 
@@ -43,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -62,6 +66,10 @@ This will return a list of code formats in desc order from most to least formats
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = MetricsApi();
 
@@ -82,7 +90,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 

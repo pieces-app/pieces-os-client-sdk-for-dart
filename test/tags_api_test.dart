@@ -1,49 +1,112 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for TagsApi
 void main() {
   // final instance = TagsApi();
 
-  group('tests for TagsApi', () {
+  group('[Localhost] Tests for TagsApi', () {
+
+    // /tags/search [POST]
+    //
+    // This will search your tags for a specific tag
+    //
+    test('Test /searchTags Endpoint', () async {
+    Future<SearchedTags ? > searchTags({ bool? transferables, SearchInput? searchInput }) async {
+            SearchedTags?  returnable = SearchedTags.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        searchTags(  transferables: transferables ,  searchInput: searchInput  );
+    });
+
     // /tags/create [POST]
     //
     // This will create a new tag.
     //
-    //Future<Tag> tagsCreateNewTag({ bool transferables, SeededTag seededTag }) async
-    test('test tagsCreateNewTag', () async {
-      // TODO
+    test('Test /tagsCreateNewTag Endpoint', () async {
+    Future<Tag ? > tagsCreateNewTag({ bool? transferables, SeededTag? seededTag }) async {
+            Tag?  returnable = Tag.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        tagsCreateNewTag(  transferables: transferables ,  seededTag: seededTag  );
     });
 
     // /tags/{tag}/delete [POST]
     //
     // This will delete a specific tag.
     //
-    //Future tagsDeleteSpecificTag(String tag) async
-    test('test tagsDeleteSpecificTag', () async {
-      // TODO
+    test('Test /tagsDeleteSpecificTag Endpoint', () async {
+    Future tagsDeleteSpecificTag( String tag) async {
+             returnable = .fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        tagsDeleteSpecificTag(tag );
+    });
+
+    // /tags/exists [POST]
+    //
+    // This will check all of the tags in our database to see if this specific provided tag actually exists, if not we will just return a null tag in the output.
+    //
+    test('Test /tagsExists Endpoint', () async {
+    Future<ExistingMetadata ? > tagsExists({ ExistentMetadata? existentMetadata }) async {
+            ExistingMetadata?  returnable = ExistingMetadata.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        tagsExists(  existentMetadata: existentMetadata  );
     });
 
     // /tags [GET]
     //
     // This will get a snapshot of all of your tags.
     //
-    //Future<Tags> tagsSnapshot({ bool transferables }) async
-    test('test tagsSnapshot', () async {
-      // TODO
+    test('Test /tagsSnapshot Endpoint', () async {
+    Future<Tags ? > tagsSnapshot({ bool? transferables }) async {
+            Tags?  returnable = Tags.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        tagsSnapshot(  transferables: transferables  );
     });
 
+    // /tags/stream/identifiers [WS]
+    //
+    // Provides a WebSocket connection that emits changes to your tag identifiers (UUIDs).
+    //
+    test('Test /tagsStreamIdentifiers Endpoint', () async {
+    Future<StreamedIdentifiers ? > tagsStreamIdentifiers() async {
+            StreamedIdentifiers?  returnable = StreamedIdentifiers.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        tagsStreamIdentifiers();
+    });
   });
 }

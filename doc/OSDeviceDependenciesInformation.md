@@ -1,4 +1,4 @@
-# core_openapi.model.OSDeviceDependenciesInformation
+# pieces_os_client.model.OSDeviceDependenciesInformation
 
 ## Load the model package
 ```dart

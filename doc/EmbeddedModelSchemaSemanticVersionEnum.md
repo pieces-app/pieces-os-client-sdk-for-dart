@@ -1,4 +1,4 @@
-# core_openapi.model.EmbeddedModelSchemaSemanticVersionEnum
+# pieces_os_client.model.EmbeddedModelSchemaSemanticVersionEnum
 
 ## Load the model package
 ```dart

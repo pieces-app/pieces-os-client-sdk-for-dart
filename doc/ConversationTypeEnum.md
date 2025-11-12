@@ -1,4 +1,4 @@
-# core_openapi.model.ConversationTypeEnum
+# pieces_os_client.model.ConversationTypeEnum
 
 ## Load the model package
 ```dart

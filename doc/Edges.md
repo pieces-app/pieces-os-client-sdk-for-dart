@@ -1,4 +1,4 @@
-# core_openapi.model.Edges
+# pieces_os_client.model.Edges
 
 ## Load the model package
 ```dart

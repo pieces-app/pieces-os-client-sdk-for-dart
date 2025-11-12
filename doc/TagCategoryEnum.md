@@ -1,4 +1,4 @@
-# core_openapi.model.TagCategoryEnum
+# pieces_os_client.model.TagCategoryEnum
 
 ## Load the model package
 ```dart

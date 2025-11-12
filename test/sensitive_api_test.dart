@@ -1,40 +1,61 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for SensitiveApi
 void main() {
   // final instance = SensitiveApi();
 
-  group('tests for SensitiveApi', () {
+  group('[Localhost] Tests for SensitiveApi', () {
+
+    // '/sensitive/{sensitive}/scores/increment' [POST]
+    //
+    // This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+    //
+    test('Test /sensitiveScoresIncrement Endpoint', () async {
+    Future sensitiveScoresIncrement( String sensitive, { SeededScoreIncrement? seededScoreIncrement }) async {
+             returnable = .fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        sensitiveScoresIncrement(sensitive ,   seededScoreIncrement: seededScoreIncrement  );
+    });
+
     // /sensitive/{sensitive} [GET]
     //
-    // This will get a specific sensitive via the sensative uuid.
+    // This will get a specific sensitive via the sensitive uuid.
     //
-    //Future<Sensitive> sensitiveSnapshot(String sensitive) async
-    test('test sensitiveSnapshot', () async {
-      // TODO
+    test('Test /sensitiveSnapshot Endpoint', () async {
+    Future<Sensitive ? > sensitiveSnapshot( String sensitive) async {
+            Sensitive?  returnable = Sensitive.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        sensitiveSnapshot(sensitive );
     });
 
     // /sensitive/update [POST]
     //
     // This will update a specific sensitive
     //
-    //Future<Sensitive> updateSensitive({ Sensitive sensitive }) async
-    test('test updateSensitive', () async {
-      // TODO
-    });
+    test('Test /updateSensitive Endpoint', () async {
+    Future<Sensitive ? > updateSensitive({ Sensitive? sensitive }) async {
+            Sensitive?  returnable = Sensitive.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        updateSensitive(  sensitive: sensitive  );
+    });
   });
 }

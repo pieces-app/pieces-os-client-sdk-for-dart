@@ -1,40 +1,61 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for ShareApi
 void main() {
   // final instance = ShareApi();
 
-  group('tests for ShareApi', () {
+  group('[Localhost] Tests for ShareApi', () {
+
+    // '/share/{share}/scores/increment' [POST]
+    //
+    // This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+    //
+    test('Test /shareScoresIncrement Endpoint', () async {
+    Future shareScoresIncrement( String share, { SeededScoreIncrement? seededScoreIncrement }) async {
+             returnable = .fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        shareScoresIncrement(share ,   seededScoreIncrement: seededScoreIncrement  );
+    });
+
     // /share/{share}
     //
     // Get the snapshot of a specific share.
     //
-    //Future<Share> shareSnapshot(String share, { bool transferables }) async
-    test('test shareSnapshot', () async {
-      // TODO
+    test('Test /shareSnapshot Endpoint', () async {
+    Future<Share ? > shareSnapshot( String share, { bool? transferables }) async {
+            Share?  returnable = Share.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        shareSnapshot(share ,   transferables: transferables  );
     });
 
     // /share/update [POST]
     //
     // This endpoint will accept a Share that the user wants to update, and will return a full Share that was updated!
     //
-    //Future<Share> shareUpdate({ bool transferables, Share share }) async
-    test('test shareUpdate', () async {
-      // TODO
-    });
+    test('Test /shareUpdate Endpoint', () async {
+    Future<Share ? > shareUpdate({ bool? transferables, Share? share }) async {
+            Share?  returnable = Share.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        shareUpdate(  transferables: transferables ,  share: share  );
+    });
   });
 }

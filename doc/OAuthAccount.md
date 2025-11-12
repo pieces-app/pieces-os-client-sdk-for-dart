@@ -1,4 +1,4 @@
-# core_openapi.model.OAuthAccount
+# pieces_os_client.model.OAuthAccount
 
 ## Load the model package
 ```dart
@@ -9,14 +9,14 @@ import 'package:pieces_os_client/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **clientId** | **String** | The client_id of your client. | 
-**email** | **String** | The user's email address. | 
 **connection** | **String** | The name of the database configured to your client. | 
-**username** | **String** | The user's username. Only valid if the connection requires a username. | 
-**givenName** | **String** | The user's given name(s). | 
+**email** | **String** | The user's email address. | 
 **familyName** | **String** | The user's family name(s). | 
+**givenName** | **String** | The user's given name(s). | 
 **name** | **String** | The user's full name. | 
-**picture** | **String** | A URI pointing to the user's picture. | 
 **nickname** | **String** | The user's nickname. | 
+**picture** | **String** | A URI pointing to the user's picture. | 
+**username** | **String** | The user's username. Only valid if the connection requires a username. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

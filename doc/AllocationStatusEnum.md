@@ -1,4 +1,4 @@
-# core_openapi.model.AllocationStatusEnum
+# pieces_os_client.model.AllocationStatusEnum
 
 ## Load the model package
 ```dart

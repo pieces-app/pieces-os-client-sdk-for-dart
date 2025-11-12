@@ -1,4 +1,4 @@
-# core_openapi.model.PersonAccessScopedEnum
+# pieces_os_client.model.PersonAccessScopedEnum
 
 ## Load the model package
 ```dart

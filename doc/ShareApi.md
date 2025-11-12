@@ -1,11 +1,11 @@
-# core_openapi.api.ShareApi
+# pieces_os_client.api.ShareApi
 
 ## Load the API package
 ```dart
 import 'package:pieces_os_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3000*
+All URIs are relative to *http://localhost:1000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,6 +24,10 @@ This will take in a SeededScoreIncrement and will increment the material relativ
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ShareApi();
 final share = share_example; // String | Share id
@@ -49,12 +53,12 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -68,6 +72,10 @@ Get the snapshot of a specific share.
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ShareApi();
 final share = share_example; // String | Share id
@@ -94,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -113,6 +121,10 @@ This endpoint will accept a Share that the user wants to update, and will return
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = ShareApi();
 final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -139,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 

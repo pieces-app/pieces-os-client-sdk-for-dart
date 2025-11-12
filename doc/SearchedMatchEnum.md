@@ -1,4 +1,4 @@
-# core_openapi.model.SearchedMatchEnum
+# pieces_os_client.model.SearchedMatchEnum
 
 ## Load the model package
 ```dart

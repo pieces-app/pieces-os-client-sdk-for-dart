@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for RelationshipsApi
@@ -9,11 +9,11 @@ void main() {
 
     // /relationships [GET]
     //
-    // This will reurn all of the relationships that exists within your pieces db.
+    // This will return all of the relationships that exists within your pieces db.
     //
     test('Test /relationshipsSnapshot Endpoint', () async {
-    Future<List<Relationships> ? > relationshipsSnapshot() async {
-            List<Relationships>?  returnable = List<Relationships>.fromJson();
+    Future<Relationships ? > relationshipsSnapshot() async {
+            Relationships?  returnable = Relationships.fromJson();
             print(returnable?.toJson());
             return returnable;
         }

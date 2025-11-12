@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for ExternalProviderApi

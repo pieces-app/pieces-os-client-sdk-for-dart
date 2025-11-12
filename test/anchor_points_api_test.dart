@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for AnchorPointsApi
@@ -56,6 +56,23 @@ void main() {
         // TODO - Need to check if it is nullable or not
 
         anchorPointsSnapshot(  transferables: transferables  );
+    });
+
+    // /anchor_points/stream/identifiers [WS]
+    //
+    // Provides a WebSocket connection that emits changes to your annotation identifiers (UUIDs).
+    //
+    test('Test /anchorPointsStreamIdentifiers Endpoint', () async {
+    Future<StreamedIdentifiers ? > anchorPointsStreamIdentifiers() async {
+            StreamedIdentifiers?  returnable = StreamedIdentifiers.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        anchorPointsStreamIdentifiers();
     });
   });
 }

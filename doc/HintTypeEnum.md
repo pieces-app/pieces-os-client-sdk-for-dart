@@ -1,4 +1,4 @@
-# core_openapi.model.HintTypeEnum
+# pieces_os_client.model.HintTypeEnum
 
 ## Load the model package
 ```dart

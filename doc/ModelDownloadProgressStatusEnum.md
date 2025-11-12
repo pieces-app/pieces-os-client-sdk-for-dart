@@ -1,4 +1,4 @@
-# core_openapi.model.ModelDownloadProgressStatusEnum
+# pieces_os_client.model.ModelDownloadProgressStatusEnum
 
 ## Load the model package
 ```dart

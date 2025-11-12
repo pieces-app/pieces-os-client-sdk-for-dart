@@ -1,4 +1,4 @@
-# core_openapi.model.DiscoveredRelatedTag
+# pieces_os_client.model.DiscoveredRelatedTag
 
 ## Load the model package
 ```dart

@@ -1,4 +1,4 @@
-# core_openapi.model.Distributions
+# pieces_os_client.model.Distributions
 
 ## Load the model package
 ```dart

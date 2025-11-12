@@ -1,4 +1,4 @@
-# core_openapi.model.ModelFoundationEnum
+# pieces_os_client.model.ModelFoundationEnum
 
 ## Load the model package
 ```dart

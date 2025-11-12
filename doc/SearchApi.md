@@ -1,11 +1,11 @@
-# core_openapi.api.SearchApi
+# pieces_os_client.api.SearchApi
 
 ## Load the API package
 ```dart
 import 'package:pieces_os_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3000*
+All URIs are relative to *http://localhost:1000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,6 +24,10 @@ This will run FTS for exact search, and will NOT run fuzzy matching. This will o
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = SearchApi();
 final query = query_example; // String | This is a string that you can use to search your assets.
@@ -50,12 +54,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -69,6 +73,10 @@ This will run ncs on your assets. This will simply return FlattenedAssets, but w
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = SearchApi();
 final query = query_example; // String | This is a string that you can use to search your assets.
@@ -95,12 +103,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -114,6 +122,10 @@ This will run our tag based search, and return the assets that best match your p
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = SearchApi();
 final pseudo = true; // bool | This is helper boolean that will give you the ability to also include your pseudo assets, we will always default to false.
@@ -140,12 +152,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,49 +1,61 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for LinkifyApi
 void main() {
   // final instance = LinkifyApi();
 
-  group('tests for LinkifyApi', () {
+  group('[Localhost] Tests for LinkifyApi', () {
+
     // /linkify [POST]
     //
     // 
     //
-    //Future<Shares> linkify({ Linkify linkify }) async
-    test('test linkify', () async {
-      // TODO
+    test('Test /linkify Endpoint', () async {
+    Future<Shares ? > linkify({ Linkify? linkify }) async {
+            Shares?  returnable = Shares.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        linkify(  linkify: linkify  );
     });
 
     // /linkify/multiple [POST]
     //
     // - assumption that you have already backed up the asset's that you are sending to this endpoint.(b/c the assets are ids.)
     //
-    //Future<Shares> linkifyMultiple({ LinkifyMultiple linkifyMultiple }) async
-    test('test linkifyMultiple', () async {
-      // TODO
+    test('Test /linkifyMultiple Endpoint', () async {
+    Future<Shares ? > linkifyMultiple({ LinkifyMultiple? linkifyMultiple }) async {
+            Shares?  returnable = Shares.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        linkifyMultiple(  linkifyMultiple: linkifyMultiple  );
     });
 
     // [POST} /linkify/{share}/revoke
     //
     // This will revoke a link.
     //
-    //Future<String> linkifyShareRevoke(String share) async
-    test('test linkifyShareRevoke', () async {
-      // TODO
-    });
+    test('Test /linkifyShareRevoke Endpoint', () async {
+    Future<String ? > linkifyShareRevoke( String share) async {
+            String?  returnable = String.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        linkifyShareRevoke(share );
+    });
   });
 }

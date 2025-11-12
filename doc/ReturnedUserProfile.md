@@ -1,4 +1,4 @@
-# core_openapi.model.ReturnedUserProfile
+# pieces_os_client.model.ReturnedUserProfile
 
 ## Load the model package
 ```dart

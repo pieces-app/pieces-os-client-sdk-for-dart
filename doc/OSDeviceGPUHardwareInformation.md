@@ -1,4 +1,4 @@
-# core_openapi.model.OSDeviceGPUHardwareInformation
+# pieces_os_client.model.OSDeviceGPUHardwareInformation
 
 ## Load the model package
 ```dart
@@ -8,10 +8,11 @@ import 'package:pieces_os_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
-**name** | **String** |  | [optional] 
-**memory** | **num** |  | [optional] 
 **capabilities** | [**OSDeviceGPUHardwareCapabilitiesInformation**](OSDeviceGPUHardwareCapabilitiesInformation.md) |  | [optional] 
+**memory** | **num** |  | [optional] 
+**name** | **String** |  | [optional] 
+**schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
+**sharedMemory** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,40 +1,44 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for MetricsApi
 void main() {
   // final instance = MetricsApi();
 
-  group('tests for MetricsApi', () {
+  group('[Localhost] Tests for MetricsApi', () {
+
     // /metrics/formats [GET]
     //
     // This is going to get a snapshot of our FormatsMetrics
     //
-    //Future<FormatsMetrics> getMetricsFormats() async
-    test('test getMetricsFormats', () async {
-      // TODO
+    test('Test /getMetricsFormats Endpoint', () async {
+    Future<FormatsMetrics ? > getMetricsFormats() async {
+            FormatsMetrics?  returnable = FormatsMetrics.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        getMetricsFormats();
     });
 
     // /metrics/formats/ordered [GET]
     //
     // This will return a list of code formats in desc order from most to least formats uploaded.
     //
-    //Future<OrderedMetrics> metricsFormatsOrdered() async
-    test('test metricsFormatsOrdered', () async {
-      // TODO
-    });
+    test('Test /metricsFormatsOrdered Endpoint', () async {
+    Future<OrderedMetrics ? > metricsFormatsOrdered() async {
+            OrderedMetrics?  returnable = OrderedMetrics.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        metricsFormatsOrdered();
+    });
   });
 }

@@ -1,11 +1,11 @@
-# core_openapi.api.FormatApi
+# pieces_os_client.api.FormatApi
 
 ## Load the API package
 ```dart
 import 'package:pieces_os_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3000*
+All URIs are relative to *http://localhost:1000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,6 @@ Method | HTTP request | Description
 [**formatReclassify**](FormatApi.md#formatreclassify) | **POST** /format/reclassify | /format/reclassify [POST]
 [**formatSnapshot**](FormatApi.md#formatsnapshot) | **GET** /format/{format} | /format/{format} [GET] Scoped to Format
 [**formatUpdateValue**](FormatApi.md#formatupdatevalue) | **POST** /format/update/value | [POST] /format/update/value
-[**formatUsageEvent**](FormatApi.md#formatusageevent) | **POST** /format/usage/event | /format/usage/event [POST] Scoped to Format
 
 
 # **formatAnalysis**
@@ -26,6 +25,10 @@ This will get an analysis from a format's id.
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = FormatApi();
 final format = 102ff265-fdfb-4142-8d94-4932d400199c; // String | The id (uuid) for a specific format.
@@ -50,12 +53,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -69,6 +72,10 @@ This endpoint will be used to reclassify a single Format.
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = FormatApi();
 final transferable = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -95,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -105,7 +112,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **formatSnapshot**
-> Format formatSnapshot(format, transferable)
+> Format formatSnapshot(format, transferable, packageActivities)
 
 /format/{format} [GET] Scoped to Format
 
@@ -114,13 +121,18 @@ Get a snapshot of a specific format.
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = FormatApi();
 final format = 102ff265-fdfb-4142-8d94-4932d400199c; // String | The id (uuid) for a specific format.
 final transferable = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
+final packageActivities = true; // bool | This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement)
 
 try {
-    final result = api_instance.formatSnapshot(format, transferable);
+    final result = api_instance.formatSnapshot(format, transferable, packageActivities);
     print(result);
 } catch (e) {
     print('Exception when calling FormatApi->formatSnapshot: $e\n');
@@ -133,6 +145,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **format** | **String**| The id (uuid) for a specific format. | 
  **transferable** | **bool**| This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement) | [optional] 
+ **packageActivities** | **bool**| This is a boolean that will decided if we are want to return the activities data (not default) or not(performance enhancement) | [optional] 
 
 ### Return type
 
@@ -140,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -159,6 +172,10 @@ This will update a format's value, ie, a formats fragment or file depending on w
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = FormatApi();
 final transferable = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
@@ -185,55 +202,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **formatUsageEvent**
-> TrackedFormatEvent formatUsageEvent(seededTrackedFormatEvent)
-
-/format/usage/event [POST] Scoped to Format
-
-This is an analytics endpoint that will enable us to know when a user has copied/downloaded/beamed/viewed a format.
-
-### Example
-```dart
-import 'package:pieces_os_client/api.dart';
-
-final api_instance = FormatApi();
-final seededTrackedFormatEvent = SeededTrackedFormatEvent(); // SeededTrackedFormatEvent | This is a SeededTrackedFormatEvent, per tracked event:)
-
-try {
-    final result = api_instance.formatUsageEvent(seededTrackedFormatEvent);
-    print(result);
-} catch (e) {
-    print('Exception when calling FormatApi->formatUsageEvent: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **seededTrackedFormatEvent** | [**SeededTrackedFormatEvent**](SeededTrackedFormatEvent.md)| This is a SeededTrackedFormatEvent, per tracked event:) | [optional] 
-
-### Return type
-
-[**TrackedFormatEvent**](TrackedFormatEvent.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

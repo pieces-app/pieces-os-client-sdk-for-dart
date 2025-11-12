@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for ClassificationApi
@@ -9,7 +9,7 @@ void main() {
 
     // Convert Generic Classification
     //
-    // This endpoint converts on a best effort basis from one generic format to another, i.e. from Code to HLJS
+    // This endpoint converts on a best effort basis from one generic format to another, i.e. from Code to HLJS 
     //
     test('Test /convertGenericClassification Endpoint', () async {
     Future<SeededFormat ? > convertGenericClassification({ SeededFormat? seededFormat }) async {

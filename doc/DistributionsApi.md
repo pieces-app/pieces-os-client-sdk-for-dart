@@ -1,11 +1,11 @@
-# core_openapi.api.DistributionsApi
+# pieces_os_client.api.DistributionsApi
 
 ## Load the API package
 ```dart
 import 'package:pieces_os_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3000*
+All URIs are relative to *http://localhost:1000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -24,6 +24,10 @@ This will create a new distribution.
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = DistributionsApi();
 final seededDistribution = SeededDistribution(); // SeededDistribution | 
@@ -48,12 +52,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -67,6 +71,10 @@ This will delete a specific distribution.
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = DistributionsApi();
 final distribution = distribution_example; // String | This is the uuid of a specific distribution.
@@ -90,12 +98,12 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -109,6 +117,10 @@ This will get a specific snapshot of all our distributions.
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = DistributionsApi();
 
@@ -129,12 +141,12 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: application/json, text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

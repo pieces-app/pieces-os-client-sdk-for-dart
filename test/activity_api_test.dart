@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for ActivityApi
@@ -22,6 +22,23 @@ void main() {
         // TODO - Need to check if it is nullable or not
 
         activitiesSpecificActivitySnapshot(activity ,   transferables: transferables  );
+    });
+
+    // /activity/identifiers [GET]
+    //
+    // This is going to return all the identifiers of the activity event in order of most recent -> oldest.
+    //
+    test('Test /activityIdentifiersSnapshot Endpoint', () async {
+    Future<FlattenedActivities ? > activityIdentifiersSnapshot({ bool? pseudo, String? activityFilterEnum }) async {
+            FlattenedActivities?  returnable = FlattenedActivities.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        activityIdentifiersSnapshot(  pseudo: pseudo ,  activityFilterEnum: activityFilterEnum  );
     });
 
     // /activity/update [POST]

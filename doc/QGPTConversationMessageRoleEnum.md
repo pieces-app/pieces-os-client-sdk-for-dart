@@ -1,4 +1,4 @@
-# core_openapi.model.QGPTConversationMessageRoleEnum
+# pieces_os_client.model.QGPTConversationMessageRoleEnum
 
 ## Load the model package
 ```dart

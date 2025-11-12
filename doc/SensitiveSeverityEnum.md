@@ -1,4 +1,4 @@
-# core_openapi.model.SensitiveSeverityEnum
+# pieces_os_client.model.SensitiveSeverityEnum
 
 ## Load the model package
 ```dart

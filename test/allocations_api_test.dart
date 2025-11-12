@@ -1,76 +1,112 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for AllocationsApi
 void main() {
   // final instance = AllocationsApi();
 
-  group('tests for AllocationsApi', () {
+  group('[Localhost] Tests for AllocationsApi', () {
+
     // /allocations/connect [POST]
     //
     // This will attempt to connect to a specific users cloud.(Required that the current user is logged in.)
     //
-    //Future<AllocationCloud> allocationsConnectNewCloud({ UserProfile userProfile }) async
-    test('test allocationsConnectNewCloud', () async {
-      // TODO
+    test('Test /allocationsConnectNewCloud Endpoint', () async {
+    Future<AllocationCloud ? > allocationsConnectNewCloud({ UserProfile? userProfile }) async {
+            AllocationCloud?  returnable = AllocationCloud.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        allocationsConnectNewCloud(  userProfile: userProfile  );
     });
 
     // /allocations/create [POST]
     //
     // This is unimplemented locally. This will create an allocation. ONLY used within the cloud.
     //
-    //Future<AllocationCloud> allocationsCreateNewAllocation({ AllocationCloud allocationCloud }) async
-    test('test allocationsCreateNewAllocation', () async {
-      // TODO
+    test('Test /allocationsCreateNewAllocation Endpoint', () async {
+    Future<AllocationCloud ? > allocationsCreateNewAllocation({ AllocationCloud? allocationCloud }) async {
+            AllocationCloud?  returnable = AllocationCloud.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        allocationsCreateNewAllocation(  allocationCloud: allocationCloud  );
     });
 
     // /allocations/delete [POST]
     //
     // This is unimplemented locally. This will delete an allocation. ONLY used within the cloud.
     //
-    //Future<String> allocationsDeleteAllocation({ AllocationCloud allocationCloud }) async
-    test('test allocationsDeleteAllocation', () async {
-      // TODO
+    test('Test /allocationsDeleteAllocation Endpoint', () async {
+    Future<String ? > allocationsDeleteAllocation({ AllocationCloud? allocationCloud }) async {
+            String?  returnable = String.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        allocationsDeleteAllocation(  allocationCloud: allocationCloud  );
     });
 
     // /allocations/disconnect [POST]
     //
     // This will attempt to disconnect to a specific users cloud.
     //
-    //Future<String> allocationsDisconnectCloud({ AllocationCloud allocationCloud }) async
-    test('test allocationsDisconnectCloud', () async {
-      // TODO
+    test('Test /allocationsDisconnectCloud Endpoint', () async {
+    Future<String ? > allocationsDisconnectCloud({ AllocationCloud? allocationCloud }) async {
+            String?  returnable = String.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        allocationsDisconnectCloud(  allocationCloud: allocationCloud  );
     });
 
     // /allocations/reconnect [POST]
     //
     // This will attempt to reconnect to a users cloud. This will ensure that we are connected to a users cloud and will ensure that all the data associated with a user's cloud is up-to-date.
     //
-    //Future<AllocationCloud> allocationsReconnectCloud({ AllocationCloud allocationCloud }) async
-    test('test allocationsReconnectCloud', () async {
-      // TODO
+    test('Test /allocationsReconnectCloud Endpoint', () async {
+    Future<AllocationCloud ? > allocationsReconnectCloud({ AllocationCloud? allocationCloud }) async {
+            AllocationCloud?  returnable = AllocationCloud.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        allocationsReconnectCloud(  allocationCloud: allocationCloud  );
     });
 
     // /allocations [GET]
     //
     // This is going to get a snapshot of all of the connected allocations.
     //
-    //Future<Allocations> allocationsSnapshot() async
-    test('test allocationsSnapshot', () async {
-      // TODO
-    });
+    test('Test /allocationsSnapshot Endpoint', () async {
+    Future<Allocations ? > allocationsSnapshot() async {
+            Allocations?  returnable = Allocations.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        allocationsSnapshot();
+    });
   });
 }

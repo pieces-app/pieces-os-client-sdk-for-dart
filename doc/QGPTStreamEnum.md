@@ -1,4 +1,4 @@
-# core_openapi.model.QGPTStreamEnum
+# pieces_os_client.model.QGPTStreamEnum
 
 ## Load the model package
 ```dart

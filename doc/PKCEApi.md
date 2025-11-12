@@ -1,11 +1,11 @@
-# core_openapi.api.PKCEApi
+# pieces_os_client.api.PKCEApi
 
 ## Load the API package
 ```dart
 import 'package:pieces_os_client/api.dart';
 ```
 
-All URIs are relative to *http://localhost:3000*
+All URIs are relative to *http://localhost:1000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,6 +26,10 @@ This is a function to Clear a PKCE Authentication Flow
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = PKCEApi();
 
@@ -45,7 +49,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -64,6 +68,10 @@ An endpoint to get the PKCE Code - this endpoint proxies the call out to Authori
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = PKCEApi();
 final seededPKCE = SeededPKCE(); // SeededPKCE | All of the properties that the client might want to send over to authorize a PKCE Code Flow
@@ -88,7 +96,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -107,6 +115,10 @@ A proxy endpoint for PKCE token generation, internally calls Auth0 /oauth/token
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = PKCEApi();
 final tokenizedPKCE = TokenizedPKCE(); // TokenizedPKCE | The needed properties to exchange a PKCE Code for an OAuth Token
@@ -131,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -150,6 +162,10 @@ An endpoint that returns a PKCE Challenge
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = PKCEApi();
 
@@ -170,7 +186,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 
@@ -189,6 +205,10 @@ This is a callback function hosted to help pass along the ResultedPKCE code from
 ### Example
 ```dart
 import 'package:pieces_os_client/api.dart';
+// TODO Configure API key authorization: application
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKey = 'YOUR_API_KEY';
+// uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+//defaultApiClient.getAuthentication<ApiKeyAuth>('application').apiKeyPrefix = 'Bearer';
 
 final api_instance = PKCEApi();
 final code = code_example; // String | The PKCE Code to be used to access a Token.
@@ -217,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[application](../README.md#application)
 
 ### HTTP request headers
 

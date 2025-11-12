@@ -1,4 +1,4 @@
-# core_openapi.model.QGPTTaskPipelineForCodeCommentation
+# pieces_os_client.model.QGPTTaskPipelineForCodeCommentation
 
 ## Load the model package
 ```dart

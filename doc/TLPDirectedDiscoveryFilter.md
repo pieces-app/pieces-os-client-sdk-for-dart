@@ -1,4 +1,4 @@
-# core_openapi.model.TLPDirectedDiscoveryFilter
+# pieces_os_client.model.TLPDirectedDiscoveryFilter
 
 ## Load the model package
 ```dart

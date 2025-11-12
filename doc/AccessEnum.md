@@ -1,4 +1,4 @@
-# core_openapi.model.AccessEnum
+# pieces_os_client.model.AccessEnum
 
 ## Load the model package
 ```dart
