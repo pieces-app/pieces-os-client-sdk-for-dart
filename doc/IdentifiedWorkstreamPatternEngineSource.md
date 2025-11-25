@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **messages** | [**FlattenedConversationMessages**](FlattenedConversationMessages.md) |  | [optional] 
 **persons** | [**FlattenedPersons**](FlattenedPersons.md) |  | [optional] 
 **raw** | [**WorkstreamPatternEngineSource**](WorkstreamPatternEngineSource.md) |  | 
-**readable** | **String** | This is the name of the source(defualt original data) this is NOT used for matching just for readability | 
+**readable** | **String** | This is the name of the source(default original data) this is NOT used for matching just for readability | 
 **schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
 **score** | [**Score**](Score.md) |  | [optional] 
 **summaries** | [**FlattenedWorkstreamSummaries**](FlattenedWorkstreamSummaries.md) |  | [optional] 
