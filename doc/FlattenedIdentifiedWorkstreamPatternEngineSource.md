@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **filter** | **bool** | This will determine if we want to filter this specific source | [optional] 
 **id** | **String** |  | 
 **messages** | [**FlattenedConversationMessages**](FlattenedConversationMessages.md) |  | [optional] 
-**name** | **String** | This is the name of the source(defualt original data) this is NOT used for matching just for readability | 
+**name** | **String** | This is the name of the source(default original data) this is NOT used for matching just for readability | 
 **persons** | [**FlattenedPersons**](FlattenedPersons.md) |  | [optional] 
 **raw** | [**WorkstreamPatternEngineSource**](WorkstreamPatternEngineSource.md) |  | 
 **schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
