@@ -41,15 +41,14 @@ Please follow the [installation procedure](#installation--usage) and then run th
 import 'package:pieces_os_client/api.dart';
 
 
-final api_instance = ActivitiesApi();
-final transferables = true; // bool | This is a boolean that will decided if we are want to return the transferable data (default) or not(performance enhancement)
-final seededActivity = SeededActivity(); // SeededActivity | 
+final api_instance = AssetsApi();
+final seededAsset = SeededAsset(); // SeededAsset | 
 
 try {
-    final result = api_instance.activitiesCreateNewActivity(transferables, seededActivity);
+    final result = api_instance.assetsCreateNewAsset(seededAsset: seededAsset);
     print(result);
 } catch (e) {
-    print('Exception when calling ActivitiesApi->activitiesCreateNewActivity: $e\n');
+    print('Exception when calling AssetsApi->assetsCreateNewAsset: $e\n');
 }
 
 ```
@@ -60,12 +59,6 @@ All URIs are relative to *http://localhost:3000*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ActivitiesApi* | [**activitiesCreateNewActivity**](doc//ActivitiesApi.md#activitiescreatenewactivity) | **POST** /activities/create | /activities/create [POST]
-*ActivitiesApi* | [**activitiesDeleteSpecificActivity**](doc//ActivitiesApi.md#activitiesdeletespecificactivity) | **POST** /activities/{activity}/delete | /activities/{activity}/delete [POST]
-*ActivitiesApi* | [**activitiesSnapshot**](doc//ActivitiesApi.md#activitiessnapshot) | **GET** /activities | /activities [GET]
-*ActivityApi* | [**activitiesSpecificActivitySnapshot**](doc//ActivityApi.md#activitiesspecificactivitysnapshot) | **GET** /activity/{activity} | /activity/{activity} [GET]
-*ActivityApi* | [**activityIdentifiersSnapshot**](doc//ActivityApi.md#activityidentifierssnapshot) | **GET** /activity/identifiers | /activity/identifiers [GET]
-*ActivityApi* | [**activityUpdate**](doc//ActivityApi.md#activityupdate) | **POST** /activity/update | /activity/update [POST]
 *AllocationApi* | [**allocationSnapshot**](doc//AllocationApi.md#allocationsnapshot) | **GET** /allocation/{allocation} | /allocation/{allocation} [GET]
 *AllocationApi* | [**allocationUpdate**](doc//AllocationApi.md#allocationupdate) | **POST** /allocation/update | /allocation/update [POST]
 *AllocationsApi* | [**allocationsConnectNewCloud**](doc//AllocationsApi.md#allocationsconnectnewcloud) | **POST** /allocations/connect | /allocations/connect [POST]
@@ -136,10 +129,6 @@ Class | Method | HTTP request | Description
 *AssetsApi* | [**assetsStreamIdentifiers**](doc//AssetsApi.md#assetsstreamidentifiers) | **GET** /assets/stream/identifiers | /assets/stream/identifiers [GET]
 *AssetsApi* | [**getAssetsStreamTransferables**](doc//AssetsApi.md#getassetsstreamtransferables) | **GET** /assets/stream/transferables | Your GET endpoint
 *AssetsApi* | [**streamAssets**](doc//AssetsApi.md#streamassets) | **GET** /assets/stream | /assets/stream [GET]
-*Auth0Api* | [**auth0Logout**](doc//Auth0Api.md#auth0logout) | **GET** /v2/logout | https://auth.pieces.services/v2/logout [GET]
-*Auth0Api* | [**authorizeAuth0**](doc//Auth0Api.md#authorizeauth0) | **GET** /authorize | https://auth.pieces.services/authorize [GET]
-*Auth0Api* | [**exchangeForAuth0Token**](doc//Auth0Api.md#exchangeforauth0token) | **POST** /oauth/token | https://auth.pieces.services/oauth/token [POST]
-*Auth0Api* | [**getAuth0UserInfo**](doc//Auth0Api.md#getauth0userinfo) | **GET** /userinfo | https://auth.pieces.services/userinfo [GET]
 *BackupApi* | [**backup**](doc//BackupApi.md#backup) | **POST** /backup | /backup [POST]
 *BackupApi* | [**backupAsset**](doc//BackupApi.md#backupasset) | **POST** /backup/asset | /backup/asset [POST]
 *ClassificationApi* | [**convertGenericClassification**](doc//ClassificationApi.md#convertgenericclassification) | **POST** /classification/generic/convert | Convert Generic Classification
@@ -178,8 +167,6 @@ Class | Method | HTTP request | Description
 *ConversationsApi* | [**conversationsIdentifiersSnapshot**](doc//ConversationsApi.md#conversationsidentifierssnapshot) | **GET** /conversations/identifiers | /conversations/identifiers [GET]
 *ConversationsApi* | [**conversationsSnapshot**](doc//ConversationsApi.md#conversationssnapshot) | **GET** /conversations | /conversations [GET]
 *ConversationsApi* | [**conversationsStreamIdentifiers**](doc//ConversationsApi.md#conversationsstreamidentifiers) | **GET** /conversations/stream/identifiers | /conversations/stream/identifiers [STREAMED]
-*DatabaseApi* | [**databaseExport**](doc//DatabaseApi.md#databaseexport) | **GET** /database/export | Your GET endpoint
-*DatabaseApi* | [**databaseImport**](doc//DatabaseApi.md#databaseimport) | **POST** /database/import | /database/import [POST]
 *DiscoveryApi* | [**discoveryDiscoverAssets**](doc//DiscoveryApi.md#discoverydiscoverassets) | **POST** /discovery/discover/assets | /discovery/discover/assets [POST]
 *DiscoveryApi* | [**discoveryDiscoverAssetsHtml**](doc//DiscoveryApi.md#discoverydiscoverassetshtml) | **POST** /discovery/discover/assets/html | /discovery/discover/assets/html[POST]
 *DiscoveryApi* | [**discoveryDiscoverSensitives**](doc//DiscoveryApi.md#discoverydiscoversensitives) | **POST** /discovery/discover/sensitives | /discovery/discover/sensitives [POST]
@@ -210,11 +197,8 @@ Class | Method | HTTP request | Description
 *LinkifyApi* | [**linkify**](doc//LinkifyApi.md#linkify) | **POST** /linkify | /linkify [POST]
 *LinkifyApi* | [**linkifyMultiple**](doc//LinkifyApi.md#linkifymultiple) | **POST** /linkify/multiple | /linkify/multiple [POST]
 *LinkifyApi* | [**linkifyShareRevoke**](doc//LinkifyApi.md#linkifysharerevoke) | **POST** /linkify/{share}/revoke | [POST} /linkify/{share}/revoke
-*MacOSApi* | [**assetsCreateNewAssetFromMacos**](doc//MacOSApi.md#assetscreatenewassetfrommacos) | **POST** /macos/assets/create | /macos/assets/create [Post]
 *MachineLearningApi* | [**personificationTechnicalLanguageGeneration**](doc//MachineLearningApi.md#personificationtechnicallanguagegeneration) | **POST** /machine_learning/text/technical_language/generators/personification | /machine_learning/text/technical_language/generators/personification [GET]
 *MachineLearningApi* | [**segmentTechnicalLanguage**](doc//MachineLearningApi.md#segmenttechnicallanguage) | **POST** /machine_learning/text/technical_language/parsers/segmentation | /machine_learning/text/technical_language/parsers/segmentation [POST]
-*MetricsApi* | [**getMetricsFormats**](doc//MetricsApi.md#getmetricsformats) | **GET** /metrics/formats | /metrics/formats [GET]
-*MetricsApi* | [**metricsFormatsOrdered**](doc//MetricsApi.md#metricsformatsordered) | **GET** /metrics/formats/ordered | /metrics/formats/ordered [GET]
 *ModelApi* | [**modelSpecificModelDownload**](doc//ModelApi.md#modelspecificmodeldownload) | **POST** /model/{model}/download | /model/{model}/download [POST]
 *ModelApi* | [**modelSpecificModelDownloadCancel**](doc//ModelApi.md#modelspecificmodeldownloadcancel) | **POST** /model/{model}/download/cancel | /model/{model}/download/cancel [POST]
 *ModelApi* | [**modelSpecificModelDownloadProgress**](doc//ModelApi.md#modelspecificmodeldownloadprogress) | **GET** /model/{model}/download/progress | /model/{model}/download/progress [WS]
@@ -238,11 +222,6 @@ Class | Method | HTTP request | Description
 *OSApi* | [**signIntoOS**](doc//OSApi.md#signintoos) | **POST** /os/sign_in | 
 *OSApi* | [**signOutOfOS**](doc//OSApi.md#signoutofos) | **POST** /os/sign_out | /os/sign_out [POST]
 *OpenAIApi* | [**openAiModelsList**](doc//OpenAIApi.md#openaimodelslist) | **POST** /open_ai/models/list | /open_ai/models/list [POST]
-*PKCEApi* | [**clearPKCE**](doc//PKCEApi.md#clearpkce) | **POST** /pkce/clear | /pkce/clear [POST]
-*PKCEApi* | [**generateCode**](doc//PKCEApi.md#generatecode) | **POST** /pkce/code | /pkce/code [POST]
-*PKCEApi* | [**generateToken**](doc//PKCEApi.md#generatetoken) | **POST** /pkce/token | /pkce/token [POST]
-*PKCEApi* | [**getChallenge**](doc//PKCEApi.md#getchallenge) | **GET** /pkce/challenge | Your GET endpoint
-*PKCEApi* | [**respondWithCode**](doc//PKCEApi.md#respondwithcode) | **POST** /pkce/response/code | /pkce/response/code [POST]
 *PersonApi* | [**personScoresIncrement**](doc//PersonApi.md#personscoresincrement) | **POST** /person/{person}/scores/increment | '/person/{person}/scores/increment' [POST]
 *PersonApi* | [**personSnapshot**](doc//PersonApi.md#personsnapshot) | **GET** /person/{person} | /person/{person} [GET]
 *PersonApi* | [**updatePerson**](doc//PersonApi.md#updateperson) | **POST** /person/update | /person/update [POST]
@@ -286,7 +265,6 @@ Class | Method | HTTP request | Description
 *TagsApi* | [**tagsDeleteSpecificTag**](doc//TagsApi.md#tagsdeletespecifictag) | **POST** /tags/{tag}/delete | /tags/{tag}/delete [POST]
 *TagsApi* | [**tagsExists**](doc//TagsApi.md#tagsexists) | **POST** /tags/exists | /tags/exists [POST]
 *TagsApi* | [**tagsSnapshot**](doc//TagsApi.md#tagssnapshot) | **GET** /tags | /tags [GET]
-*UltraSuiteApi* | [**assetsCreateUltraSuiteAsset**](doc//UltraSuiteApi.md#assetscreateultrasuiteasset) | **POST** /ultra_suite/assets/create | /ultra_suite/assets/create [POST]
 *UserApi* | [**clearUser**](doc//UserApi.md#clearuser) | **POST** /user/clear | /user/clear
 *UserApi* | [**selectUser**](doc//UserApi.md#selectuser) | **POST** /user/select | /user/select [POST]
 *UserApi* | [**streamUser**](doc//UserApi.md#streamuser) | **GET** /user/stream | /user/stream [GET]

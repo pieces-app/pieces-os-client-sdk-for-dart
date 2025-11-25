@@ -16,64 +16,6 @@ class UsersApi {
 
   final ApiClient apiClient;
 
-  /// /users/authenticate/from_token [POST]
-  ///
-  /// Creates a User From a oAuth Token
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [OAuthToken] oAuthToken:
-  ///   
-  Future<Response> authenticateFromOauthTokenWithHttpInfo({ OAuthToken? oAuthToken, }) async {
-    // ignore: prefer_const_declarations
-    final path = r'/users/authenticate/from_token';
-
-    // ignore: prefer_final_locals
-    Object? postBody = oAuthToken;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>['application/json'];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// /users/authenticate/from_token [POST]
-  ///
-  /// Creates a User From a oAuth Token
-  ///
-  /// Parameters:
-  ///
-  /// * [OAuthToken] oAuthToken:
-  ///   
-  Future<UserProfile?> authenticateFromOauthToken({ OAuthToken? oAuthToken, }) async {
-    final response = await authenticateFromOauthTokenWithHttpInfo( oAuthToken: oAuthToken, );
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserProfile',) as UserProfile;
-    
-    }
-    return null;
-  }
-
   /// /users/{user}/disconnect [POST]
   ///
   /// Locally Removing a user for the purpose of Signing Out
