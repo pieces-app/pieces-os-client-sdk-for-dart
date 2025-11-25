@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 /model/{model}/load [POST]
 
-Loads a previously downloaded model into memory. It differs from downloading, as downloading involves transferring the entire model to your machine, while loading simply loads the model into memory.
+Loads a model that has already been downloaded to your machine into memory so it can be used. This differs from downloading, which transfers the model files from the server to your local disk.
 
 ### Example
 ```dart
