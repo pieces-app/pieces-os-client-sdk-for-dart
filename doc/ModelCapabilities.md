@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **images** | **bool** | True if the model can leverage images and graphical material files in it's context window | [optional] 
 **schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
 **temporal** | **bool** | True if model is able to support live context and any other temporally powered RAG Capabilities i.e. \"What did I do yesterday?\" | [optional] 
-**videos** | **bool** | True if the model can leverage videos files in it's context window | [optional] 
+**videos** | **bool** | True if the model can leverage videos files in its context window | [optional] 
 **websites** | **bool** | True if the model can leverage websites in its context window. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
