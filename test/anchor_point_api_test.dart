@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for AnchorPointApi
@@ -6,6 +6,23 @@ void main() {
   // final instance = AnchorPointApi();
 
   group('[Localhost] Tests for AnchorPointApi', () {
+
+    // '/anchor_point/{anchor_point}/scores/increment' [POST]
+    //
+    // This will take in a SeededScoreIncrement and will increment the material relative to the incoming body.
+    //
+    test('Test /anchorPointScoresIncrement Endpoint', () async {
+    Future anchorPointScoresIncrement( String anchorPoint, { SeededScoreIncrement? seededScoreIncrement }) async {
+             returnable = .fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        anchorPointScoresIncrement(anchorPoint ,   seededScoreIncrement: seededScoreIncrement  );
+    });
 
     // /anchor_point/{anchor_point} [GET]
     //

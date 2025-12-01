@@ -1,4 +1,4 @@
-# core_openapi.model.Role
+# pieces_os_client.model.Role
 
 ## Load the model package
 ```dart

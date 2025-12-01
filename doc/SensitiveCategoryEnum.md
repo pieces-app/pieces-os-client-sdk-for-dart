@@ -1,4 +1,4 @@
-# core_openapi.model.SensitiveCategoryEnum
+# pieces_os_client.model.SensitiveCategoryEnum
 
 ## Load the model package
 ```dart

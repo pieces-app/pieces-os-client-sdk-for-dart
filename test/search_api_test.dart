@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for SearchApi
@@ -7,11 +7,13 @@ void main() {
 
   group('[Localhost] Tests for SearchApi', () {
 
-    // /search/fts [GET]
+    // /search/full_text [GET]
     //
-    test('Test /searchFts Endpoint', () async {
-    Future searchFts() async {
-             returnable = .fromJson();
+    // This will run FTS for exact search, and will NOT run fuzzy matching. This will only search the content within the 
+    //
+    test('Test /fullTextSearch Endpoint', () async {
+    Future<SearchedAssets ? > fullTextSearch({ String? query, bool? pseudo }) async {
+            SearchedAssets?  returnable = SearchedAssets.fromJson();
             print(returnable?.toJson());
             return returnable;
         }
@@ -19,16 +21,16 @@ void main() {
         // Helpful Variables here for use with responses below
         // TODO - Need to check if it is nullable or not
 
-        searchFts();
+        fullTextSearch(  query: query ,  pseudo: pseudo  );
     });
 
-    // /search/ncs [GET]
+    // /search/neural_code [GET]
     //
     // This will run ncs on your assets. This will simply return FlattenedAssets, but will just be the assetuuids that match.
     //
-    test('Test /searchNcs Endpoint', () async {
-    Future searchNcs() async {
-             returnable = .fromJson();
+    test('Test /neuralCodeSearch Endpoint', () async {
+    Future<SearchedAssets ? > neuralCodeSearch({ String? query, bool? pseudo }) async {
+            SearchedAssets?  returnable = SearchedAssets.fromJson();
             print(returnable?.toJson());
             return returnable;
         }
@@ -36,16 +38,16 @@ void main() {
         // Helpful Variables here for use with responses below
         // TODO - Need to check if it is nullable or not
 
-        searchNcs();
+        neuralCodeSearch(  query: query ,  pseudo: pseudo  );
     });
 
     // /search/tag_based [POST]
     //
-    // This will run ncs on your assets. This will simply return FlattenedAssets, but will just be the assetuuids that match.
+    // This will run our tag based search, and return the assets that best match your passed in tags. This will simply return FlattenedAssets, but will just be the assetuuids that match.
     //
-    test('Test /searchTagBased Endpoint', () async {
-    Future searchTagBased() async {
-             returnable = .fromJson();
+    test('Test /tagBasedSearch Endpoint', () async {
+    Future<SearchedAssets ? > tagBasedSearch({ bool? pseudo, SeededAssetTags? seededAssetTags }) async {
+            SearchedAssets?  returnable = SearchedAssets.fromJson();
             print(returnable?.toJson());
             return returnable;
         }
@@ -53,7 +55,7 @@ void main() {
         // Helpful Variables here for use with responses below
         // TODO - Need to check if it is nullable or not
 
-        searchTagBased();
+        tagBasedSearch(  pseudo: pseudo ,  seededAssetTags: seededAssetTags  );
     });
   });
 }

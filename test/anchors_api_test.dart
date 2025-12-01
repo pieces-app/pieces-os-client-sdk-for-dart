@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for AnchorsApi
@@ -58,13 +58,13 @@ void main() {
         anchorsSnapshot(  transferables: transferables  );
     });
 
-    // /anchors/{anchor}/assets/delete/{asset} [POST]
+    // /anchors/stream/identifiers [WS]
     //
-    // This will update both the asset and the anchor reference, that will remove a anchor from an asset(only the references).  This will NOT remove the anchor. This will NOT remove the asset. This will only update the references so that they are disconnected from one another.
+    // Provides a WebSocket connection that emits changes to your anchor identifiers (UUIDs).
     //
-    test('Test /removeAnchorReferenceFromAsset Endpoint', () async {
-    Future removeAnchorReferenceFromAsset( String anchor,  String asset) async {
-             returnable = .fromJson();
+    test('Test /anchorsStreamIdentifiers Endpoint', () async {
+    Future<StreamedIdentifiers ? > anchorsStreamIdentifiers() async {
+            StreamedIdentifiers?  returnable = StreamedIdentifiers.fromJson();
             print(returnable?.toJson());
             return returnable;
         }
@@ -72,7 +72,24 @@ void main() {
         // Helpful Variables here for use with responses below
         // TODO - Need to check if it is nullable or not
 
-        removeAnchorReferenceFromAsset(anchor , asset );
+        anchorsStreamIdentifiers();
+    });
+
+    // /anchors/search [POST]
+    //
+    // This will search your anchors for a specific anchor  note: we will search all the anchor points
+    //
+    test('Test /searchAnchors Endpoint', () async {
+    Future<SearchedAnchors ? > searchAnchors({ bool? transferables, SearchInput? searchInput }) async {
+            SearchedAnchors?  returnable = SearchedAnchors.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        searchAnchors(  transferables: transferables ,  searchInput: searchInput  );
     });
   });
 }

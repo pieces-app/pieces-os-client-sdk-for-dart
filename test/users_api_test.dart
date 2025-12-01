@@ -1,58 +1,78 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for UsersApi
 void main() {
   // final instance = UsersApi();
 
-  group('tests for UsersApi', () {
+  group('[Localhost] Tests for UsersApi', () {
+
     // /users/authenticate/from_token [POST]
     //
     // Creates a User From a oAuth Token
     //
-    //Future<UserProfile> authenticateFromOauthToken({ OAuthToken oAuthToken }) async
-    test('test authenticateFromOauthToken', () async {
-      // TODO
+    test('Test /authenticateFromOauthToken Endpoint', () async {
+    Future<UserProfile ? > authenticateFromOauthToken({ OAuthToken? oAuthToken }) async {
+            UserProfile?  returnable = UserProfile.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        authenticateFromOauthToken(  oAuthToken: oAuthToken  );
     });
 
     // /users/{user}/disconnect [POST]
     //
     // Locally Removing a user for the purpose of Signing Out
     //
-    //Future<Users> usersDisconnectUser(String user) async
-    test('test usersDisconnectUser', () async {
-      // TODO
+    test('Test /usersDisconnectUser Endpoint', () async {
+    Future<Users ? > usersDisconnectUser( String user) async {
+            Users?  returnable = Users.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        usersDisconnectUser(user );
     });
 
     // /users [GET]
     //
     // this will return a snapshot of all of the users that are in the users database. TODO might want to make this internal.
     //
-    //Future<Users> usersSnapshot() async
-    test('test usersSnapshot', () async {
-      // TODO
+    test('Test /usersSnapshot Endpoint', () async {
+    Future<Users ? > usersSnapshot() async {
+            Users?  returnable = Users.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        usersSnapshot();
     });
 
     // /users/{user} [GET] Scoped to Users
     //
     // This enables the client to get the current user.  This endpoint will return a UserPRofile or will throw an error since you are sending user uid.
     //
-    //Future<UserProfile> usersSpecificUserSnapshot(String user) async
-    test('test usersSpecificUserSnapshot', () async {
-      // TODO
-    });
+    test('Test /usersSpecificUserSnapshot Endpoint', () async {
+    Future<UserProfile ? > usersSpecificUserSnapshot( String user) async {
+            UserProfile?  returnable = UserProfile.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        usersSpecificUserSnapshot(user );
+    });
   });
 }

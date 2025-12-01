@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for QGPTApi
@@ -7,9 +7,77 @@ void main() {
 
   group('[Localhost] Tests for QGPTApi', () {
 
+    // /qgpt/hints [POST]
+    //
+    // Generates suggested questions that users can ask. It accepts the answer displayed to the user, relevant code snippets used for the answer, and the previous query as inputs. In return, it provides a list of questions that can be presented to the user.
+    //
+    test('Test /hints Endpoint', () async {
+    Future<QGPTQuestionOutput ? > hints({ QGPTHintsInput? qGPTHintsInput }) async {
+            QGPTQuestionOutput?  returnable = QGPTQuestionOutput.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        hints(  qGPTHintsInput: qGPTHintsInput  );
+    });
+
+    // /qgpt/persons/related [POST]
+    //
+    // Utilize this endpoint for Who Support, identifying individuals who can provide assistance when given context such as a Seed or a QGPT Conversation, for example.  Input:   - (optional) seed: Seed - Only supports fragments for now.   - (optional) conversation: QGPTConversation.  Output:   - persons: Persons
+    //
+    test('Test /personsRelated Endpoint', () async {
+    Future<QGPTPersonsRelatedOutput ? > personsRelated({ bool? transferables, QGPTPersonsRelatedInput? qGPTPersonsRelatedInput }) async {
+            QGPTPersonsRelatedOutput?  returnable = QGPTPersonsRelatedOutput.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        personsRelated(  transferables: transferables ,  qGPTPersonsRelatedInput: qGPTPersonsRelatedInput  );
+    });
+
+    // /qgpt/behavior_specific_retrieval/activations [GET]
+    //
+    // This will provide a running count of the number of deep study activations for the user. for the QGPT flow. 
+    //
+    test('Test /qgptBehaviorSpecificRetrievalActivations Endpoint', () async {
+    Future<QGPTBehaviorSpecificRetrievalActivationsOutput ? > qgptBehaviorSpecificRetrievalActivations() async {
+            QGPTBehaviorSpecificRetrievalActivationsOutput?  returnable = QGPTBehaviorSpecificRetrievalActivationsOutput.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        qgptBehaviorSpecificRetrievalActivations();
+    });
+
+    // /qgpt/stream [WS]
+    //
+    // Provides a WebSocket connection that streams inputs to the qGPT model. It handles relevance and questions, but will throw an error if both are passed in simultaneously. However, if you wish to utilize both question and relevance, you can obtain stream results by passing relevance with the option 'question:true'. It is designed to manage multiple conversations.
+    //
+    test('Test /qgptStream Endpoint', () async {
+    Future<QGPTStreamOutput ? > qgptStream({ QGPTStreamInput? qGPTStreamInput }) async {
+            QGPTStreamOutput?  returnable = QGPTStreamOutput.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        qgptStream(  qGPTStreamInput: qGPTStreamInput  );
+    });
+
     // /qgpt/question [POST]
     //
-    // This is going to accept, relevant code snippets or uuids returned from the /qgpt/relevance endpoint, as well as a question query and we will return possible results to answer your question.  NOTE: - The relevant seeds, must require either an id, that was used within the /qgpt/relevance endpoint or a seed with afragment/string. or else we will throw and error.  This endpoint will take your query and your relevant snippets and use them to answer your question, returning multiple answers to your question all of which with scores.
+    // Processes relevant code snippets or UUIDs returned from the /qgpt/relevance endpoint, along with a question query, to provide possible answers.  Note:   - Relevant seeds must either include an ID used within the /qgpt/relevance endpoint or a seed with a fragment/string; otherwise, an error will be thrown.   - This endpoint utilizes your query and relevant snippets to generate multiple answers, each accompanied by a score.
     //
     test('Test /question Endpoint', () async {
     Future<QGPTQuestionOutput ? > question({ QGPTQuestionInput? qGPTQuestionInput }) async {
@@ -39,6 +107,23 @@ void main() {
         // TODO - Need to check if it is nullable or not
 
         relevance(  qGPTRelevanceInput: qGPTRelevanceInput  );
+    });
+
+    // /qgpt/reprompt [POST]
+    //
+    // This will take in a followup question and the history of the conversation, and emit your a prompt or query that you can pass to the /qgpt/relevance and then the /qgpt/question endpoint to get your next answer.
+    //
+    test('Test /reprompt Endpoint', () async {
+    Future<QGPTRepromptOutput ? > reprompt({ QGPTRepromptInput? qGPTRepromptInput }) async {
+            QGPTRepromptOutput?  returnable = QGPTRepromptOutput.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        reprompt(  qGPTRepromptInput: qGPTRepromptInput  );
     });
   });
 }

@@ -1,49 +1,112 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for ModelsApi
 void main() {
   // final instance = ModelsApi();
 
-  group('tests for ModelsApi', () {
+  group('[Localhost] Tests for ModelsApi', () {
+
     // /models/create [POST]
     //
-    // 
+    // Creates a machine learning model. By default, all models created through this endpoint will have the 'custom' attribute set to true. Additionally, the endpoint ensures that no duplicate models exist before creating a new one.
     //
-    //Future<Model> modelsCreateNewModel({ SeededModel seededModel }) async
-    test('test modelsCreateNewModel', () async {
-      // TODO
+    test('Test /modelsCreateNewModel Endpoint', () async {
+    Future<Model ? > modelsCreateNewModel({ SeededModel? seededModel }) async {
+            Model?  returnable = Model.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        modelsCreateNewModel(  seededModel: seededModel  );
     });
 
     // /models/{model}/delete [POST]
     //
-    // 
+    // Deletes a specific model. It is exclusively available for custom models with the 'custom: true' attribute.
     //
-    //Future modelsDeleteSpecificModel(String model) async
-    test('test modelsDeleteSpecificModel', () async {
-      // TODO
+    test('Test /modelsDeleteSpecificModel Endpoint', () async {
+    Future modelsDeleteSpecificModel( String model) async {
+             returnable = .fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        modelsDeleteSpecificModel(model );
+    });
+
+    // /models/{model}/delete/cache [POST]
+    //
+    // Deletes the data associated with a specific model, such as assets or libraries downloaded specifically for this model.   Note: This functionality is currently only available for LLM models.
+    //
+    test('Test /modelsDeleteSpecificModelCache Endpoint', () async {
+    Future<ModelDeleteCacheOutput ? > modelsDeleteSpecificModelCache( String model, { ModelDeleteCacheInput? modelDeleteCacheInput }) async {
+            ModelDeleteCacheOutput?  returnable = ModelDeleteCacheOutput.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        modelsDeleteSpecificModelCache(model ,   modelDeleteCacheInput: modelDeleteCacheInput  );
     });
 
     // /models [GET]
     //
     // This will get a snapshot of all of your models.
     //
-    //Future<Models> modelsSnapshot() async
-    test('test modelsSnapshot', () async {
-      // TODO
+    test('Test /modelsSnapshot Endpoint', () async {
+    Future<Models ? > modelsSnapshot() async {
+            Models?  returnable = Models.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        modelsSnapshot();
     });
 
+    // /models/stream/identifiers [WS]
+    //
+    // Provides a WebSocket connection that emits changes to your model identifiers (UUIDs).
+    //
+    test('Test /modelsStreamIdentifiers Endpoint', () async {
+    Future<StreamedIdentifiers ? > modelsStreamIdentifiers() async {
+            StreamedIdentifiers?  returnable = StreamedIdentifiers.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        modelsStreamIdentifiers();
+    });
+
+    // /models/unload [POST]
+    //
+    // Unloads all available machine learning models that are unloadable.
+    //
+    test('Test /unloadModels Endpoint', () async {
+    Future unloadModels() async {
+             returnable = .fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        unloadModels();
+    });
   });
 }

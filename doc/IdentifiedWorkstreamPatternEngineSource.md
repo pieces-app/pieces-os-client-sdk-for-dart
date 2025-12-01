@@ -1,0 +1,31 @@
+# pieces_os_client.model.IdentifiedWorkstreamPatternEngineSource
+
+## Load the model package
+```dart
+import 'package:pieces_os_client/api.dart';
+```
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**accessibility** | [**WorkstreamPatternEngineSourceSupportedAccessibility**](WorkstreamPatternEngineSourceSupportedAccessibility.md) |  | [optional] 
+**anchors** | [**FlattenedAnchors**](FlattenedAnchors.md) |  | [optional] 
+**conversations** | [**FlattenedConversations**](FlattenedConversations.md) |  | [optional] 
+**created** | [**GroupedTimestamp**](GroupedTimestamp.md) |  | 
+**filter** | **bool** | This will determine if we want to filter this specific source | [optional] 
+**id** | **String** |  | 
+**messages** | [**FlattenedConversationMessages**](FlattenedConversationMessages.md) |  | [optional] 
+**persons** | [**FlattenedPersons**](FlattenedPersons.md) |  | [optional] 
+**raw** | [**WorkstreamPatternEngineSource**](WorkstreamPatternEngineSource.md) |  | 
+**readable** | **String** | This is the name of the source(default original data) this is NOT used for matching just for readability | 
+**schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
+**score** | [**Score**](Score.md) |  | [optional] 
+**summaries** | [**FlattenedWorkstreamSummaries**](FlattenedWorkstreamSummaries.md) |  | [optional] 
+**updated** | [**GroupedTimestamp**](GroupedTimestamp.md) |  | 
+**websites** | [**FlattenedWebsites**](FlattenedWebsites.md) |  | [optional] 
+**workstreamPatternEngineSourcesVector** | **List<double>** | This is the embedding for the wpeSource. (NEEDs to collection.vector) and specific here because we can only index on a single name. NOTE: this is the vector index that corresponds to the couchbase lite index. | [optional] [default to const []]
+**workstreamEvents** | [**FlattenedWorkstreamEvents**](FlattenedWorkstreamEvents.md) |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

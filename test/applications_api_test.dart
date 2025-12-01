@@ -1,112 +1,146 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for ApplicationsApi
 void main() {
   // final instance = ApplicationsApi();
 
-  group('tests for ApplicationsApi', () {
+  group('[Localhost] Tests for ApplicationsApi', () {
+
+    // /applications/update/capabilities [POST]
+    //
+    // This will bulk update all our applications to have a set of specific capabilities(depending on the input)
+    //
+    test('Test /applicationsBulkUpdateApplicationCapabilities Endpoint', () async {
+    Future<Applications ? > applicationsBulkUpdateApplicationCapabilities({ ApplicationsBulkUpdateCapabilitiesInput? applicationsBulkUpdateCapabilitiesInput }) async {
+            Applications?  returnable = Applications.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        applicationsBulkUpdateApplicationCapabilities(  applicationsBulkUpdateCapabilitiesInput: applicationsBulkUpdateCapabilitiesInput  );
+    });
+
+    // /applications/external/related [GET]
+    //
+    // Retrieves a list of external applications installed on the user's machine that have potential integrations with Pieces, including those not yet installed by the user and those anticipated to be supported in the future.
+    //
+    test('Test /applicationsExternalRelated Endpoint', () async {
+    Future<DetectedExternalApplications ? > applicationsExternalRelated() async {
+            DetectedExternalApplications?  returnable = DetectedExternalApplications.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        applicationsExternalRelated();
+    });
+
+    // /applications/external [GET]
+    //
+    // Provides a snapshot of all external applications detected on the user's machine, such as Microsoft Teams classic, Google Chat, Obsidian, etc.
+    //
+    test('Test /applicationsExternalSnapshot Endpoint', () async {
+    Future<DetectedExternalApplications ? > applicationsExternalSnapshot() async {
+            DetectedExternalApplications?  returnable = DetectedExternalApplications.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        applicationsExternalSnapshot();
+    });
+
     // /applications/register [POST]
     //
-    // This will register a connected applicaiton.
+    // Registers a new application within the Pieces ecosystem.
     //
-    //Future<Application> applicationsRegister({ Application application }) async
-    test('test applicationsRegister', () async {
-      // TODO
+    test('Test /applicationsRegister Endpoint', () async {
+    Future<Application ? > applicationsRegister({ Application? application }) async {
+            Application?  returnable = Application.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        applicationsRegister(  application: application  );
     });
 
     // /applications/session/close [POST]
     //
-    // This will close your opened session! Going to want to accept a session uuid here.
+    // Closes an active session, identified by a session UUID, marking the end of the user's current interaction with the Pieces application.
     //
-    //Future<Session> applicationsSessionClose({ String body }) async
-    test('test applicationsSessionClose', () async {
-      // TODO
+    test('Test /applicationsSessionClose Endpoint', () async {
+    Future<Session ? > applicationsSessionClose({ String? body }) async {
+            Session?  returnable = Session.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        applicationsSessionClose(  body: body  );
     });
 
     // /applications/session/open [POST]
     //
-    // This will open a new session. A session is when someone is using the pieces application.
+    // Initiates a new session, marking the start of a user's interaction with the Pieces application.
     //
-    //Future<Session> applicationsSessionOpen() async
-    test('test applicationsSessionOpen', () async {
-      // TODO
-    });
+    test('Test /applicationsSessionOpen Endpoint', () async {
+    Future<Session ? > applicationsSessionOpen() async {
+            Session?  returnable = Session.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
-    // /applications/sessions/{session} [GET]
-    //
-    // This is an endpoint to get a snapshot of a specific session.
-    //
-    //Future<Session> applicationsSessionSnapshot(String session) async
-    test('test applicationsSessionSnapshot', () async {
-      // TODO
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        applicationsSessionOpen();
     });
 
     // /applications [GET]
     //
-    // 
+    // Retrieves a comprehensive overview of all applications tracked by the Pieces system, including status, version, and engagement metrics.
     //
-    //Future<Applications> applicationsSnapshot() async
-    test('test applicationsSnapshot', () async {
-      // TODO
+    test('Test /applicationsSnapshot Endpoint', () async {
+    Future<Applications ? > applicationsSnapshot() async {
+            Applications?  returnable = Applications.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        applicationsSnapshot();
     });
 
-    // /applications/{application} [GET]
+    // /applications/stream/identifiers [WS]
     //
-    // This will retrieve snapshot of a single application.
+    // Provides a WebSocket connection that emits changes to your application identifiers (UUIDs).
     //
-    //Future<Application> applicationsSpecificApplicationSnapshot(String application) async
-    test('test applicationsSpecificApplicationSnapshot', () async {
-      // TODO
-    });
+    test('Test /applicationsStreamIdentifiers Endpoint', () async {
+    Future<StreamedIdentifiers ? > applicationsStreamIdentifiers() async {
+            StreamedIdentifiers?  returnable = StreamedIdentifiers.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
 
-    // /applications/usage/engagement/interaction [POST] Scoped to Apps
-    //
-    // This is an analytics endpoint that will enable us to know when a user engages something via an interaction(ie click/tap).
-    //
-    //Future<TrackedInteractionEvent> applicationsUsageEngagementInteraction({ SeededTrackedInteractionEvent seededTrackedInteractionEvent }) async
-    test('test applicationsUsageEngagementInteraction', () async {
-      // TODO
-    });
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
 
-    // /applications/usage/engagement/keyboard [POST] Scoped to Apps
-    //
-    // This is an analytics endpoint that will enable us to know when a user uses a keyboard short cut for any sort of engagement.
-    //
-    //Future<TrackedKeyboardEvent> applicationsUsageEngagementKeyboard({ SeededTrackedKeyboardEvent seededTrackedKeyboardEvent }) async
-    test('test applicationsUsageEngagementKeyboard', () async {
-      // TODO
+        applicationsStreamIdentifiers();
     });
-
-    // /applications/usage/installation [POST]
-    //
-    // This is an analytics endpoint that will enable us to know when a user has installed a version of Pieces
-    //
-    //Future applicationsUsageInstallation({ TrackedApplicationInstall trackedApplicationInstall }) async
-    test('test applicationsUsageInstallation', () async {
-      // TODO
-    });
-
-    // /applications/usage/updated [POST]
-    //
-    // This is an endpoint to determine when an application has been updated 
-    //
-    //Future postApplicationsUsageUpdated({ TrackedApplicationUpdate trackedApplicationUpdate }) async
-    test('test postApplicationsUsageUpdated', () async {
-      // TODO
-    });
-
   });
 }

@@ -1,4 +1,4 @@
-# core_openapi.model.PrivacyEnum
+# pieces_os_client.model.PrivacyEnum
 
 ## Load the model package
 ```dart

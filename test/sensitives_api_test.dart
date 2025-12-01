@@ -1,49 +1,95 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:core_openapi/api.dart';
-<!--pubLibrary-->
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
-
 
 /// tests for SensitivesApi
 void main() {
   // final instance = SensitivesApi();
 
-  group('tests for SensitivesApi', () {
+  group('[Localhost] Tests for SensitivesApi', () {
+
+    // /sensitives/search [POST]
+    //
+    // This will search your sensitives for a specific sensitive  note: we will search the value of the sensitive
+    //
+    test('Test /searchSensitives Endpoint', () async {
+    Future<SearchedSensitives ? > searchSensitives({ bool? transferables, SearchInput? searchInput }) async {
+            SearchedSensitives?  returnable = SearchedSensitives.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        searchSensitives(  transferables: transferables ,  searchInput: searchInput  );
+    });
+
     // /sensitives/create [POST]
     //
     // This will create a new sensitive model.
     //
-    //Future<Sensitive> sensitivesCreateNewSensitive({ SeededSensitive seededSensitive }) async
-    test('test sensitivesCreateNewSensitive', () async {
-      // TODO
+    test('Test /sensitivesCreateNewSensitive Endpoint', () async {
+    Future<Sensitive ? > sensitivesCreateNewSensitive({ SeededSensitive? seededSensitive }) async {
+            Sensitive?  returnable = Sensitive.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        sensitivesCreateNewSensitive(  seededSensitive: seededSensitive  );
     });
 
     // /sensitives/{sensitive}/delete [POST]
     //
-    // This will delete a sensitive based on the sensative uuid.
+    // This will delete a sensitive based on the sensitive uuid.
     //
-    //Future sensitivesDeleteSensitive(String sensitive) async
-    test('test sensitivesDeleteSensitive', () async {
-      // TODO
+    test('Test /sensitivesDeleteSensitive Endpoint', () async {
+    Future sensitivesDeleteSensitive( String sensitive) async {
+             returnable = .fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        sensitivesDeleteSensitive(sensitive );
     });
 
     // /sensitives [GET]
     //
     // This will get a snapshot of all of the sensitives.
     //
-    //Future<Sensitives> sensitivesSnapshot() async
-    test('test sensitivesSnapshot', () async {
-      // TODO
+    test('Test /sensitivesSnapshot Endpoint', () async {
+    Future<Sensitives ? > sensitivesSnapshot() async {
+            Sensitives?  returnable = Sensitives.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        sensitivesSnapshot();
     });
 
+    // /sensitives/stream/identifiers [WS]
+    //
+    // Provides a WebSocket connection that emits changes to your sensitive identifiers (UUIDs).
+    //
+    test('Test /sensitivesStreamIdentifiers Endpoint', () async {
+    Future<StreamedIdentifiers ? > sensitivesStreamIdentifiers() async {
+            StreamedIdentifiers?  returnable = StreamedIdentifiers.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        sensitivesStreamIdentifiers();
+    });
   });
 }

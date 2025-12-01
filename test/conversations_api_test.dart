@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for ConversationsApi
@@ -7,13 +7,13 @@ void main() {
 
   group('[Localhost] Tests for ConversationsApi', () {
 
-    // /conversations/{conversation}/anchors/associate/{anchor} [POST]
+    // /conversations/create/from_asset/{asset} [POST]
     //
-    // This will update both the anchor and the conversation.  and associate the 2 together
+    // Creates a conversation based on an asset. It initiates a conversation and generates an initial message that includes a summary of the asset used as contextual grounding.
     //
-    test('Test /conversationAssociateAnchor Endpoint', () async {
-    Future conversationAssociateAnchor( String conversation,  String anchor) async {
-             returnable = .fromJson();
+    test('Test /conversationsCreateFromAsset Endpoint', () async {
+    Future<ConversationsCreateFromAssetOutput ? > conversationsCreateFromAsset( String asset) async {
+            ConversationsCreateFromAssetOutput?  returnable = ConversationsCreateFromAssetOutput.fromJson();
             print(returnable?.toJson());
             return returnable;
         }
@@ -21,16 +21,16 @@ void main() {
         // Helpful Variables here for use with responses below
         // TODO - Need to check if it is nullable or not
 
-        conversationAssociateAnchor(conversation , anchor );
+        conversationsCreateFromAsset(asset );
     });
 
-    // /conversations/{conversation}/assets/associate/{asset} [POST]
+    // /conversations/create/from_workstream_summary/{workstream_summary} [POST]
     //
-    // This will update both the asset and the conversation.  and associate the 2 together
+    // Creates a conversation based on an workstream_summary. It initiates a conversation and generates an initial message that includes a summary of the workstream_summary used as contextual grounding.
     //
-    test('Test /conversationAssociateAsset Endpoint', () async {
-    Future conversationAssociateAsset( String conversation,  String asset) async {
-             returnable = .fromJson();
+    test('Test /conversationsCreateFromWorkstreamSummary Endpoint', () async {
+    Future<ConversationsCreateFromWorkstreamSummaryOutput ? > conversationsCreateFromWorkstreamSummary( String workstreamSummary) async {
+            ConversationsCreateFromWorkstreamSummaryOutput?  returnable = ConversationsCreateFromWorkstreamSummaryOutput.fromJson();
             print(returnable?.toJson());
             return returnable;
         }
@@ -38,15 +38,15 @@ void main() {
         // Helpful Variables here for use with responses below
         // TODO - Need to check if it is nullable or not
 
-        conversationAssociateAsset(conversation , asset );
+        conversationsCreateFromWorkstreamSummary(workstreamSummary );
     });
 
     // /conversations/create [POST]
     //
-    // This will create a specific conversation.
+    // Creates a specific conversation.
     //
     test('Test /conversationsCreateSpecificConversation Endpoint', () async {
-    Future<Conversation ? > conversationsCreateSpecificConversation({ SeededConversation? seededConversation }) async {
+    Future<Conversation ? > conversationsCreateSpecificConversation({ bool? transferables, SeededConversation? seededConversation }) async {
             Conversation?  returnable = Conversation.fromJson();
             print(returnable?.toJson());
             return returnable;
@@ -55,12 +55,12 @@ void main() {
         // Helpful Variables here for use with responses below
         // TODO - Need to check if it is nullable or not
 
-        conversationsCreateSpecificConversation(  seededConversation: seededConversation  );
+        conversationsCreateSpecificConversation(  transferables: transferables ,  seededConversation: seededConversation  );
     });
 
     // /conversations/{conversation}/delete [POST]
     //
-    // This will delete a specific Conversation.
+    // Deletes a specific conversation.
     //
     test('Test /conversationsDeleteSpecificConversation Endpoint', () async {
     Future conversationsDeleteSpecificConversation( String conversation) async {
@@ -75,12 +75,29 @@ void main() {
         conversationsDeleteSpecificConversation(conversation );
     });
 
+    // /conversations/identifiers [GET]
+    //
+    // Retrieves all the UUIDs associated with a Conversation.
+    //
+    test('Test /conversationsIdentifiersSnapshot Endpoint', () async {
+    Future<FlattenedConversations ? > conversationsIdentifiersSnapshot() async {
+            FlattenedConversations?  returnable = FlattenedConversations.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        conversationsIdentifiersSnapshot();
+    });
+
     // /conversations [GET]
     //
-    // This will return a snapshot of a specific conversation
+    // Retrieves a snapshot of a specific conversation.
     //
     test('Test /conversationsSnapshot Endpoint', () async {
-    Future<Conversations ? > conversationsSnapshot() async {
+    Future<Conversations ? > conversationsSnapshot({ bool? transferables }) async {
             Conversations?  returnable = Conversations.fromJson();
             print(returnable?.toJson());
             return returnable;
@@ -89,12 +106,12 @@ void main() {
         // Helpful Variables here for use with responses below
         // TODO - Need to check if it is nullable or not
 
-        conversationsSnapshot();
+        conversationsSnapshot(  transferables: transferables  );
     });
 
-    // /conversations/stream/identifiers [STREAMED]
+    // /conversations/stream/identifiers [WS]
     //
-    // This is a stream for the conversation identifiers.
+    // Provides a WebSocket connection that emits changes to your conversation identifiers (UUIDs).
     //
     test('Test /conversationsStreamIdentifiers Endpoint', () async {
     Future conversationsStreamIdentifiers() async {
@@ -107,6 +124,23 @@ void main() {
         // TODO - Need to check if it is nullable or not
 
         conversationsStreamIdentifiers();
+    });
+
+    // /conversations/search [POST]
+    //
+    // This will search your conversations for a specific conversation  note: we will search annotations, the name of the conversation, and the conversation messages
+    //
+    test('Test /searchConversations Endpoint', () async {
+    Future<SearchedConversations ? > searchConversations({ bool? transferables, SearchInput? searchInput }) async {
+            SearchedConversations?  returnable = SearchedConversations.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        searchConversations(  transferables: transferables ,  searchInput: searchInput  );
     });
   });
 }

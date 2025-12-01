@@ -1,4 +1,4 @@
-# core_openapi.model.FilterOperationTypeEnum
+# pieces_os_client.model.FilterOperationTypeEnum
 
 ## Load the model package
 ```dart

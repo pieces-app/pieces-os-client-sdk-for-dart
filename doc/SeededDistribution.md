@@ -1,4 +1,4 @@
-# core_openapi.model.SeededDistribution
+# pieces_os_client.model.SeededDistribution
 
 ## Load the model package
 ```dart
@@ -8,9 +8,9 @@ import 'package:pieces_os_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
-**mailgun** | [**MailgunDistribution**](MailgunDistribution.md) |  | [optional] 
 **github** | [**SeededGitHubDistribution**](SeededGitHubDistribution.md) |  | [optional] 
+**mailgun** | [**MailgunDistribution**](MailgunDistribution.md) |  | [optional] 
+**schema** | [**EmbeddedModelSchema**](EmbeddedModelSchema.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

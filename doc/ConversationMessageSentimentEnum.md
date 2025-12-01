@@ -1,4 +1,4 @@
-# core_openapi.model.ConversationMessageSentimentEnum
+# pieces_os_client.model.ConversationMessageSentimentEnum
 
 ## Load the model package
 ```dart

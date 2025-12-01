@@ -1,4 +1,4 @@
-# core_openapi.model.OpenAIModelsListInput
+# pieces_os_client.model.OpenAIModelsListInput
 
 ## Load the model package
 ```dart

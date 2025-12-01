@@ -1,4 +1,4 @@
-import 'package:core_openapi/api.dart';
+import 'package:pieces_os_client/api.dart';
 import 'package:test/test.dart';
 
 /// tests for HintsApi
@@ -56,6 +56,40 @@ void main() {
         // TODO - Need to check if it is nullable or not
 
         hintsSnapshot();
+    });
+
+    // /hints/stream/identifiers [WS]
+    //
+    // Provides a WebSocket connection that emits changes to your hint identifiers (UUIDs).
+    //
+    test('Test /hintsStreamIdentifiers Endpoint', () async {
+    Future<StreamedIdentifiers ? > hintsStreamIdentifiers() async {
+            StreamedIdentifiers?  returnable = StreamedIdentifiers.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        hintsStreamIdentifiers();
+    });
+
+    // /hints/search [POST]
+    //
+    // This will search your hints for a specific hint  note: we will just search the hint value
+    //
+    test('Test /searchHints Endpoint', () async {
+    Future<SearchedHints ? > searchHints({ bool? transferables, SearchInput? searchInput }) async {
+            SearchedHints?  returnable = SearchedHints.fromJson();
+            print(returnable?.toJson());
+            return returnable;
+        }
+
+        // Helpful Variables here for use with responses below
+        // TODO - Need to check if it is nullable or not
+
+        searchHints(  transferables: transferables ,  searchInput: searchInput  );
     });
   });
 }

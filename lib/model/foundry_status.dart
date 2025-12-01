@@ -1,0 +1,203 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.18
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
+part of pieces_os_client;
+
+class FoundryStatus {
+  /// Returns a new [FoundryStatus] instance.
+  FoundryStatus({
+    this.installation,
+    this.installing,
+    this.recommendation,
+    this.schema,
+    this.updateRequired,
+    this.updating,
+  });
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  FoundryDeployment? installation;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  FoundryDeployment? installing;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  FoundryRecommendation? recommendation;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  EmbeddedModelSchema? schema;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  FoundryDeployment? updateRequired;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  FoundryDeployment? updating;
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is FoundryStatus &&
+    other.installation == installation &&
+    other.installing == installing &&
+    other.recommendation == recommendation &&
+    other.schema == schema &&
+    other.updateRequired == updateRequired &&
+    other.updating == updating;
+
+  @override
+  int get hashCode =>
+    // ignore: unnecessary_parenthesis
+    (installation == null ? 0 : installation!.hashCode) +
+    (installing == null ? 0 : installing!.hashCode) +
+    (recommendation == null ? 0 : recommendation!.hashCode) +
+    (schema == null ? 0 : schema!.hashCode) +
+    (updateRequired == null ? 0 : updateRequired!.hashCode) +
+    (updating == null ? 0 : updating!.hashCode);
+
+  @override
+  String toString() => 'FoundryStatus[installation=$installation, installing=$installing, recommendation=$recommendation, schema=$schema, updateRequired=$updateRequired, updating=$updating]';
+
+  Map<String, dynamic> toJson() {
+    final json = <String, dynamic>{};
+    if (this.installation != null) {
+      json[r'installation'] = this.installation;
+    } else {
+      json[r'installation'] = null;
+    }
+    if (this.installing != null) {
+      json[r'installing'] = this.installing;
+    } else {
+      json[r'installing'] = null;
+    }
+    if (this.recommendation != null) {
+      json[r'recommendation'] = this.recommendation;
+    } else {
+      json[r'recommendation'] = null;
+    }
+    if (this.schema != null) {
+      json[r'schema'] = this.schema;
+    } else {
+      json[r'schema'] = null;
+    }
+    if (this.updateRequired != null) {
+      json[r'updateRequired'] = this.updateRequired;
+    } else {
+      json[r'updateRequired'] = null;
+    }
+    if (this.updating != null) {
+      json[r'updating'] = this.updating;
+    } else {
+      json[r'updating'] = null;
+    }
+    return json;
+  }
+
+  /// Returns a new [FoundryStatus] instance and imports its values from
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static FoundryStatus? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
+
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "FoundryStatus[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "FoundryStatus[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return FoundryStatus(
+        installation: FoundryDeployment.fromJson(json[r'installation']),
+        installing: FoundryDeployment.fromJson(json[r'installing']),
+        recommendation: FoundryRecommendation.fromJson(json[r'recommendation']),
+        schema: EmbeddedModelSchema.fromJson(json[r'schema']),
+        updateRequired: FoundryDeployment.fromJson(json[r'updateRequired']),
+        updating: FoundryDeployment.fromJson(json[r'updating']),
+      );
+    }
+    return null;
+  }
+
+  static List<FoundryStatus> listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <FoundryStatus>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = FoundryStatus.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
+
+  static Map<String, FoundryStatus> mapFromJson(dynamic json) {
+    final map = <String, FoundryStatus>{};
+    if (json is Map && json.isNotEmpty) {
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = FoundryStatus.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
+    }
+    return map;
+  }
+
+  // maps a json object with a list of FoundryStatus-objects as value to a dart map
+  static Map<String, List<FoundryStatus>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<FoundryStatus>>{};
+    if (json is Map && json.isNotEmpty) {
+      // ignore: parameter_assignments
+      json = json.cast<String, dynamic>();
+      for (final entry in json.entries) {
+        map[entry.key] = FoundryStatus.listFromJson(entry.value, growable: growable,);
+      }
+    }
+    return map;
+  }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
+}
+

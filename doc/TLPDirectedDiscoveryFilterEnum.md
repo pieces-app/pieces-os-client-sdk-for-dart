@@ -1,4 +1,4 @@
-# core_openapi.model.TLPDirectedDiscoveryFilterEnum
+# pieces_os_client.model.TLPDirectedDiscoveryFilterEnum
 
 ## Load the model package
 ```dart
