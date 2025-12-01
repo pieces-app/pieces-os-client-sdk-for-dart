@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **score** | [**Score**](Score.md) |  | [optional] 
 **sourceWindows** | [**FlattenedWorkstreamPatternEngineSourceWindows**](FlattenedWorkstreamPatternEngineSourceWindows.md) |  | [optional] 
 **summaries** | [**FlattenedWorkstreamSummaries**](FlattenedWorkstreamSummaries.md) |  | [optional] 
-**tagsVector** | **List<double>** | This is the embedding for the format.(NEEDs to collectionection.vector) and specific here because we can only index on a single name NOTE: this the the vector index that corresponds the the couchbase lite index. | [optional] [default to const []]
+**tagsVector** | **List<double>** | This is the embedding for the format. (NEEDs to collection.vector) and specific here because we can only index on a single name NOTE: this is the vector index that corresponds to the couchbase lite index. | [optional] [default to const []]
 **text** | **String** |  | 
 **updated** | [**GroupedTimestamp**](GroupedTimestamp.md) |  | 
 **websites** | [**FlattenedWebsites**](FlattenedWebsites.md) |  | [optional] 
