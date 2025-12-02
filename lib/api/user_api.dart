@@ -56,64 +56,6 @@ class UserApi {
     }
   }
 
-  /// /user/select [POST]
-  ///
-  /// This will select the current user.
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [Auth0User] auth0User:
-  ///   
-  Future<Response> selectUserWithHttpInfo({ Auth0User? auth0User, }) async {
-    // ignore: prefer_const_declarations
-    final path = r'/user/select';
-
-    // ignore: prefer_final_locals
-    Object? postBody = auth0User;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>['application/json'];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'POST',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// /user/select [POST]
-  ///
-  /// This will select the current user.
-  ///
-  /// Parameters:
-  ///
-  /// * [Auth0User] auth0User:
-  ///   
-  Future<UserProfile?> selectUser({ Auth0User? auth0User, }) async {
-    final response = await selectUserWithHttpInfo( auth0User: auth0User, );
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserProfile',) as UserProfile;
-    
-    }
-    return null;
-  }
-
   /// /user/stream [WS]
   ///
   /// Provides a WebSocket connection that streams user data.

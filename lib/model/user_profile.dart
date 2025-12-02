@@ -50,7 +50,7 @@ class UserProfile {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  Auth0UserMetadata? auth0;
+  Map<String, dynamic>? auth0;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -66,7 +66,7 @@ class UserProfile {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  DescopeUserMetadata? descope;
+  Map<String, dynamic>? descope;
 
   String email;
 
@@ -279,9 +279,9 @@ class UserProfile {
         apiKeys: json[r'apiKeys'] is Iterable
             ? (json[r'apiKeys'] as Iterable).cast<String>().toList(growable: false)
             : const [],
-        auth0: Auth0UserMetadata.fromJson(json[r'auth0']),
+        auth0: json[r'auth0'] as Map<String, dynamic>?,
         created: GroupedTimestamp.fromJson(json[r'created']),
-        descope: DescopeUserMetadata.fromJson(json[r'descope']),
+        descope: json[r'descope'] as Map<String, dynamic>?,
         email: mapValueOfType<String>(json, r'email') ?? 'user@pieces.app',
         entities: FlattenedEntities.fromJson(json[r'entities']),
         id: mapValueOfType<String>(json, r'id')!,

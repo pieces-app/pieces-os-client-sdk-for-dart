@@ -17,7 +17,7 @@ class DeletedExternalProviderApiKey {
     this.schema,
   });
 
-  Auth0UserMetadata metadata;
+  Map<String, dynamic> metadata;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -71,7 +71,7 @@ class DeletedExternalProviderApiKey {
       }());
 
       return DeletedExternalProviderApiKey(
-        metadata: Auth0UserMetadata.fromJson(json[r'metadata'])!,
+        metadata: json[r'metadata'] as Map<String, dynamic>,
         schema: EmbeddedModelSchema.fromJson(json[r'schema']),
       );
     }
