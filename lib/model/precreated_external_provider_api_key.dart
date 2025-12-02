@@ -24,7 +24,7 @@ class PrecreatedExternalProviderApiKey {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  Auth0OpenAIUserMetadata? openAI;
+  Map<String, dynamic>? openAI;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -88,7 +88,7 @@ class PrecreatedExternalProviderApiKey {
       }());
 
       return PrecreatedExternalProviderApiKey(
-        openAI: Auth0OpenAIUserMetadata.fromJson(json[r'open_AI']),
+        openAI: json[r'open_AI'] as Map<String, dynamic>?,
         schema: EmbeddedModelSchema.fromJson(json[r'schema']),
         user: mapValueOfType<String>(json, r'user')!,
       );

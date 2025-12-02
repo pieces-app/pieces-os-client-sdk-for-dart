@@ -25,7 +25,7 @@ class UserBetaStatus {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  Auth0UserBetaStatus? auth0;
+  Map<String, dynamic>? auth0;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -33,7 +33,7 @@ class UserBetaStatus {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  Auth0UserBetaStatus? descope;
+  Map<String, dynamic>? descope;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -103,8 +103,8 @@ class UserBetaStatus {
       }());
 
       return UserBetaStatus(
-        auth0: Auth0UserBetaStatus.fromJson(json[r'auth0']),
-        descope: Auth0UserBetaStatus.fromJson(json[r'descope']),
+        auth0: json[r'auth0'] as Map<String, dynamic>?,
+        descope: json[r'descope'] as Map<String, dynamic>?,
         schema: EmbeddedModelSchema.fromJson(json[r'schema']),
         user: mapValueOfType<String>(json, r'user')!,
       );
