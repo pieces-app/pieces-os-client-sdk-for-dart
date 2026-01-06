@@ -10,7 +10,6 @@
 
 part of pieces_os_client;
 
-
 class UserApi {
   UserApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
@@ -18,7 +17,7 @@ class UserApi {
 
   /// /user/clear
   ///
-  /// An endpoint to clear the current user. 
+  /// An endpoint to clear the current user.
   ///
   /// Note: This method returns the HTTP [Response].
   Future<Response> clearUserWithHttpInfo() async {
@@ -34,7 +33,6 @@ class UserApi {
 
     const contentTypes = <String>[];
 
-
     return apiClient.invokeAPI(
       path,
       'POST',
@@ -48,7 +46,7 @@ class UserApi {
 
   /// /user/clear
   ///
-  /// An endpoint to clear the current user. 
+  /// An endpoint to clear the current user.
   Future<void> clearUser() async {
     final response = await clearUserWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
@@ -74,7 +72,6 @@ class UserApi {
 
     const contentTypes = <String>[];
 
-
     return apiClient.invokeAPI(
       path,
       'GET',
@@ -97,9 +94,12 @@ class UserApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserProfile',) as UserProfile;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'UserProfile',
+      ) as UserProfile;
     }
     return null;
   }
@@ -121,7 +121,6 @@ class UserApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>[];
-
 
     return apiClient.invokeAPI(
       path,
@@ -145,9 +144,12 @@ class UserApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserLastCheckedInStreamOutput',) as UserLastCheckedInStreamOutput;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'UserLastCheckedInStreamOutput',
+      ) as UserLastCheckedInStreamOutput;
     }
     return null;
   }
@@ -161,8 +163,10 @@ class UserApi {
   /// Parameters:
   ///
   /// * [UserProfile] userProfile:
-  ///   
-  Future<Response> updateUserWithHttpInfo({ UserProfile? userProfile, }) async {
+  ///
+  Future<Response> updateUserWithHttpInfo({
+    UserProfile? userProfile,
+  }) async {
     // ignore: prefer_const_declarations
     final path = r'/user/update';
 
@@ -175,7 +179,6 @@ class UserApi {
 
     const contentTypes = <String>['application/json'];
 
-
     return apiClient.invokeAPI(
       path,
       'POST',
@@ -194,18 +197,25 @@ class UserApi {
   /// Parameters:
   ///
   /// * [UserProfile] userProfile:
-  ///   
-  Future<UserProfile?> updateUser({ UserProfile? userProfile, }) async {
-    final response = await updateUserWithHttpInfo( userProfile: userProfile, );
+  ///
+  Future<UserProfile?> updateUser({
+    UserProfile? userProfile,
+  }) async {
+    final response = await updateUserWithHttpInfo(
+      userProfile: userProfile,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserProfile',) as UserProfile;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'UserProfile',
+      ) as UserProfile;
     }
     return null;
   }
@@ -225,11 +235,15 @@ class UserApi {
   ///   This is the uuid of an entity (organization or team).
   ///
   /// * [EntityAssociateToUserInput] entityAssociateToUserInput:
-  Future<Response> userAssociateEntityWithHttpInfo(String user, String entity, { EntityAssociateToUserInput? entityAssociateToUserInput, }) async {
+  Future<Response> userAssociateEntityWithHttpInfo(
+    String user,
+    String entity, {
+    EntityAssociateToUserInput? entityAssociateToUserInput,
+  }) async {
     // ignore: prefer_const_declarations
     final path = r'/user/{user}/entities/associate/{entity}'
-      .replaceAll('{user}', user)
-      .replaceAll('{entity}', entity);
+        .replaceAll('{user}', user)
+        .replaceAll('{entity}', entity);
 
     // ignore: prefer_final_locals
     Object? postBody = entityAssociateToUserInput;
@@ -239,7 +253,6 @@ class UserApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>['application/json'];
-
 
     return apiClient.invokeAPI(
       path,
@@ -265,8 +278,16 @@ class UserApi {
   ///   This is the uuid of an entity (organization or team).
   ///
   /// * [EntityAssociateToUserInput] entityAssociateToUserInput:
-  Future<void> userAssociateEntity(String user, String entity, { EntityAssociateToUserInput? entityAssociateToUserInput, }) async {
-    final response = await userAssociateEntityWithHttpInfo(user, entity,  entityAssociateToUserInput: entityAssociateToUserInput, );
+  Future<void> userAssociateEntity(
+    String user,
+    String entity, {
+    EntityAssociateToUserInput? entityAssociateToUserInput,
+  }) async {
+    final response = await userAssociateEntityWithHttpInfo(
+      user,
+      entity,
+      entityAssociateToUserInput: entityAssociateToUserInput,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -281,7 +302,9 @@ class UserApi {
   /// Parameters:
   ///
   /// * [UserBetaStatus] userBetaStatus:
-  Future<Response> userBetaStatusWithHttpInfo({ UserBetaStatus? userBetaStatus, }) async {
+  Future<Response> userBetaStatusWithHttpInfo({
+    UserBetaStatus? userBetaStatus,
+  }) async {
     // ignore: prefer_const_declarations
     final path = r'/user/beta/status';
 
@@ -294,7 +317,6 @@ class UserApi {
 
     const contentTypes = <String>['application/json'];
 
-
     return apiClient.invokeAPI(
       path,
       'POST',
@@ -313,17 +335,24 @@ class UserApi {
   /// Parameters:
   ///
   /// * [UserBetaStatus] userBetaStatus:
-  Future<UserBetaStatus?> userBetaStatus({ UserBetaStatus? userBetaStatus, }) async {
-    final response = await userBetaStatusWithHttpInfo( userBetaStatus: userBetaStatus, );
+  Future<UserBetaStatus?> userBetaStatus({
+    UserBetaStatus? userBetaStatus,
+  }) async {
+    final response = await userBetaStatusWithHttpInfo(
+      userBetaStatus: userBetaStatus,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserBetaStatus',) as UserBetaStatus;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'UserBetaStatus',
+      ) as UserBetaStatus;
     }
     return null;
   }
@@ -337,7 +366,9 @@ class UserApi {
   /// Parameters:
   ///
   /// * [UserCheckoutInput] userCheckoutInput:
-  Future<Response> userCheckoutWithHttpInfo({ UserCheckoutInput? userCheckoutInput, }) async {
+  Future<Response> userCheckoutWithHttpInfo({
+    UserCheckoutInput? userCheckoutInput,
+  }) async {
     // ignore: prefer_const_declarations
     final path = r'/user/checkout';
 
@@ -350,7 +381,6 @@ class UserApi {
 
     const contentTypes = <String>['application/json'];
 
-
     return apiClient.invokeAPI(
       path,
       'POST',
@@ -369,17 +399,24 @@ class UserApi {
   /// Parameters:
   ///
   /// * [UserCheckoutInput] userCheckoutInput:
-  Future<UserCheckoutOutput?> userCheckout({ UserCheckoutInput? userCheckoutInput, }) async {
-    final response = await userCheckoutWithHttpInfo( userCheckoutInput: userCheckoutInput, );
+  Future<UserCheckoutOutput?> userCheckout({
+    UserCheckoutInput? userCheckoutInput,
+  }) async {
+    final response = await userCheckoutWithHttpInfo(
+      userCheckoutInput: userCheckoutInput,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserCheckoutOutput',) as UserCheckoutOutput;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'UserCheckoutOutput',
+      ) as UserCheckoutOutput;
     }
     return null;
   }
@@ -397,11 +434,14 @@ class UserApi {
   ///
   /// * [String] entity (required):
   ///   This is the uuid of an entity (organization or team).
-  Future<Response> userDisassociateEntityWithHttpInfo(String user, String entity,) async {
+  Future<Response> userDisassociateEntityWithHttpInfo(
+    String user,
+    String entity,
+  ) async {
     // ignore: prefer_const_declarations
     final path = r'/user/{user}/entities/disassociate/{entity}'
-      .replaceAll('{user}', user)
-      .replaceAll('{entity}', entity);
+        .replaceAll('{user}', user)
+        .replaceAll('{entity}', entity);
 
     // ignore: prefer_final_locals
     Object? postBody;
@@ -411,7 +451,6 @@ class UserApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>[];
-
 
     return apiClient.invokeAPI(
       path,
@@ -435,8 +474,14 @@ class UserApi {
   ///
   /// * [String] entity (required):
   ///   This is the uuid of an entity (organization or team).
-  Future<void> userDisassociateEntity(String user, String entity,) async {
-    final response = await userDisassociateEntityWithHttpInfo(user, entity,);
+  Future<void> userDisassociateEntity(
+    String user,
+    String entity,
+  ) async {
+    final response = await userDisassociateEntityWithHttpInfo(
+      user,
+      entity,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -451,7 +496,9 @@ class UserApi {
   /// Parameters:
   ///
   /// * [UserManageSubscriptionsInput] userManageSubscriptionsInput:
-  Future<Response> userManageSubscriptionsWithHttpInfo({ UserManageSubscriptionsInput? userManageSubscriptionsInput, }) async {
+  Future<Response> userManageSubscriptionsWithHttpInfo({
+    UserManageSubscriptionsInput? userManageSubscriptionsInput,
+  }) async {
     // ignore: prefer_const_declarations
     final path = r'/user/manage/subscriptions';
 
@@ -463,7 +510,6 @@ class UserApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>['application/json'];
-
 
     return apiClient.invokeAPI(
       path,
@@ -483,17 +529,24 @@ class UserApi {
   /// Parameters:
   ///
   /// * [UserManageSubscriptionsInput] userManageSubscriptionsInput:
-  Future<UserManageSubscriptionsOutput?> userManageSubscriptions({ UserManageSubscriptionsInput? userManageSubscriptionsInput, }) async {
-    final response = await userManageSubscriptionsWithHttpInfo( userManageSubscriptionsInput: userManageSubscriptionsInput, );
+  Future<UserManageSubscriptionsOutput?> userManageSubscriptions({
+    UserManageSubscriptionsInput? userManageSubscriptionsInput,
+  }) async {
+    final response = await userManageSubscriptionsWithHttpInfo(
+      userManageSubscriptionsInput: userManageSubscriptionsInput,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserManageSubscriptionsOutput',) as UserManageSubscriptionsOutput;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'UserManageSubscriptionsOutput',
+      ) as UserManageSubscriptionsOutput;
     }
     return null;
   }
@@ -515,7 +568,6 @@ class UserApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>[];
-
 
     return apiClient.invokeAPI(
       path,
@@ -539,9 +591,12 @@ class UserApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ReturnedUserProfile',) as ReturnedUserProfile;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'ReturnedUserProfile',
+      ) as ReturnedUserProfile;
     }
     return null;
   }
@@ -556,7 +611,9 @@ class UserApi {
   ///
   /// * [UserProfile] userProfile:
   ///   This will take an update userProfile, with the updated vanity name!
-  Future<Response> userUpdateVanityWithHttpInfo({ UserProfile? userProfile, }) async {
+  Future<Response> userUpdateVanityWithHttpInfo({
+    UserProfile? userProfile,
+  }) async {
     // ignore: prefer_const_declarations
     final path = r'/user/update/vanity';
 
@@ -568,7 +625,6 @@ class UserApi {
     final formParams = <String, String>{};
 
     const contentTypes = <String>['application/json'];
-
 
     return apiClient.invokeAPI(
       path,
@@ -589,18 +645,99 @@ class UserApi {
   ///
   /// * [UserProfile] userProfile:
   ///   This will take an update userProfile, with the updated vanity name!
-  Future<UserProfile?> userUpdateVanity({ UserProfile? userProfile, }) async {
-    final response = await userUpdateVanityWithHttpInfo( userProfile: userProfile, );
+  Future<UserProfile?> userUpdateVanity({
+    UserProfile? userProfile,
+  }) async {
+    final response = await userUpdateVanityWithHttpInfo(
+      userProfile: userProfile,
+    );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UserProfile',) as UserProfile;
-    
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'UserProfile',
+      ) as UserProfile;
     }
     return null;
+  }
+
+  /// /user/{user}/annotations [POST]
+  ///
+  /// Retrieve all annotations for a user with filtering support, sorted by most recently created. This is a helper proxy endpoint that resolves the user's active person and returns both the Person and filtered Annotations.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] user (required):
+  ///   The id (uuid) for a specific user.
+  ///
+  /// * [UserAnnotationsInput] userAnnotationsInput (required):
+  Future<Response> userGetAnnotationsWithHttpInfo(
+    String user,
+    UserAnnotationsInput userAnnotationsInput,
+  ) async {
+    // ignore: prefer_const_declarations
+    final path = r'/user/{user}/annotations'.replaceAll('{user}', user);
+
+    // is complex UserAnnotationsInput
+    Object? postBody = userAnnotationsInput;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// /user/{user}/annotations [POST]
+  ///
+  /// Retrieve all annotations for a user with filtering support, sorted by most recently created. This is a helper proxy endpoint that resolves the user's active person and returns both the Person and filtered Annotations.
+  ///
+  /// Parameters:
+  ///
+  /// * [String] user (required):
+  ///   The id (uuid) for a specific user.
+  ///
+  /// * [UserAnnotationsInput] userAnnotationsInput (required):
+  Future<UserAnnotationsOutput> userGetAnnotations(
+    String user,
+    UserAnnotationsInput userAnnotationsInput,
+  ) async {
+    final response = await userGetAnnotationsWithHttpInfo(
+      user,
+      userAnnotationsInput,
+    );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty &&
+        response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(
+        await _decodeBodyBytes(response),
+        'UserAnnotationsOutput',
+      ) as UserAnnotationsOutput;
+    }
+    throw ApiException(
+        response.statusCode, 'Received an empty body (not in a 204)');
   }
 }

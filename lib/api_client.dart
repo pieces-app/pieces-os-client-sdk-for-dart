@@ -1302,6 +1302,8 @@ class ApiClient {
           return UserManageSubscriptionsInput.fromJson(value);
         case 'UserManageSubscriptionsOutput':
           return UserManageSubscriptionsOutput.fromJson(value);
+        case 'UserAnnotationsOutput':
+          return UserAnnotationsOutput.fromJson(value);
         case 'UserProfile':
           return UserProfile.fromJson(value);
         case 'Users':
